@@ -10,15 +10,15 @@
 	<link rel="icon" href="/favicon.ico" />
 </svelte:head>
 
-
-
 <nav class="sticky top-0 z-50 bg-white/90 border-b" style="backdrop-filter: blur(6px); border-color: rgba(198,166,100,0.2)">
-	<div class="max-w-6xl mx-auto px-6" style="height:64px; display:flex; align-items:center; justify-content:space-between;">
-		<a href="/" style="font-family: var(--font-serif); font-size: 1.5rem; letter-spacing: 0.02em; color: var(--ink);">ModernBrands</a>
-		<div style="display:flex; gap: 1.5rem; align-items:center;">
-			<a href="/services" style="color: var(--ink)">Services</a>
-			<a href="/get-started" style="color: var(--ink)">Get Started</a>
-			<a href="/get-started" class="btn">Get Started</a>
+	<div class="max-w-6xl mx-auto px-6" style="height:80px; display:flex; align-items:center; justify-content:space-between;">
+		<a href="/" style="display:flex; align-items:center;">
+			<img src="/modern-brands-typography.svg" alt="ModernBrands" style="height:48px; width:auto;" />
+		</a>
+		<div style="display:flex; gap: 2rem; align-items:center;">
+			<a href="/services" style="color: var(--ink); font-size: 1.1rem; font-weight: 500;">Services</a>
+			<a href="/get-started" style="color: var(--ink); font-size: 1.1rem; font-weight: 500;">Get Started</a>
+			<a href="/get-started" class="btn" style="font-size: 1.1rem; padding: 0.875rem 2rem;">Get Started</a>
 		</div>
 	</div>
 </nav>
