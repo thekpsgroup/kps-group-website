@@ -4,12 +4,23 @@
 </svelte:head>
 
 <section style="max-width:72rem; margin:0 auto; padding:4rem 1.5rem; display:grid; gap:3rem;">
-	<div>
-		<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-		<stripe-pricing-table
-			pricing-table-id="REPLACE_WITH_PRICING_TABLE_ID"
-			publishable-key="REPLACE_WITH_LIVE_PUBLISHABLE_KEY">
-		</stripe-pricing-table>
+	<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+	<div style="display:grid; gap:3rem;">
+		<div>
+			<div class="eyebrow" style="text-align:center; margin-bottom:1rem;">Starter Packages</div>
+			<stripe-pricing-table
+				pricing-table-id="prctbl_1RxysH2K0wLA8j3Go1ecWenh"
+				publishable-key="pk_live_51QpDWI2K0wLA8j3GCC0CoY2cLmGl6dkKVpCfIzpZB1TXkUgGFIXDVtPjxqJ4s9jjejdG6SsbJLlbyGFHf7aUX1fm00xfAjoCEb">
+			</stripe-pricing-table>
+		</div>
+		
+		<div>
+			<div class="eyebrow" style="text-align:center; margin-bottom:1rem;">Professional Packages</div>
+			<stripe-pricing-table
+				pricing-table-id="prctbl_1RxxKK2K0wLA8j3G9h9tjOrs"
+				publishable-key="pk_live_51QpDWI2K0wLA8j3GCC0CoY2cLmGl6dkKVpCfIzpZB1TXkUgGFIXDVtPjxqJ4s9jjejdG6SsbJLlbyGFHf7aUX1fm00xfAjoCEb">
+			</stripe-pricing-table>
+		</div>
 	</div>
 
 	<div id="backup-form" style="max-width:32rem;">
