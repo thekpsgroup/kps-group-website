@@ -1,16 +1,16 @@
 <script lang="ts">
-	let { children } = $props();
+	import '../app.css';
 </script>
 
 <svelte:head>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
 	<link rel="icon" href="/favicon.ico" />
 </svelte:head>
 
-<link rel="stylesheet" href="/app.css" />
+
 
 <nav class="sticky top-0 z-50 bg-white/90 border-b" style="backdrop-filter: blur(6px); border-color: rgba(198,166,100,0.2)">
 	<div class="max-w-6xl mx-auto px-6" style="height:64px; display:flex; align-items:center; justify-content:space-between;">
@@ -23,7 +23,7 @@
 	</div>
 </nav>
 
-{@render children?.()}
+<slot />
 
 <footer style="border-top: 1px solid rgba(198,166,100,0.2); margin-top: 6rem;">
 	<div class="max-w-6xl mx-auto" style="padding: 3rem 1.5rem; display:grid; gap:2rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
