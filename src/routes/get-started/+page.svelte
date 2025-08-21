@@ -4,21 +4,43 @@
 </svelte:head>
 
 <!-- LUXURY HERO SECTION -->
-<section style="background: linear-gradient(135deg, #FFF8F0 0%, #FCEFE3 50%, #FFF8F0 100%); padding: 8rem 1.5rem 6rem; text-align: center; position: relative; overflow: hidden;">
-	<!-- Decorative gold elements -->
-	<div style="position: absolute; top: 2rem; left: 10%; width: 2px; height: 4rem; background: linear-gradient(to bottom, transparent, var(--gold), transparent);"></div>
-	<div style="position: absolute; top: 4rem; right: 15%; width: 1px; height: 3rem; background: linear-gradient(to bottom, transparent, var(--gold), transparent);"></div>
-	<div style="position: absolute; bottom: 3rem; left: 20%; width: 3px; height: 2rem; background: linear-gradient(to bottom, transparent, var(--gold), transparent);"></div>
+<section style="background: linear-gradient(135deg, #FFF8F0 0%, #FCEFE3 25%, #FFF8F0 50%, #FCEFE3 75%, #FFF8F0 100%); padding: 10rem 1.5rem 8rem; text-align: center; position: relative; overflow: hidden;">
+	<!-- Animated decorative elements -->
+	<div style="position: absolute; inset: 0; pointer-events: none;">
+		<div style="position: absolute; top: 10%; left: 8%; width: 1px; height: 80px; background: linear-gradient(to bottom, transparent, var(--gold), transparent); animation: float 8s ease-in-out infinite;"></div>
+		<div style="position: absolute; top: 20%; right: 12%; width: 2px; height: 60px; background: linear-gradient(to bottom, transparent, var(--gold), transparent); animation: float 10s ease-in-out infinite reverse;"></div>
+		<div style="position: absolute; bottom: 20%; left: 15%; width: 1px; height: 70px; background: linear-gradient(to bottom, transparent, var(--gold), transparent); animation: float 9s ease-in-out infinite;"></div>
+		<div style="position: absolute; top: 70%; right: 8%; width: 1px; height: 50px; background: linear-gradient(to bottom, transparent, var(--gold), transparent); animation: float 11s ease-in-out infinite reverse;"></div>
+	</div>
 	
-	<div style="max-width: 64rem; margin: 0 auto;">
-		<div class="eyebrow" style="margin-bottom: 1rem; letter-spacing: 0.2em;">Choose Your Path</div>
-		<h1 style="font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; margin: 0 0 1.5rem; color: var(--ink); line-height: 1.1;">
-			Dominate Your Market
+	<!-- Subtle geometric pattern -->
+	<div style="position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(circle at 20% 80%, rgba(198,166,100,0.03) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(198,166,100,0.03) 0%, transparent 50%);"></div>
+	
+	<div style="max-width: 72rem; margin: 0 auto; position: relative;">
+		<!-- Decorative line above eyebrow -->
+		<div style="width: 80px; height: 1px; background: var(--gold); margin: 0 auto 3rem; opacity: 0.7;"></div>
+		
+		<div class="eyebrow" style="margin-bottom: 2rem; letter-spacing: 0.3em; font-size: 0.9rem; color: var(--gold); font-weight: 500;">CHOOSE YOUR PATH</div>
+		
+		<h1 style="font-family: var(--font-serif); font-size: clamp(3rem, 6vw, 5rem); font-weight: 600; margin: 0 0 2rem; color: var(--ink); line-height: 1.05; letter-spacing: -0.02em;">
+			Dominate Your<br/>
+			<span style="color: var(--gold); font-weight: 700;">Market</span>
 		</h1>
-		<p style="font-size: 1.25rem; color: rgba(10,10,10,0.8); max-width: 48rem; margin: 0 auto; line-height: 1.6;">
+		
+		<p style="font-size: 1.375rem; color: rgba(10,10,10,0.7); max-width: 56rem; margin: 0 auto; line-height: 1.5; font-weight: 300; letter-spacing: 0.01em;">
 			Select the perfect package for your brand's journey to market leadership. Each tier is crafted for maximum impact.
 		</p>
+		
+		<!-- Decorative line below content -->
+		<div style="width: 60px; height: 1px; background: var(--gold); margin: 4rem auto 0; opacity: 0.5;"></div>
 	</div>
+	
+	<style>
+		@keyframes float {
+			0%, 100% { transform: translateY(0px); opacity: 0.6; }
+			50% { transform: translateY(-25px); opacity: 1; }
+		}
+	</style>
 </section>
 
 <!-- STARTER PACKAGES - LUXURY EDITORIAL LAYOUT -->
@@ -60,18 +82,24 @@
 	</div>
 
 	<!-- LUXURY 3-COLUMN LAYOUT -->
-	<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
+	<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
 		<!-- Card 1: Signature Mark - Luxury Design -->
-		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" 
-			 onmouseenter="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 50px rgba(198,166,100,0.2)'" 
+		<div style="background: white; border: 1px solid rgba(198,166,100,0.15); border-radius: 2rem; overflow: hidden; transition: all 0.4s ease; position: relative;" 
+			 onmouseenter="this.style.transform='translateY(-12px)'; this.style.boxShadow='0 30px 60px rgba(198,166,100,0.25)'" 
 			 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-			<!-- Luxury header -->
-			<div style="background: linear-gradient(135deg, #FCEFE3 0%, #FFF8F0 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
-				<div style="position: absolute; top: 1rem; left: 1rem; width: 2px; height: 2rem; background: var(--gold);"></div>
-				<div style="position: absolute; top: 1rem; right: 1rem; width: 2px; height: 2rem; background: var(--gold);"></div>
-				<div class="eyebrow" style="margin-bottom: 0.5rem;">Signature Mark</div>
-				<h3 style="font-family: var(--font-serif); font-size: 2rem; margin: 0 0 0.5rem; color: var(--ink);">Essential Branding</h3>
-				<div style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--gold); font-weight: 600;">$2,500</div>
+			<!-- Luxury header with enhanced design -->
+			<div style="background: linear-gradient(135deg, #FCEFE3 0%, #FFF8F0 50%, #FCEFE3 100%); padding: 3rem 2.5rem 2.5rem; text-align: center; position: relative; overflow: hidden;">
+				<!-- Decorative corner elements -->
+				<div style="position: absolute; top: 0; left: 0; width: 0; height: 0; border-right: 60px solid transparent; border-top: 60px solid rgba(198,166,100,0.08);"></div>
+				<div style="position: absolute; top: 0; right: 0; width: 0; height: 0; border-left: 60px solid transparent; border-top: 60px solid rgba(198,166,100,0.08);"></div>
+				
+				<!-- Decorative lines -->
+				<div style="position: absolute; top: 1.5rem; left: 2rem; width: 2px; height: 2.5rem; background: linear-gradient(to bottom, var(--gold), transparent);"></div>
+				<div style="position: absolute; top: 1.5rem; right: 2rem; width: 2px; height: 2.5rem; background: linear-gradient(to bottom, var(--gold), transparent);"></div>
+				
+				<div class="eyebrow" style="margin-bottom: 1rem; color: var(--gold); font-weight: 500; letter-spacing: 0.1em;">SIGNATURE MARK</div>
+				<h3 style="font-family: var(--font-serif); font-size: 2.25rem; margin: 0 0 1rem; color: var(--ink); font-weight: 600;">Essential Branding</h3>
+				<div style="font-family: var(--font-serif); font-size: 3rem; color: var(--gold); font-weight: 700; text-shadow: 0 2px 4px rgba(198,166,100,0.2);">$2,500</div>
 			</div>
 			
 			<!-- Image section -->
