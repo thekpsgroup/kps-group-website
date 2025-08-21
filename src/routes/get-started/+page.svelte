@@ -84,9 +84,7 @@
 	<!-- LUXURY 3-COLUMN LAYOUT -->
 	<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
 		<!-- Card 1: Signature Mark - Luxury Design -->
-		<div style="background: white; border: 1px solid rgba(198,166,100,0.15); border-radius: 2rem; overflow: hidden; transition: all 0.4s ease; position: relative;" role="button" tabindex="0"
-			 } 
-			 }>
+		<div style="background: white; border: 1px solid rgba(198,166,100,0.15); border-radius: 2rem; overflow: hidden; transition: all 0.4s ease; position: relative;" role="button" tabindex="0">
 			<!-- Luxury header with enhanced design -->
 			<div style="background: linear-gradient(135deg, #FCEFE3 0%, #FFF8F0 50%, #FCEFE3 100%); padding: 3rem 2.5rem 2.5rem; text-align: center; position: relative; overflow: hidden;">
 				<!-- Decorative corner elements -->
@@ -145,9 +143,7 @@
 		</div>
 
 		<!-- Card 2: Digital Canvas - Luxury Design -->
-		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" role="button" tabindex="0"
-			 } 
-			 }>
+		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" role="button" tabindex="0">
 			<!-- Luxury header -->
 			<div style="background: linear-gradient(135deg, #FCEFE3 0%, #FFF8F0 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
 				<div style="position: absolute; top: 1rem; left: 1rem; width: 2px; height: 2rem; background: var(--gold);"></div>
@@ -200,9 +196,7 @@
 		</div>
 
 		<!-- Card 3: Brand in a Box - Luxury Design -->
-		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" role="button" tabindex="0"
-			 } 
-			 }>
+		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" role="button" tabindex="0">
 			<!-- Luxury header -->
 			<div style="background: linear-gradient(135deg, #FCEFE3 0%, #FFF8F0 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
 				<div style="position: absolute; top: 1rem; left: 1rem; width: 2px; height: 2rem; background: var(--gold);"></div>
@@ -298,8 +292,7 @@
 	<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
 		<!-- Card 1: Enterprise Branding - Luxury Design -->
 		<div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(198,166,100,0.3); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative; backdrop-filter: blur(10px);" 
-			 } 
-			 }>
+			 >
 			<!-- Luxury header -->
 			<div style="background: linear-gradient(135deg, rgba(198,166,100,0.1) 0%, rgba(198,166,100,0.05) 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
 				<div style="position: absolute; top: 1rem; left: 1rem; width: 2px; height: 2rem; background: var(--gold);"></div>
@@ -353,8 +346,7 @@
 
 		<!-- Card 2: Digital Transformation - Luxury Design -->
 		<div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(198,166,100,0.3); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative; backdrop-filter: blur(10px);" 
-			 } 
-			 }>
+			 >
 			<!-- Luxury header -->
 			<div style="background: linear-gradient(135deg, rgba(198,166,100,0.1) 0%, rgba(198,166,100,0.05) 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
 				<div style="position: absolute; top: 1rem; left: 1rem; width: 2px; height: 2rem; background: var(--gold);"></div>
@@ -408,8 +400,7 @@
 
 		<!-- Card 3: Brand Ecosystem - Luxury Design -->
 		<div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(198,166,100,0.3); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative; backdrop-filter: blur(10px);" 
-			 } 
-			 }>
+			 >
 			<!-- Luxury header -->
 			<div style="background: linear-gradient(135deg, rgba(198,166,100,0.1) 0%, rgba(198,166,100,0.05) 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
 				<div style="position: absolute; top: 1rem; left: 1rem; width: 2px; height: 2rem; background: var(--gold);"></div>
@@ -504,7 +495,7 @@
 					<span class="eyebrow" style="margin-bottom: 0.5rem; display: block;">Project Details</span>
 					<textarea name="notes" rows="4" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; resize: vertical; transition: border-color 0.3s ease;" 
 							  placeholder="Tell us about your brand vision, target audience, and goals..." 
-							  on:focus={(e) => { e.target.style.borderColor='var(--gold)' }} on:blur={(e) => { e.target.style.borderColor='rgba(198,166,100,0.3)' }}></textarea>
+							  on:focus={(e) => { e.target.style.borderColor='var(--gold)' }} on:blur={(e) => { e.target.style.borderColor='rgba(198,166,100,0.3)' ></textarea>
 				</label>
 				
 				<button class="btn" style="width: fit-content; margin: 0 auto; padding: 1.25rem 3rem; font-size: 1.1rem; font-weight: 600;" type="submit">
