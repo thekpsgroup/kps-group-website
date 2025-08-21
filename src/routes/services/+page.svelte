@@ -60,8 +60,8 @@
 		<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 3rem;">
 			<!-- Phase 1 -->
 			<div style="background: white; border: 1px solid rgba(198,166,100,0.15); border-radius: 2rem; padding: 3rem; text-align: center; transition: all 0.4s ease; position: relative; overflow: hidden;" 
-				 onmouseenter="this.style.transform='translateY(-12px)'; this.style.boxShadow='0 30px 60px rgba(198,166,100,0.2)'" 
-				 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+				 on:mouseenter={(e) => role="button" tabindex="0" { e.target.style.transform='translateY(-12px)'; e.target.style.boxShadow='0 30px 60px rgba(198,166,100,0.2)' }} 
+				 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none' }}>
 				<!-- Decorative background element -->
 				<div style="position: absolute; top: -50px; right: -50px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(198,166,100,0.05) 0%, transparent 70%); border-radius: 50%;"></div>
 				
@@ -72,8 +72,8 @@
 
 			<!-- Phase 2 -->
 			<div style="background: white; border: 1px solid rgba(198,166,100,0.15); border-radius: 2rem; padding: 3rem; text-align: center; transition: all 0.4s ease; position: relative; overflow: hidden;" 
-				 onmouseenter="this.style.transform='translateY(-12px)'; this.style.boxShadow='0 30px 60px rgba(198,166,100,0.2)'" 
-				 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+				 on:mouseenter={(e) => role="button" tabindex="0" { e.target.style.transform='translateY(-12px)'; e.target.style.boxShadow='0 30px 60px rgba(198,166,100,0.2)' }} 
+				 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none' }}>
 				<!-- Decorative background element -->
 				<div style="position: absolute; top: -50px; left: -50px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(198,166,100,0.05) 0%, transparent 70%); border-radius: 50%;"></div>
 				
@@ -84,8 +84,8 @@
 
 			<!-- Phase 3 -->
 			<div style="background: white; border: 1px solid rgba(198,166,100,0.15); border-radius: 2rem; padding: 3rem; text-align: center; transition: all 0.4s ease; position: relative; overflow: hidden;" 
-				 onmouseenter="this.style.transform='translateY(-12px)'; this.style.boxShadow='0 30px 60px rgba(198,166,100,0.2)'" 
-				 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+				 on:mouseenter={(e) => role="button" tabindex="0" { e.target.style.transform='translateY(-12px)'; e.target.style.boxShadow='0 30px 60px rgba(198,166,100,0.2)' }} 
+				 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none' }}>
 				<!-- Decorative background element -->
 				<div style="position: absolute; bottom: -50px; right: -50px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(198,166,100,0.05) 0%, transparent 70%); border-radius: 50%;"></div>
 				
@@ -111,8 +111,8 @@
 		<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 3rem;">
 			<!-- Brand Strategy -->
 			<div style="background: white; border: 1px solid rgba(198,166,100,0.15); border-radius: 2rem; padding: 3rem; transition: all 0.4s ease; position: relative; overflow: hidden;" 
-				 onmouseenter="this.style.transform='translateY(-12px)'; this.style.boxShadow='0 30px 60px rgba(198,166,100,0.2)'" 
-				 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+				 on:mouseenter={(e) => role="button" tabindex="0" { e.target.style.transform='translateY(-12px)'; e.target.style.boxShadow='0 30px 60px rgba(198,166,100,0.2)' }} 
+				 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none' }}>
 				<!-- Decorative corner element -->
 				<div style="position: absolute; top: 0; right: 0; width: 0; height: 0; border-left: 60px solid transparent; border-top: 60px solid rgba(198,166,100,0.05);"></div>
 				
@@ -146,8 +146,8 @@
 
 			<!-- Visual Identity -->
 			<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; padding: 2.5rem; transition: all 0.3s ease;" 
-				 onmouseenter="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 50px rgba(198,166,100,0.15)'" 
-				 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+				 on:mouseenter={(e) => role="button" tabindex="0" { e.target.style.transform='translateY(-8px)'; e.target.style.boxShadow='0 25px 50px rgba(198,166,100,0.15)' }} 
+				 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none' }}>
 				<div class="eyebrow" style="margin-bottom: 0.5rem;">Visual Identity</div>
 				<h3 style="font-family: var(--font-serif); font-size: 1.75rem; margin: 0 0 1rem; color: var(--ink);">Design Systems</h3>
 				<p style="color: rgba(10,10,10,0.7); line-height: 1.6; margin-bottom: 1.5rem;">
@@ -178,8 +178,8 @@
 
 			<!-- Digital Presence -->
 			<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; padding: 2.5rem; transition: all 0.3s ease;" 
-				 onmouseenter="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 50px rgba(198,166,100,0.15)'" 
-				 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+				 on:mouseenter={(e) => role="button" tabindex="0" { e.target.style.transform='translateY(-8px)'; e.target.style.boxShadow='0 25px 50px rgba(198,166,100,0.15)' }} 
+				 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none' }}>
 				<div class="eyebrow" style="margin-bottom: 0.5rem;">Digital Presence</div>
 				<h3 style="font-family: var(--font-serif); font-size: 1.75rem; margin: 0 0 1rem; color: var(--ink);">Web & Digital</h3>
 				<p style="color: rgba(10,10,10,0.7); line-height: 1.6; margin-bottom: 1.5rem;">
@@ -210,8 +210,8 @@
 
 			<!-- Content Strategy -->
 			<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; padding: 2.5rem; transition: all 0.3s ease;" 
-				 onmouseenter="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 50px rgba(198,166,100,0.15)'" 
-				 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+				 on:mouseenter={(e) => role="button" tabindex="0" { e.target.style.transform='translateY(-8px)'; e.target.style.boxShadow='0 25px 50px rgba(198,166,100,0.15)' }} 
+				 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none' }}>
 				<div class="eyebrow" style="margin-bottom: 0.5rem;">Content Strategy</div>
 				<h3 style="font-family: var(--font-serif); font-size: 1.75rem; margin: 0 0 1rem; color: var(--ink);">Messaging & Voice</h3>
 				<p style="color: rgba(10,10,10,0.7); line-height: 1.6; margin-bottom: 1.5rem;">
