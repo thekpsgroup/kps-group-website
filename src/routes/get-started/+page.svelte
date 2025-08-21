@@ -84,7 +84,7 @@
 	<!-- LUXURY 3-COLUMN LAYOUT -->
 	<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
 		<!-- Card 1: Signature Mark - Luxury Design -->
-		<div style="background: white; border: 1px solid rgba(198,166,100,0.15); border-radius: 2rem; overflow: hidden; transition: all 0.4s ease; position: relative;" role="button" tabindex="0">
+		<div style="background: white; border: 1px solid rgba(198,166,100,0.15); border-radius: 2rem; overflow: hidden; transition: all 0.4s ease; position: relative;" >
 			<!-- Luxury header with enhanced design -->
 			<div style="background: linear-gradient(135deg, #FCEFE3 0%, #FFF8F0 50%, #FCEFE3 100%); padding: 3rem 2.5rem 2.5rem; text-align: center; position: relative; overflow: hidden;">
 				<!-- Decorative corner elements -->
@@ -136,14 +136,14 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')}>
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')>
 					Get Started - $2,500
 				</button>
 			</div>
 		</div>
 
 		<!-- Card 2: Digital Canvas - Luxury Design -->
-		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" role="button" tabindex="0">
+		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" >
 			<!-- Luxury header -->
 			<div style="background: linear-gradient(135deg, #FCEFE3 0%, #FFF8F0 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
 				<div style="position: absolute; top: 1rem; left: 1rem; width: 2px; height: 2rem; background: var(--gold);"></div>
@@ -189,14 +189,14 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')}>
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')>
 					Get Started - $5,000
 				</button>
 			</div>
 		</div>
 
 		<!-- Card 3: Brand in a Box - Luxury Design -->
-		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" role="button" tabindex="0">
+		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" >
 			<!-- Luxury header -->
 			<div style="background: linear-gradient(135deg, #FCEFE3 0%, #FFF8F0 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
 				<div style="position: absolute; top: 1rem; left: 1rem; width: 2px; height: 2rem; background: var(--gold);"></div>
@@ -242,7 +242,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')}>
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')>
 					Get Started - $8,500
 				</button>
 			</div>
@@ -338,7 +338,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')}>
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')>
 					Get Started - $15,000
 				</button>
 			</div>
@@ -392,7 +392,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')}>
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')>
 					Get Started - $25,000
 				</button>
 			</div>
@@ -446,7 +446,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')}>
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')>
 					Get Started - $50,000
 				</button>
 			</div>
@@ -476,26 +476,26 @@
 					<label style="display: block;">
 						<span class="eyebrow" style="margin-bottom: 0.5rem; display: block;">Name</span>
 						<input required name="name" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; transition: border-color 0.3s ease;" 
-							   on:focus={(e) => { e.target.style.borderColor='var(--gold)' }} on:blur={(e) => { e.target.style.borderColor='rgba(198,166,100,0.3)' }} />
+							   } } />
 					</label>
 					<label style="display: block;">
 						<span class="eyebrow" style="margin-bottom: 0.5rem; display: block;">Email</span>
 						<input required type="email" name="email" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; transition: border-color 0.3s ease;" 
-							   on:focus={(e) => { e.target.style.borderColor='var(--gold)' }} on:blur={(e) => { e.target.style.borderColor='rgba(198,166,100,0.3)' }} />
+							   } } />
 					</label>
 				</div>
 				
 				<label style="display: block;">
 					<span class="eyebrow" style="margin-bottom: 0.5rem; display: block;">Phone</span>
 					<input name="phone" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; transition: border-color 0.3s ease;" 
-						   on:focus={(e) => { e.target.style.borderColor='var(--gold)' }} on:blur={(e) => { e.target.style.borderColor='rgba(198,166,100,0.3)' }} />
+						   } } />
 				</label>
 				
 				<label style="display: block;">
 					<span class="eyebrow" style="margin-bottom: 0.5rem; display: block;">Project Details</span>
 					<textarea name="notes" rows="4" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; resize: vertical; transition: border-color 0.3s ease;" 
 							  placeholder="Tell us about your brand vision, target audience, and goals..." 
-							  on:focus={(e) => { e.target.style.borderColor='var(--gold)' }} on:blur={(e) => { e.target.style.borderColor='rgba(198,166,100,0.3)' ></textarea>
+							  } on:blur={(e) => { e.target.style.borderColor='rgba(198,166,100,0.3)' ></textarea>
 				</label>
 				
 				<button class="btn" style="width: fit-content; margin: 0 auto; padding: 1.25rem 3rem; font-size: 1.1rem; font-weight: 600;" type="submit">
