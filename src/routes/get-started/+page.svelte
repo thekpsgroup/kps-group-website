@@ -85,8 +85,8 @@
 	<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
 		<!-- Card 1: Signature Mark - Luxury Design -->
 		<div style="background: white; border: 1px solid rgba(198,166,100,0.15); border-radius: 2rem; overflow: hidden; transition: all 0.4s ease; position: relative;" 
-			 onmouseenter="this.style.transform='translateY(-12px)'; this.style.boxShadow='0 30px 60px rgba(198,166,100,0.25)'" 
-			 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+			 on:mouseenter={(e) => { e.target.style.transform='translateY(-12px)'; e.target.style.boxShadow='0 30px 60px rgba(198,166,100,0.25)'; }} 
+			 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none'; }}>
 			<!-- Luxury header with enhanced design -->
 			<div style="background: linear-gradient(135deg, #FCEFE3 0%, #FFF8F0 50%, #FCEFE3 100%); padding: 3rem 2.5rem 2.5rem; text-align: center; position: relative; overflow: hidden;">
 				<!-- Decorative corner elements -->
@@ -105,7 +105,7 @@
 			<!-- Image section -->
 			<div style="height: 250px; position: relative; overflow: hidden;">
 				<img src="/signature-mark.png" alt="Signature Mark - Logo Design" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" 
-					 onmouseenter="this.style.transform='scale(1.05)'" onmouseleave="this.style.transform='scale(1)'" />
+					 on:mouseenter={(e) => e.target.style.transform='scale(1.05)'} on:mouseleave={(e) => e.target.style.transform='scale(1)'} />
 			</div>
 			
 			<!-- Content -->
@@ -138,7 +138,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" onclick="window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')">
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')}>
 					Get Started - $2,500
 				</button>
 			</div>
@@ -146,8 +146,8 @@
 
 		<!-- Card 2: Digital Canvas - Luxury Design -->
 		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" 
-			 onmouseenter="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 50px rgba(198,166,100,0.2)'" 
-			 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+			 on:mouseenter={(e) => { e.target.style.transform='translateY(-8px)'; e.target.style.boxShadow='0 25px 50px rgba(198,166,100,0.2)'; }} 
+			 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none'; }}>
 			<!-- Luxury header -->
 			<div style="background: linear-gradient(135deg, #FCEFE3 0%, #FFF8F0 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
 				<div style="position: absolute; top: 1rem; left: 1rem; width: 2px; height: 2rem; background: var(--gold);"></div>
@@ -160,7 +160,7 @@
 			<!-- Image section -->
 			<div style="height: 250px; position: relative; overflow: hidden;">
 				<img src="/digital-canvas.png" alt="Digital Canvas - Brand Identity" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" 
-					 onmouseenter="this.style.transform='scale(1.05)'" onmouseleave="this.style.transform='scale(1)'" />
+					 on:mouseenter={(e) => { e.target.style.transform='scale(1.05)' }} on:mouseleave={(e) => { e.target.style.transform='scale(1)' }} />
 			</div>
 			
 			<!-- Content -->
@@ -193,7 +193,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" onclick="window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')">
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')}>
 					Get Started - $5,000
 				</button>
 			</div>
@@ -201,8 +201,8 @@
 
 		<!-- Card 3: Brand in a Box - Luxury Design -->
 		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" 
-			 onmouseenter="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 50px rgba(198,166,100,0.2)'" 
-			 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+			 on:mouseenter={(e) => { e.target.style.transform='translateY(-8px)'; e.target.style.boxShadow='0 25px 50px rgba(198,166,100,0.2)' }} 
+			 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none' }}>
 			<!-- Luxury header -->
 			<div style="background: linear-gradient(135deg, #FCEFE3 0%, #FFF8F0 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
 				<div style="position: absolute; top: 1rem; left: 1rem; width: 2px; height: 2rem; background: var(--gold);"></div>
@@ -215,7 +215,7 @@
 			<!-- Image section -->
 			<div style="height: 250px; position: relative; overflow: hidden;">
 				<img src="/brand-bundle.png" alt="Brand in a Box - Complete Package" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" 
-					 onmouseenter="this.style.transform='scale(1.05)'" onmouseleave="this.style.transform='scale(1)'" />
+					 on:mouseenter={(e) => { e.target.style.transform='scale(1.05)' }} on:mouseleave={(e) => { e.target.style.transform='scale(1)' }} />
 			</div>
 			
 			<!-- Content -->
@@ -248,7 +248,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" onclick="window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')">
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')}>
 					Get Started - $8,500
 				</button>
 			</div>
@@ -298,8 +298,8 @@
 	<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
 		<!-- Card 1: Enterprise Branding - Luxury Design -->
 		<div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(198,166,100,0.3); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative; backdrop-filter: blur(10px);" 
-			 onmouseenter="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 50px rgba(198,166,100,0.3)'" 
-			 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+			 on:mouseenter={(e) => { e.target.style.transform='translateY(-8px)'; e.target.style.boxShadow='0 25px 50px rgba(198,166,100,0.3)' }} 
+			 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none' }}>
 			<!-- Luxury header -->
 			<div style="background: linear-gradient(135deg, rgba(198,166,100,0.1) 0%, rgba(198,166,100,0.05) 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
 				<div style="position: absolute; top: 1rem; left: 1rem; width: 2px; height: 2rem; background: var(--gold);"></div>
@@ -312,7 +312,7 @@
 			<!-- Image section -->
 			<div style="height: 250px; position: relative; overflow: hidden;">
 				<img src="/brand-foundation.png" alt="Enterprise Branding" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" 
-					 onmouseenter="this.style.transform='scale(1.05)'" onmouseleave="this.style.transform='scale(1)'" />
+					 on:mouseenter={(e) => { e.target.style.transform='scale(1.05)' }} on:mouseleave={(e) => { e.target.style.transform='scale(1)' }} />
 			</div>
 			
 			<!-- Content -->
@@ -345,7 +345,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" onclick="window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')">
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')}>
 					Get Started - $15,000
 				</button>
 			</div>
@@ -353,8 +353,8 @@
 
 		<!-- Card 2: Digital Transformation - Luxury Design -->
 		<div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(198,166,100,0.3); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative; backdrop-filter: blur(10px);" 
-			 onmouseenter="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 50px rgba(198,166,100,0.3)'" 
-			 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+			 on:mouseenter={(e) => { e.target.style.transform='translateY(-8px)'; e.target.style.boxShadow='0 25px 50px rgba(198,166,100,0.3)' }} 
+			 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none' }}>
 			<!-- Luxury header -->
 			<div style="background: linear-gradient(135deg, rgba(198,166,100,0.1) 0%, rgba(198,166,100,0.05) 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
 				<div style="position: absolute; top: 1rem; left: 1rem; width: 2px; height: 2rem; background: var(--gold);"></div>
@@ -367,7 +367,7 @@
 			<!-- Image section -->
 			<div style="height: 250px; position: relative; overflow: hidden;">
 				<img src="/growth-accelerator.png" alt="Digital Transformation" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" 
-					 onmouseenter="this.style.transform='scale(1.05)'" onmouseleave="this.style.transform='scale(1)'" />
+					 on:mouseenter={(e) => { e.target.style.transform='scale(1.05)' }} on:mouseleave={(e) => { e.target.style.transform='scale(1)' }} />
 			</div>
 			
 			<!-- Content -->
@@ -400,7 +400,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" onclick="window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')">
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')}>
 					Get Started - $25,000
 				</button>
 			</div>
@@ -408,8 +408,8 @@
 
 		<!-- Card 3: Brand Ecosystem - Luxury Design -->
 		<div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(198,166,100,0.3); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative; backdrop-filter: blur(10px);" 
-			 onmouseenter="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 50px rgba(198,166,100,0.3)'" 
-			 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+			 on:mouseenter={(e) => { e.target.style.transform='translateY(-8px)'; e.target.style.boxShadow='0 25px 50px rgba(198,166,100,0.3)' }} 
+			 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none' }}>
 			<!-- Luxury header -->
 			<div style="background: linear-gradient(135deg, rgba(198,166,100,0.1) 0%, rgba(198,166,100,0.05) 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
 				<div style="position: absolute; top: 1rem; left: 1rem; width: 2px; height: 2rem; background: var(--gold);"></div>
@@ -422,7 +422,7 @@
 			<!-- Image section -->
 			<div style="height: 250px; position: relative; overflow: hidden;">
 				<img src="/market-domination.png" alt="Brand Ecosystem" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" 
-					 onmouseenter="this.style.transform='scale(1.05)'" onmouseleave="this.style.transform='scale(1)'" />
+					 on:mouseenter={(e) => { e.target.style.transform='scale(1.05)' }} on:mouseleave={(e) => { e.target.style.transform='scale(1)' }} />
 			</div>
 			
 			<!-- Content -->
@@ -455,7 +455,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" onclick="window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')">
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')}>
 					Get Started - $50,000
 				</button>
 			</div>
