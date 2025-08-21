@@ -485,26 +485,26 @@
 					<label style="display: block;">
 						<span class="eyebrow" style="margin-bottom: 0.5rem; display: block;">Name</span>
 						<input required name="name" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; transition: border-color 0.3s ease;" 
-							   onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(198,166,100,0.3)'" />
+							   on:focus={(e) => { e.target.style.borderColor='var(--gold)' }} on:blur={(e) => { e.target.style.borderColor='rgba(198,166,100,0.3)' }} />
 					</label>
 					<label style="display: block;">
 						<span class="eyebrow" style="margin-bottom: 0.5rem; display: block;">Email</span>
 						<input required type="email" name="email" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; transition: border-color 0.3s ease;" 
-							   onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(198,166,100,0.3)'" />
+							   on:focus={(e) => { e.target.style.borderColor='var(--gold)' }} on:blur={(e) => { e.target.style.borderColor='rgba(198,166,100,0.3)' }} />
 					</label>
 				</div>
 				
 				<label style="display: block;">
 					<span class="eyebrow" style="margin-bottom: 0.5rem; display: block;">Phone</span>
 					<input name="phone" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; transition: border-color 0.3s ease;" 
-						   onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(198,166,100,0.3)'" />
+						   on:focus={(e) => { e.target.style.borderColor='var(--gold)' }} on:blur={(e) => { e.target.style.borderColor='rgba(198,166,100,0.3)' }} />
 				</label>
 				
 				<label style="display: block;">
 					<span class="eyebrow" style="margin-bottom: 0.5rem; display: block;">Project Details</span>
 					<textarea name="notes" rows="4" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; resize: vertical; transition: border-color 0.3s ease;" 
 							  placeholder="Tell us about your brand vision, target audience, and goals..." 
-							  onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(198,166,100,0.3)'"></textarea>
+							  on:focus={(e) => { e.target.style.borderColor='var(--gold)' }} on:blur={(e) => { e.target.style.borderColor='rgba(198,166,100,0.3)' }}></textarea>
 				</label>
 				
 				<button class="btn" style="width: fit-content; margin: 0 auto; padding: 1.25rem 3rem; font-size: 1.1rem; font-weight: 600;" type="submit">
