@@ -136,7 +136,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')>
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')}>
 					Get Started - $2,500
 				</button>
 			</div>
@@ -155,8 +155,7 @@
 			
 			<!-- Image section -->
 			<div style="height: 250px; position: relative; overflow: hidden;">
-				<img src="/digital-canvas.png" alt="Digital Canvas - Brand Identity" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" 
-					 } } />
+				<img src="/digital-canvas.png" alt="Digital Canvas - Brand Identity" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" />
 			</div>
 			
 			<!-- Content -->
@@ -189,7 +188,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')>
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')}>
 					Get Started - $5,000
 				</button>
 			</div>
@@ -208,8 +207,7 @@
 			
 			<!-- Image section -->
 			<div style="height: 250px; position: relative; overflow: hidden;">
-				<img src="/brand-bundle.png" alt="Brand in a Box - Complete Package" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" 
-					 } } />
+				<img src="/brand-bundle.png" alt="Brand in a Box - Complete Package" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" />
 			</div>
 			
 			<!-- Content -->
