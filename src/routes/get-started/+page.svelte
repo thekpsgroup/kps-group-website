@@ -84,8 +84,8 @@
 	<!-- LUXURY 3-COLUMN LAYOUT -->
 	<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
 		<!-- Card 1: Signature Mark - Luxury Design -->
-		<div style="background: white; border: 1px solid rgba(198,166,100,0.15); border-radius: 2rem; overflow: hidden; transition: all 0.4s ease; position: relative;" 
-			 on:mouseenter={(e) = role="button" tabindex="0"> { e.target.style.transform='translateY(-12px)'; e.target.style.boxShadow='0 30px 60px rgba(198,166,100,0.25)'; }} 
+		<div style="background: white; border: 1px solid rgba(198,166,100,0.15); border-radius: 2rem; overflow: hidden; transition: all 0.4s ease; position: relative;" role="button" tabindex="0"
+			 on:mouseenter={(e) => { e.target.style.transform='translateY(-12px)'; e.target.style.boxShadow='0 30px 60px rgba(198,166,100,0.25)'; }} 
 			 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none'; }}>
 			<!-- Luxury header with enhanced design -->
 			<div style="background: linear-gradient(135deg, #FCEFE3 0%, #FFF8F0 50%, #FCEFE3 100%); padding: 3rem 2.5rem 2.5rem; text-align: center; position: relative; overflow: hidden;">
@@ -145,8 +145,8 @@
 		</div>
 
 		<!-- Card 2: Digital Canvas - Luxury Design -->
-		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" 
-			 on:mouseenter={(e) = role="button" tabindex="0"> { e.target.style.transform='translateY(-8px)'; e.target.style.boxShadow='0 25px 50px rgba(198,166,100,0.2)'; }} 
+		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" role="button" tabindex="0"
+			 on:mouseenter={(e) => { e.target.style.transform='translateY(-8px)'; e.target.style.boxShadow='0 25px 50px rgba(198,166,100,0.2)'; }} 
 			 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none'; }}>
 			<!-- Luxury header -->
 			<div style="background: linear-gradient(135deg, #FCEFE3 0%, #FFF8F0 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
@@ -200,8 +200,8 @@
 		</div>
 
 		<!-- Card 3: Brand in a Box - Luxury Design -->
-		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" 
-			 on:mouseenter={(e) = role="button" tabindex="0"> { e.target.style.transform='translateY(-8px)'; e.target.style.boxShadow='0 25px 50px rgba(198,166,100,0.2)' }} 
+		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; overflow: hidden; transition: all 0.3s ease; position: relative;" role="button" tabindex="0"
+			 on:mouseenter={(e) => { e.target.style.transform='translateY(-8px)'; e.target.style.boxShadow='0 25px 50px rgba(198,166,100,0.2)' }} 
 			 on:mouseleave={(e) => { e.target.style.transform='translateY(0)'; e.target.style.boxShadow='none' }}>
 			<!-- Luxury header -->
 			<div style="background: linear-gradient(135deg, #FCEFE3 0%, #FFF8F0 100%); padding: 2.5rem 2rem 2rem; text-align: center; position: relative;">
