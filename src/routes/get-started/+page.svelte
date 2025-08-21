@@ -138,7 +138,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" onclick="window.open('https://buy.stripe.com/your-starter-link', '_blank')">
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" onclick="window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')">
 					Get Started - $2,500
 				</button>
 			</div>
@@ -193,7 +193,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" onclick="window.open('https://buy.stripe.com/your-starter-link', '_blank')">
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" onclick="window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')">
 					Get Started - $5,000
 				</button>
 			</div>
@@ -248,7 +248,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" onclick="window.open('https://buy.stripe.com/your-starter-link', '_blank')">
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" onclick="window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')">
 					Get Started - $8,500
 				</button>
 			</div>
@@ -345,7 +345,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" onclick="window.open('https://buy.stripe.com/your-professional-link', '_blank')">
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" onclick="window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')">
 					Get Started - $15,000
 				</button>
 			</div>
@@ -400,7 +400,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" onclick="window.open('https://buy.stripe.com/your-professional-link', '_blank')">
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" onclick="window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')">
 					Get Started - $25,000
 				</button>
 			</div>
@@ -455,7 +455,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" onclick="window.open('https://buy.stripe.com/your-professional-link', '_blank')">
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" onclick="window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')">
 					Get Started - $50,000
 				</button>
 			</div>
