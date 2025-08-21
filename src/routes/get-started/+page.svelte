@@ -23,8 +23,7 @@
 		<div class="eyebrow" style="margin-bottom: 2rem; letter-spacing: 0.3em; font-size: 0.9rem; color: var(--gold); font-weight: 500;">CHOOSE YOUR PATH</div>
 		
 		<h1 style="font-family: var(--font-serif); font-size: clamp(3rem, 6vw, 5rem); font-weight: 600; margin: 0 0 2rem; color: var(--ink); line-height: 1.05; letter-spacing: -0.02em;">
-			Dominate Your<br/>
-			<span style="color: var(--gold); font-weight: 700;">Market</span>
+			Dominate Your <span style="color: var(--gold); font-weight: 700;">Market</span>
 		</h1>
 		
 		<p style="font-size: 1.375rem; color: rgba(10,10,10,0.7); max-width: 56rem; margin: 0 auto; line-height: 1.5; font-weight: 300; letter-spacing: 0.01em;">
@@ -240,7 +239,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')>
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600;" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxysH2K0wLA8j3Go1ecWenh', '_blank')}>
 					Get Started - $8,500
 				</button>
 			</div>
@@ -302,8 +301,7 @@
 			
 			<!-- Image section -->
 			<div style="height: 250px; position: relative; overflow: hidden;">
-				<img src="/brand-foundation.png" alt="Enterprise Branding" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" 
-					 } } />
+				<img src="/brand-foundation.png" alt="Enterprise Branding" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" />
 			</div>
 			
 			<!-- Content -->
@@ -336,7 +334,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')>
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')}>
 					Get Started - $15,000
 				</button>
 			</div>
@@ -356,8 +354,7 @@
 			
 			<!-- Image section -->
 			<div style="height: 250px; position: relative; overflow: hidden;">
-				<img src="/growth-accelerator.png" alt="Digital Transformation" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" 
-					 } } />
+				<img src="/growth-accelerator.png" alt="Digital Transformation" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" />
 			</div>
 			
 			<!-- Content -->
@@ -390,7 +387,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')>
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')}>
 					Get Started - $25,000
 				</button>
 			</div>
@@ -410,8 +407,7 @@
 			
 			<!-- Image section -->
 			<div style="height: 250px; position: relative; overflow: hidden;">
-				<img src="/market-domination.png" alt="Brand Ecosystem" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" 
-					 } } />
+				<img src="/market-domination.png" alt="Brand Ecosystem" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" />
 			</div>
 			
 			<!-- Content -->
@@ -444,7 +440,7 @@
 						</li>
 					</ul>
 				</div>
-				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')>
+				<button class="btn" style="width: 100%; padding: 1.25rem; font-size: 1.1rem; font-weight: 600; background: var(--gold); color: var(--ink);" on:click={() => window.open('https://buy.stripe.com/pricing-table/prctbl_1RxxKK2K0wLA8j3G9h9tjOrs', '_blank')}>
 					Get Started - $50,000
 				</button>
 			</div>
@@ -473,27 +469,23 @@
 				<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
 					<label style="display: block;">
 						<span class="eyebrow" style="margin-bottom: 0.5rem; display: block;">Name</span>
-						<input required name="name" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; transition: border-color 0.3s ease;" 
-							   } } />
+						<input required name="name" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; transition: border-color 0.3s ease;" />
 					</label>
 					<label style="display: block;">
 						<span class="eyebrow" style="margin-bottom: 0.5rem; display: block;">Email</span>
-						<input required type="email" name="email" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; transition: border-color 0.3s ease;" 
-							   } } />
+						<input required type="email" name="email" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; transition: border-color 0.3s ease;" />
 					</label>
 				</div>
 				
 				<label style="display: block;">
 					<span class="eyebrow" style="margin-bottom: 0.5rem; display: block;">Phone</span>
-					<input name="phone" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; transition: border-color 0.3s ease;" 
-						   } } />
+					<input name="phone" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; transition: border-color 0.3s ease;" />
 				</label>
 				
 				<label style="display: block;">
 					<span class="eyebrow" style="margin-bottom: 0.5rem; display: block;">Project Details</span>
 					<textarea name="notes" rows="4" style="width: 100%; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; background: white; font-size: 1rem; resize: vertical; transition: border-color 0.3s ease;" 
-							  placeholder="Tell us about your brand vision, target audience, and goals..." 
-							  } on:blur={(e) => { e.target.style.borderColor='rgba(198,166,100,0.3)' ></textarea>
+							  placeholder="Tell us about your brand vision, target audience, and goals..."></textarea>
 				</label>
 				
 				<button class="btn" style="width: fit-content; margin: 0 auto; padding: 1.25rem 3rem; font-size: 1.1rem; font-weight: 600;" type="submit">

@@ -1,10 +1,17 @@
 import { json } from '@sveltejs/kit';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+// Only initialize Stripe if we have the secret key
+const stripe = process.env.STRIPE_SECRET_KEY ? new Stripe(process.env.STRIPE_SECRET_KEY) : null;
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || 'whsec_xSXjuWrVMSZ0llmZTSXGcMeAYlklWEXO';
 
 export async function POST({ request }) {
+    // Return early if Stripe is not configured
+    if (!stripe) {
+        console.warn('Stripe not configured - webhook disabled');
+        return json({ error: 'Stripe not configured' }, { status: 503 });
+    }
+
     const body = await request.text();
     const signature = request.headers.get('stripe-signature');
 

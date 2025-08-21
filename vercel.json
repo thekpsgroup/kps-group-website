@@ -37,6 +37,17 @@
 			"source": "/home",
 			"destination": "/",
 			"permanent": true
+		},
+		{
+			"source": "/(.*)",
+			"destination": "https://modernbrands.co/$1",
+			"permanent": true,
+			"has": [
+				{
+					"type": "host",
+					"value": "www.modernbrands.co"
+				}
+			]
 		}
 	]
 }

@@ -33,8 +33,7 @@
 		<div class="eyebrow" style="margin-bottom: 2rem; letter-spacing: 0.3em; font-size: 0.9rem; color: var(--gold); font-weight: 500;">MODERN LUXURY BRANDING</div>
 		
 		<h1 style="font-family: var(--font-serif); font-size: clamp(3.5rem, 7vw, 6rem); line-height: 0.95; margin: 0 0 2rem; color: var(--ink); font-weight: 600; letter-spacing: -0.02em;">
-			We build brands<br/>
-			<span style="color: var(--gold); font-weight: 700;">that dominate.</span>
+			We build brands <span style="color: var(--gold); font-weight: 700;">that dominate.</span>
 		</h1>
 		
 		<p style="font-size: 1.375rem; color: rgba(10,10,10,0.7); max-width: 52rem; margin: 0 auto 4rem; line-height: 1.5; font-weight: 300; letter-spacing: 0.01em;">
@@ -43,14 +42,10 @@
 		
 		<!-- Enhanced CTA button -->
 		<div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
-			<a href="/get-started" class="btn" style="font-size: 1.1rem; padding: 1.5rem 3.5rem; background: var(--gold); color: var(--ink); font-weight: 600; letter-spacing: 0.05em; box-shadow: 0 8px 32px rgba(198,166,100,0.3); transition: all 0.3s ease;" 
-			   onmouseenter="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 40px rgba(198,166,100,0.4)'" 
-			   onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 32px rgba(198,166,100,0.3)'">
+					<a href="/get-started" class="btn" style="font-size: 1.1rem; padding: 1.5rem 3.5rem; background: var(--gold); color: var(--ink); font-weight: 600; letter-spacing: 0.05em; box-shadow: 0 8px 32px rgba(198,166,100,0.3); transition: all 0.3s ease;">
 				Get Started
 			</a>
-			<a href="/services" style="font-size: 1rem; padding: 1.5rem 3rem; color: var(--ink); text-decoration: none; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; font-weight: 500; letter-spacing: 0.05em; transition: all 0.3s ease;" 
-			   onmouseenter="this.style.borderColor='var(--gold)'; this.style.color='var(--gold)'" 
-			   onmouseleave="this.style.borderColor='rgba(198,166,100,0.3)'; this.style.color='var(--ink)'">
+					<a href="/services" style="font-size: 1rem; padding: 1.5rem 3rem; color: var(--ink); text-decoration: none; border: 1px solid rgba(198,166,100,0.3); border-radius: 0.75rem; font-weight: 500; letter-spacing: 0.05em; transition: all 0.3s ease;">
 				Explore Services
 			</a>
 		</div>
