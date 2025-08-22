@@ -1,60 +1,56 @@
 import type { RequestHandler } from '@sveltejs/kit';
+import { json } from '@sveltejs/kit';
 
-export const POST: RequestHandler = async ({ request, fetch, url }) => {
+export const POST: RequestHandler = async ({ request }) => {
 	try {
 		const body = await request.json();
-		
-		// Validate required fields
-		if (!body.name || !body.email || !body.phone || !body.services || body.services.length === 0) {
-			return new Response(JSON.stringify({ error: 'Missing required fields' }), {
-				status: 400,
-				headers: { 'Content-Type': 'application/json' }
-			});
+		const name: string | undefined = body.name ?? body.Name;
+		const email: string | undefined = body.email ?? body.Email;
+		const phone: string | undefined = body.phone ?? body['Phone Number'];
+		const servicesInput = body.services ?? body['Service(s) interested in?'];
+
+		if (!name || !email) {
+			return json({ error: 'Name and email are required' }, { status: 400 });
 		}
-		
-		// Router.so endpoint
-		const endpoint = 'https://app.router.so/api/endpoints/wfk5gdct';
-		
-		// Prepare the payload for Router.so
-		const payload = {
-			name: body.name,
-			email: body.email,
-			phone: body.phone,
-			services: body.services.join(', '),
-			notes: body.notes || '',
-			source: 'KPS Group Website',
-			timestamp: new Date().toISOString()
+
+		// Normalize services to comma-separated string
+		let servicesStr = '';
+		if (Array.isArray(servicesInput)) {
+			servicesStr = servicesInput.join(', ');
+		} else if (typeof servicesInput === 'string') {
+			servicesStr = servicesInput;
+		}
+
+		// Build Router.so payload with exact schema keys
+		const routerPayload: Record<string, string> = {
+			Name: name,
+			'Phone Number': phone ?? '',
+			Email: email,
+			'Service(s) interested in?': servicesStr
 		};
-		
+
+		const endpoint = 'https://app.router.so/api/endpoints/wfk5gdct';
+		const apiKey = process.env.ROUTER_API_KEY;
+
+		if (!apiKey) {
+			// Fallback: log and succeed to avoid blocking leads during setup
+			console.log('Lead (no ROUTER_API_KEY set):', routerPayload);
+			return json({ success: true, note: 'Router API key not configured. Lead logged server-side.' });
+		}
+
 		const res = await fetch(endpoint, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': `Bearer ${process.env.ROUTER_API_KEY ?? ''}`
+				Authorization: `Bearer ${apiKey}`
 			},
-			body: JSON.stringify(payload)
+			body: JSON.stringify(routerPayload)
 		});
-		
-		if (!res.ok) {
-			console.error('Router.so API error:', res.status, res.statusText);
-			return new Response(JSON.stringify({ error: 'Failed to submit lead' }), {
-				status: 500,
-				headers: { 'Content-Type': 'application/json' }
-			});
-		}
-		
-		const responseText = await res.text();
-		
-		return new Response(responseText, {
-			status: res.status,
-			headers: { 'Content-Type': 'application/json' }
-		});
-		
+
+		const text = await res.text();
+		return new Response(text, { status: res.status });
 	} catch (error) {
 		console.error('Lead submission error:', error);
-		return new Response(JSON.stringify({ error: 'Internal server error' }), {
-			status: 500,
-			headers: { 'Content-Type': 'application/json' }
-		});
+		return json({ error: 'Failed to submit lead' }, { status: 500 });
 	}
 };

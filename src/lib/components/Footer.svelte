@@ -4,7 +4,7 @@
 			<!-- Company Info -->
 			<div>
 				<div class="flex items-center space-x-2 mb-4">
-					<img src="/kps-group-logo-white.svg" alt="The KPS Group" class="h-8 w-auto" />
+					<img src="/brands/kps/photos/kps.png" alt="The KPS Group" class="h-8 w-auto" />
 					<span class="text-white font-semibold text-lg">The KPS Group</span>
 				</div>
 				<p class="text-sm leading-relaxed mb-4">
