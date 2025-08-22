@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { suiteDrawerOpen } from '$lib/stores/roadmap';
+	import { suiteDrawerOpen } from '$lib/stores/ui';
 	
 	function openSuiteDrawer() {
 		suiteDrawerOpen.set(true);

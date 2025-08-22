@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import { suiteDrawerOpen } from '$lib/stores/roadmap';
+	import { suiteDrawerOpen } from '$lib/stores/ui';
 	
 	const dispatch = createEventDispatcher();
 	

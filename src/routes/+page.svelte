@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Hero from '$lib/components/Hero.svelte';
-	import Roadmap from '$lib/components/Roadmap.svelte';
+	import SimpleNarrative from '$lib/components/SimpleNarrative.svelte';
 	import SuiteGrid from '$lib/components/SuiteGrid.svelte';
 	import Consolidation from '$lib/components/Consolidation.svelte';
 	import ContactForm from '$lib/components/ContactForm.svelte';
@@ -21,7 +21,7 @@
 </svelte:head>
 
 <Hero />
-<Roadmap />
+<SimpleNarrative />
 <SuiteGrid />
 <Consolidation />
 <ContactForm />

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { suiteDrawerOpen } from '$lib/stores/roadmap';
+	import { suiteDrawerOpen } from '$lib/stores/ui';
 	import { SUITE } from '$lib/data/suite';
 	import { createEventDispatcher } from 'svelte';
 	

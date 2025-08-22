@@ -3,7 +3,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import SuiteDrawer from '$lib/components/SuiteDrawer.svelte';
-	import { suiteDrawerOpen } from '$lib/stores/roadmap';
+	import { suiteDrawerOpen } from '$lib/stores/ui';
 	import { page } from '$app/stores';
 	const SITE_URL = (import.meta.env?.PUBLIC_SITE_URL as string) || 'https://thekpsgroup.com';
 </script>
