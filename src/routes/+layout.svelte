@@ -108,7 +108,7 @@
 <!-- Skip link for keyboard users -->
 <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-gold text-navy px-4 py-2 rounded focus-ring z-[100]">Skip to main content</a>
 
-<div class="min-h-screen bg-sand text-ink">
+<div class="min-h-screen bg-bg-900 text-ink-900">
 	<Header />
 	
 	<main id="main">
@@ -162,4 +162,29 @@
 		white-space: nowrap;
 		border: 0;
 	}
+
+	/* Dark theme overrides */
+	:root {
+		--kps-navy: #00438c;
+		--kps-gold: #cab068;
+
+		--bg-900: #0b1622;  /* deep navy background */
+		--bg-800: #0f1e2d;
+		--ink-900: rgba(255,255,255,.92);
+		--ink-700: rgba(255,255,255,.78);
+		--ink-500: rgba(255,255,255,.62);
+		--line: rgba(255,255,255,.25);
+		--ring: rgba(255,255,255,.14);
+		--surface: #0f1a26; /* card bg */
+	}
+
+	:global(html), :global(body) {
+		height: 100%;
+		background: var(--bg-900);
+		color: var(--ink-900);
+		margin: 0;
+	}
+
+	/* Nix any "helpful" default gradients from old styles */
+	:global(body::before) { content: none !important; }
 </style>

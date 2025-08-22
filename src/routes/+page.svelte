@@ -6,58 +6,15 @@
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { onMount } from 'svelte';
 
-	let activeSolution: string | null = null;
+	// tiny filter controller
+	function blocks(){ return Array.from(document.querySelectorAll<HTMLElement>('.solution-block')); }
+	function showAll(){ blocks().forEach(b=>b.classList.remove('is-hidden')); }
+	function filter(key){ let hit=false; blocks().forEach(b=>{ if(b.dataset.key===key){b.classList.remove('is-hidden'); hit=true;} else b.classList.add('is-hidden'); }); if(!hit) showAll(); }
 
 	onMount(() => {
-		// Filter logic: show only the selected solution block; default shows all.
-		const blocks = Array.from(document.querySelectorAll('.solution-block'));
-		const showAll = () => blocks.forEach(b => b.classList.remove('is-hidden'));
-		const showOne = (key: string) => {
-			let matched = false;
-			blocks.forEach(b => {
-				if (b.getAttribute('data-key') === key) { 
-					b.classList.remove('is-hidden'); 
-					matched = true; 
-				} else { 
-					b.classList.add('is-hidden'); 
-				}
-			});
-			if (!matched) showAll();
-		};
-
-		// Initial load from hash (#solutions-[key]) or sessionStorage
-		const boot = () => {
-			const hash = location.hash || '';
-			if (hash.startsWith('#solutions-')) {
-				const key = hash.replace('#solutions-','');
-				showOne(key);
-				activeSolution = key;
-				return;
-			}
-			try {
-				const saved = sessionStorage.getItem('kps:roadmap-branch');
-				if (saved) { 
-					showOne(saved); 
-					activeSolution = saved;
-					return; 
-				}
-			} catch {}
-			showAll();
-			activeSolution = null;
-		};
-
-		window.addEventListener('roadmap:branch', (e: any) => {
-			const key = e.detail?.key || '';
-			if (key) {
-				showOne(key);
-				activeSolution = key;
-			}
-		});
-
-		// Handle back/forward navigation updating the filter
-		window.addEventListener('hashchange', boot);
-
-		boot();
+		// initial state
+		const initHash = (location.hash||'');
+		if(initHash.startsWith('#solutions-')) filter(initHash.replace('#solutions-',''));
 	});
 </script>
 
@@ -79,25 +36,19 @@
 
 <RoadmapHorizontal
 	title="From Pain to Growth"
-	subtitle="Focused, fast, and built to scale with you."
+	subtitle="We fix friction fast—and keep everything working together."
 	minWidth={1080}
 	dense={true}
-	branches={[
-		{ key: "brand", title: "Modern Brands",       description: "Identity, website, funnels.",                 href: "#solutions-brand" },
-		{ key: "ops",   title: "Modern Ledger & Pay", description: "Books, payroll, HR compliance.",              href: "#solutions-ops" },
-		{ key: "tech",  title: "Modern Stack",        description: "Stack audit, integrations, custom software.", href: "#solutions-tech" },
-	]}
 />
 
-<!-- Anchor hub (fallback scroll target) -->
-<section id="solutions" class="py-6"></section>
+<!-- Fallback anchor -->
+<section id="solutions" style="padding:1rem 0;"></section>
 
-<!-- Filterable solution sections -->
+<!-- Filterable solution blocks -->
 <section id="solutions-brand" class="solution-block" data-key="brand">
 	<div class="wrap">
 		<h3 class="sol-title">Modern Brands</h3>
 		<p class="sol-copy">Identity systems, website platforms, funnel design, and conversion optimization built for service businesses.</p>
-		<!-- Add cards or CTAs as needed -->
 	</div>
 </section>
 
@@ -120,33 +71,17 @@
 <ContactForm />
 
 <style>
-	.solution-block { 
-		padding: clamp(28px, 4vw, 52px) 0; 
-		border-top: 1px solid rgba(0,0,0,.06); 
-	}
-	@media (prefers-color-scheme: dark) {
-		.solution-block { border-top-color: rgba(255,255,255,.12); }
-	}
-	.solution-block .wrap { 
-		max-width: 1100px; 
-		margin: 0 auto; 
-		padding: 0 20px; 
-	}
-	.sol-title { 
-		margin: 0 0 8px; 
-		font-size: clamp(20px, 2vw, 26px); 
-		color: var(--kps-navy);
-	}
-	.sol-copy { 
-		margin: 0; 
-		color: rgba(0,0,0,.66); 
-		font-size: 16px;
-		line-height: 1.5;
-	}
-	@media (prefers-color-scheme: dark) {
-		.sol-copy { color: rgba(255,255,255,.78); }
-	}
-
-	/* filtering states */
-	.is-hidden { display: none; }
+	.solution-block{ padding: clamp(28px,4vw,52px) 0; border-top:1px solid var(--ring); background: transparent; }
+	.solution-block .wrap{ max-width:1100px; margin:0 auto; padding:0 20px; }
+	.sol-title{ margin:0 0 8px; font-size: clamp(20px,2vw,26px); color: var(--ink-900); }
+	.sol-copy{ margin:0; color: var(--ink-700); }
+	.is-hidden{ display:none; }
 </style>
+
+<svelte:window
+	on:hashchange={()=>{
+		const key = (location.hash||'').replace('#solutions-','');
+		if(['brand','ops','tech'].includes(key)) filter(key); else showAll();
+	}}
+	on:roadmap:branch={(e)=>{ const key = e.detail?.key; if(key) filter(key); }}
+/>
