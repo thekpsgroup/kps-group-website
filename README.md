@@ -4,13 +4,13 @@ A comprehensive SvelteKit website showcasing The Modern Suite, a collection of i
 
 ## Overview
 
-This website serves as a roadmap that "connects the dots" for service-based companies, visually and interactively mapping pains → solutions → brand/offer → CTA. The core message is:
+This website guides service-based companies through a straightforward problem → solution flow. The core message is:
 
 > "We give small, gritty service businesses the same tools the giants use—without the bloat or b.s."
 
 ## Features
 
-- **Interactive Roadmap**: SVG-based visualization connecting business pains to solutions and services
+- **Problem-Solution Narrative**: Straightforward text flow linking common pains to Modern Suite services
 - **Modern Suite Overview**: Detailed information about all five service brands
 - **Industry-Specific Content**: Tailored messaging for HVAC, electrical, plumbing, and other service businesses
 - **Contact Form**: Integrated lead capture with Router.so API
@@ -60,15 +60,14 @@ src/
 │   │   ├── Footer.svelte
 │   │   ├── SuiteDrawer.svelte
 │   │   ├── Hero.svelte
-│   │   ├── Roadmap.svelte
+│   │   ├── SimpleNarrative.svelte
 │   │   ├── SuiteGrid.svelte
 │   │   ├── Consolidation.svelte
 │   │   └── ContactForm.svelte
 │   ├── data/               # Data structures
 │   │   ├── suite.ts        # Modern Suite service data
-│   │   └── roadmap.ts      # Interactive roadmap data
 │   ├── stores/             # Svelte stores
-│   │   └── roadmap.ts      # Roadmap state management
+│   │   └── ui.ts           # UI state (suite drawer)
 │   └── utils/              # Utility functions
 │       └── observe.ts      # Intersection observer utilities
 ├── routes/                 # SvelteKit routes
@@ -135,13 +134,8 @@ The project is configured for Vercel deployment:
 
 ## Key Components
 
-### Roadmap Component
-The interactive roadmap is the centerpiece of the website, featuring:
-- SVG-based visualization
-- Pain point selection
-- Industry-specific presets
-- Animated path connections
-- Mobile-responsive fallback
+### Pain-Solution Narrative
+A simple text-based section that outlines common pains and the Modern Suite services that solve them.
 
 ### Suite Drawer
 A slide-down drawer accessible from any page that provides:
