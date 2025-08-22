@@ -87,24 +87,24 @@
 
       <div class="scroller" style={`--minw:${minWidth}px`}>
         <div class="row">
-          <!-- Step 1 -->
-          <div class="col step">
-            <div class="card" tabindex="0">
-              <div class="badge">Step 1</div>
-              <h3 class="card-title">Name the Pain</h3>
-              <p class="card-text">You need help. Tell us what hurts most.</p>
-            </div>
-          </div>
+                     <!-- Step 1 -->
+           <div class="col step">
+             <div class="card">
+               <div class="badge">Step 1</div>
+               <h3 class="card-title">Name the Pain</h3>
+               <p class="card-text">You need help. Tell us what hurts most.</p>
+             </div>
+           </div>
 
           <div class="col connector" aria-hidden="true"><span></span></div>
 
-          <!-- Step 2 (hub + branches) -->
-          <div class="col step wide">
-            <div class="card hub" tabindex="0">
-              <div class="badge badge-gold">Step 2</div>
-              <h3 class="card-title">We Analyze Your Needs</h3>
-              <p class="card-text">Quick discovery to understand goals, constraints, and timeline.</p>
-            </div>
+                     <!-- Step 2 (hub + branches) -->
+           <div class="col step wide">
+             <div class="card hub">
+               <div class="badge badge-gold">Step 2</div>
+               <h3 class="card-title">We Analyze Your Needs</h3>
+               <p class="card-text">Quick discovery to understand goals, constraints, and timeline.</p>
+             </div>
 
             <div class="branches">
               <svg class="nub" width="2" height="24" viewBox="0 0 2 24" aria-hidden="true">
@@ -142,25 +142,25 @@
 
           <div class="col spacer" aria-hidden="true"></div>
 
-          <!-- Step 3 -->
-          <div class="col step">
-            <div class="card" tabindex="0">
-              <div class="badge">Step 3</div>
-              <h3 class="card-title">Recommend the Plan</h3>
-              <p class="card-text">Clear options, timelines, and a clean rollout path.</p>
-            </div>
-          </div>
+                     <!-- Step 3 -->
+           <div class="col step">
+             <div class="card">
+               <div class="badge">Step 3</div>
+               <h3 class="card-title">Recommend the Plan</h3>
+               <p class="card-text">Clear options, timelines, and a clean rollout path.</p>
+             </div>
+           </div>
 
           <div class="col connector" aria-hidden="true"><span></span></div>
 
-          <!-- Step 4 -->
-          <div class="col step wide">
-            <div class="card" tabindex="0">
-              <div class="badge">Step 4</div>
-              <h3 class="card-title">Grow Together</h3>
-              <p class="card-text">Ongoing support and optimization as your business scales.</p>
-            </div>
-          </div>
+                     <!-- Step 4 -->
+           <div class="col step wide">
+             <div class="card">
+               <div class="badge">Step 4</div>
+               <h3 class="card-title">Grow Together</h3>
+               <p class="card-text">Ongoing support and optimization as your business scales.</p>
+             </div>
+           </div>
 
         </div>
       </div>
