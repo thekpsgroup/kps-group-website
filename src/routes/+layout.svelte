@@ -1,142 +1,117 @@
 <script lang="ts">
 	import '../app.css';
-	
-	// Event handlers for hover effects
-	function handleMouseEnter(event: MouseEvent) {
-		const target = event.target as HTMLElement;
-		target.style.color = 'var(--gold)';
-	}
-	
-	function handleMouseLeave(event: MouseEvent) {
-		const target = event.target as HTMLElement;
-		target.style.color = 'var(--ink)';
-	}
-	
-	function handleLogoMouseEnter(event: MouseEvent) {
-		const target = event.target as HTMLElement;
-		target.style.opacity = '0.8';
-	}
-	
-	function handleLogoMouseLeave(event: MouseEvent) {
-		const target = event.target as HTMLElement;
-		target.style.opacity = '1';
-	}
-	
-	function handleButtonMouseEnter(event: MouseEvent) {
-		const target = event.target as HTMLElement;
-		target.style.transform = 'translateY(-2px)';
-	}
-	
-	function handleButtonMouseLeave(event: MouseEvent) {
-		const target = event.target as HTMLElement;
-		target.style.transform = 'translateY(0)';
-	}
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import SuiteDrawer from '$lib/components/SuiteDrawer.svelte';
+	import { suiteDrawerOpen } from '$lib/stores/roadmap';
+	import { page } from '$app/stores';
+	const SITE_URL = (import.meta.env?.PUBLIC_SITE_URL as string) || 'https://thekpsgroup.com';
 </script>
 
 <svelte:head>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>The Modern Suite by The KPS Group — Brand, Books, Payroll, Ops, Stack & Custom Software</title>
+	<meta name="description" content="Enterprise-grade tools and ops for service businesses. Branding, bookkeeping, payroll, consulting, stack consolidation, and custom software builds." />
+	<meta name="theme-color" content="#0A1B2E" />
+	<link rel="canonical" href={`${SITE_URL}${$page.url.pathname}${$page.url.search}`} />
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="The Modern Suite by The KPS Group" />
+	<meta property="og:description" content="Enterprise-grade tools and ops for service businesses. Branding, bookkeeping, payroll, consulting, stack consolidation, and custom software builds." />
+	<meta property="og:url" content={`${SITE_URL}${$page.url.pathname}${$page.url.search}`} />
+	<meta property="og:image" content="/brands/kps/logo-transparent.png" />
+	<meta property="og:image:alt" content="The KPS Group logo" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="The Modern Suite by The KPS Group" />
+	<meta name="twitter:description" content="Enterprise-grade tools and ops for service businesses." />
+	<meta name="twitter:image" content="/brands/kps/logo-transparent.png" />
+
+	<!-- JSON-LD Organization Schema -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "The KPS Group",
+			"url": "https://thekpsgroup.com",
+			"email": "sales@thekpsgroup.com",
+			"telephone": "469-458-6966",
+			"logo": "/kps-group-logo.svg",
+			"description": "We give small, gritty service businesses the same tools the giants use—without the bloat or b.s.",
+			"brand": [
+				{"@type": "Brand", "name": "Modern Brands", "description": "Ultra-modern logos and websites. Quiet luxury, bold impact."},
+				{"@type": "Brand", "name": "Modern Ledger", "description": "Done-for-you bookkeeping that kills busywork."},
+				{"@type": "Brand", "name": "Modern Pay", "description": "Payroll + HR compliance without the headaches."},
+				{"@type": "Brand", "name": "Modern Consulting", "description": "Sales, ops, and leadership tuned for the trades."},
+				{"@type": "Brand", "name": "Modern Stack", "description": "We audit your tech, cut waste, and build custom software that actually fits."}
+			]
+		}
+	</script>
+
+	<!-- Preconnect to external domains -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
-	<link rel="icon" href="/favicon.ico" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </svelte:head>
 
-<!-- LUXURY GLASSMORPHIC HEADER -->
-<nav class="sticky top-0 z-50" style="background: rgba(255,255,255,0.25); backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid rgba(198,166,100,0.2); transition: all 0.3s ease; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
-	<div class="max-w-7xl mx-auto px-6" style="height: 160px; display: flex; align-items: center; justify-content: space-between;">
-		<!-- Logo/Home Link -->
-		<a href="/" style="display: flex; align-items: center; text-decoration: none; transition: opacity 0.3s ease;" 
-		   on:mouseenter={handleLogoMouseEnter} on:mouseleave={handleLogoMouseLeave}>
-			<img src="/modern-brands-typography.svg" alt="ModernBrands - Home" style="height: 120px; width: auto;" />
-		</a>
-		
-		<!-- Navigation Links -->
-		<div style="display: flex; gap: 3rem; align-items: center;">
-			<a href="/" style="color: var(--ink); font-size: 1rem; font-weight: 500; text-decoration: none; transition: color 0.3s ease; position: relative;" 
-			   on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
-				Home
-			</a>
-			<a href="/services" style="color: var(--ink); font-size: 1rem; font-weight: 500; text-decoration: none; transition: color 0.3s ease; position: relative;" 
-			   on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
-				Services
-			</a>
-			<a href="/get-started" style="color: var(--ink); font-size: 1rem; font-weight: 500; text-decoration: none; transition: color 0.3s ease; position: relative;" 
-			   on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
-				Get Started
-			</a>
-			<a href="/get-started" class="btn" style="font-size: 1rem; padding: 0.875rem 2rem; text-decoration: none; transition: all 0.3s ease;" 
-			   on:mouseenter={handleButtonMouseEnter} on:mouseleave={handleButtonMouseLeave}>
-				Get Started
-			</a>
-		</div>
-	</div>
-</nav>
+<!-- Skip link for keyboard users -->
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-gold text-navy px-4 py-2 rounded focus-ring z-[100]">Skip to main content</a>
 
-<slot />
+<div class="min-h-screen bg-sand text-ink">
+	<Header />
+	
+	<main id="main">
+		<slot />
+	</main>
+	
+	<Footer />
+	
+	<SuiteDrawer />
+</div>
 
-<!-- LUXURY GLASSMORPHIC FOOTER -->
-<footer style="background: rgba(255,255,255,0.25); backdrop-filter: blur(20px) saturate(180%); border-top: 1px solid rgba(198,166,100,0.2); margin-top: 6rem; box-shadow: 0 -8px 32px rgba(0,0,0,0.1);">
-	<div class="max-w-7xl mx-auto" style="padding: 2rem 1.5rem;">
-		<!-- Single Line Footer Navigation -->
-		<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
-			<!-- Brand -->
-			<a href="/" style="text-decoration: none;">
-				<div style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--ink); font-weight: 600;">ModernBrands</div>
-			</a>
-			
-			<!-- Navigation Links -->
-			<div style="display: flex; gap: 2rem; align-items: center;">
-				<a href="/" style="color: var(--ink); text-decoration: none; transition: color 0.3s ease; font-size: 0.9rem;" 
-				   on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
-					Home
-				</a>
-				<a href="/services" style="color: var(--ink); text-decoration: none; transition: color 0.3s ease; font-size: 0.9rem;" 
-				   on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
-					Services
-				</a>
-				<a href="/get-started" style="color: var(--ink); text-decoration: none; transition: color 0.3s ease; font-size: 0.9rem;" 
-				   on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
-					Get Started
-				</a>
-			</div>
-			
-			<!-- Contact Info -->
-			<div style="display: flex; gap: 2rem; align-items: center;">
-				<a href="mailto:sales@thekpsgroup.com" style="color: var(--ink); text-decoration: none; transition: color 0.3s ease; font-size: 0.9rem;" 
-				   on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
-					sales@thekpsgroup.com
-				</a>
-				<a href="tel:+14694586966" style="color: var(--ink); text-decoration: none; transition: color 0.3s ease; font-size: 0.9rem;" 
-				   on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
-					469-458-6966
-				</a>
-			</div>
-			
-			<!-- Copyright -->
-			<div style="font-size: 0.8rem; color: rgba(10,10,10,0.6);">
-				© {new Date().getFullYear()} ModernBrands
-			</div>
-		</div>
-		
-		<!-- Legal Accordion (Collapsed by default) -->
-		<div style="margin-top: 1.5rem; text-align: center;">
-			<details style="display: inline-block; border: 1px solid rgba(198,166,100,0.2); border-radius: 0.75rem; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);">
-				<summary style="cursor: pointer; font-weight: 600; color: var(--ink); font-size: 0.9rem;">Legal Information</summary>
-				<div style="margin-top: 1rem; display: grid; gap: 0.75rem; text-align: left;">
-					<div style="font-size: 0.8rem; color: rgba(10,10,10,0.7);">
-						<strong>NDA/MSA:</strong> We operate under mutual NDA by default; an MSA can be provided on request.
-					</div>
-					<div style="font-size: 0.8rem; color: rgba(10,10,10,0.7);">
-						<strong>Payment Terms:</strong> Standard 50/50 terms: 50% to start, 50% on delivery.
-					</div>
-					<div style="font-size: 0.8rem; color: rgba(10,10,10,0.7);">
-						<strong>SEO Disclaimer:</strong> SEO performance varies; results are illustrative and not guaranteed.
-					</div>
-					<div style="font-size: 0.8rem; color: rgba(10,10,10,0.7);">
-						<strong>Privacy:</strong> We respect your privacy and only collect essential information.
-					</div>
-				</div>
-			</details>
-		</div>
-	</div>
-</footer>
+<style>
+	/* Global styles */
+	:global(html) {
+		scroll-behavior: smooth;
+	}
+	
+	:global(body) {
+		font-family: 'Inter', system-ui, sans-serif;
+		line-height: 1.6;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	
+	:global(h1, h2, h3, h4, h5, h6) {
+		font-weight: 600;
+		line-height: 1.2;
+	}
+	
+	:global(a) {
+		text-decoration: none;
+	}
+	
+	:global(button) {
+		font-family: inherit;
+	}
+	
+	:global(input, textarea, select) {
+		font-family: inherit;
+	}
+	
+	/* Screen-reader-only utility */
+	:global(.sr-only) {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+</style>

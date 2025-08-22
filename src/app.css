@@ -1,54 +1,116 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-	--gold: #C6A664;
-	--navy: #0B1736;
-	--ink: #0A0A0A;
-	--ivory: #FFF8F0;
-	--font-serif: "Playfair Display", "Cormorant Garamond", serif;
-	--font-sans: Inter, "Helvetica Neue", Arial, sans-serif;
+	--kps-navy: #0A1B2E;
+	--kps-navy-800: #0F2540;
+	--kps-gold: #D4AF37;
+	--kps-gold-600: #C39A2E;
+	--ink: #0B0F14;
+	--sand: #F5F6F8;
+	--slate: #7A8896;
 }
 
-html, body { height: 100%; }
-
-body {
-	background-color: var(--ivory);
-	color: var(--ink);
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+.bg-navy {
+	background: var(--kps-navy);
 }
 
-a {
-	text-underline-offset: 4px;
-	text-decoration-color: var(--gold);
+.bg-navy-800 {
+	background: var(--kps-navy-800);
 }
 
-.text-gold { color: var(--gold); }
-.border-gold { border-color: var(--gold); }
-.bg-ivory { background-color: var(--ivory); }
-.text-ink { color: var(--ink); }
-
-.btn {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 9999px;
-	padding: 0.75rem 1.5rem;
-	border: 1px solid var(--gold);
-	color: var(--ink);
-	transition: background-color 150ms, color 150ms, border-color 150ms;
+.text-gold {
+	color: var(--kps-gold);
 }
 
-.btn:hover {
-	background-color: var(--gold);
-	color: var(--ivory);
+.text-gold-600 {
+	color: var(--kps-gold-600);
 }
 
-.eyebrow {
-	font-size: 0.75rem;
-	letter-spacing: 0.2em;
-	text-transform: uppercase;
-	color: var(--gold);
+.border-gold {
+	border-color: var(--kps-gold);
+}
+
+.border-gold-600 {
+	border-color: var(--kps-gold-600);
+}
+
+.dot-grid {
+	background-image: radial-gradient(circle at 1px 1px, rgba(212,175,55,.2) 1px, transparent 1px);
+	background-size: 24px 24px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.rise-in {
+		transform: translateY(12px);
+		opacity: 0;
+		transition: transform .5s ease, opacity .5s ease;
+	}
+	
+	.in-view.rise-in {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--kps-navy);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--kps-gold);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--kps-gold-600);
+}
+
+/* Focus styles */
+.focus-ring:focus {
+	outline: 2px solid var(--kps-gold);
+	outline-offset: 2px;
+}
+
+/* Glassmorphism effect */
+.glass {
+	background: rgba(10, 27, 46, 0.8);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(20px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+	from { transform: translateX(-100%); }
+	to { transform: translateX(0); }
+}
+
+@keyframes pulse-gold {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0.7; }
+}
+
+.animate-fade-in {
+	animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in {
+	animation: slideIn 0.4s ease-out;
+}
+
+.animate-pulse-gold {
+	animation: pulse-gold 2s ease-in-out infinite;
 }
 
 
