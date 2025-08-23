@@ -97,6 +97,10 @@
   }
 }
 
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out;
 }

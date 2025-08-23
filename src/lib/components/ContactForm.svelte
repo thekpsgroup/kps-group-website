@@ -215,9 +215,14 @@
 					<button
 						type="submit"
 						disabled={isSubmitting}
-						class="w-full bg-gold text-navy py-4 px-8 rounded-lg text-lg font-semibold hover:bg-gold-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors focus-ring shadow-lg hover:shadow-xl"
+						class="w-full bg-gold text-navy py-4 px-8 rounded-lg text-lg font-semibold hover:bg-gold-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors focus-ring shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
 					>
-						{isSubmitting ? 'Sending...' : 'Send it'}
+						{#if isSubmitting}
+							<div class="spinner" style="width:16px; height:16px; border:2px solid transparent; border-top:2px solid currentColor; border-radius:50%; animation:spin 1s linear infinite;"></div>
+							Sending...
+						{:else}
+							Send it
+						{/if}
 					</button>
 				</form>
 				

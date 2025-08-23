@@ -63,7 +63,8 @@
 			
 			<!-- Mobile Menu Button -->
 			<button
-				class="md:hidden text-white hover:text-gold transition-colors focus-ring rounded p-2"
+				class="md:hidden text-white hover:text-gold transition-colors focus-ring rounded p-3"
+				style="min-width:44px; min-height:44px;"
 				aria-label={mobileMenuOpen ? "Close mobile menu" : "Open mobile menu"}
 				aria-expanded={mobileMenuOpen}
 				on:click={toggleMobileMenu}
