@@ -94,9 +94,23 @@
 				<h2 class="text-3xl md:text-4xl font-bold mb-6">
 					Tell us what's broken. We'll fix it.
 				</h2>
-				<p class="text-lg text-slate">
+				<p class="text-lg text-slate mb-8">
 					Ready to transform your business? Let's start the conversation.
 				</p>
+				<div class="flex justify-center items-center space-x-6 text-sm text-slate">
+					<div class="flex items-center">
+						<svg class="w-4 h-4 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+						</svg>
+						Response within 24 hours
+					</div>
+					<div class="flex items-center">
+						<svg class="w-4 h-4 text-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
+							<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+						</svg>
+						No commitment required
+					</div>
+				</div>
 			</div>
 			
 			{#if isSubmitted}

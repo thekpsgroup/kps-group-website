@@ -30,18 +30,27 @@
 			</h1>
 			
 			<!-- Subhead -->
-			<p class="text-xl md:text-2xl text-gold mb-12 max-w-3xl mx-auto leading-relaxed">
+			<p class="text-lg md:text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
 				We equip service businesses with brand, books, payroll, ops, and tech that actually work together.
 			</p>
 			
-			<!-- CTA Button -->
-			<button
-				on:click={openSuiteDrawer}
-				class="bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gold-600 transition-all duration-300 focus-ring shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-				aria-label="Explore The Modern Suite"
-			>
-				Explore The Modern Suite
-			</button>
+			<!-- CTA Buttons -->
+			<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+				<button
+					on:click={openSuiteDrawer}
+					class="bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gold-600 transition-all duration-300 focus-ring shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+					aria-label="Explore The Modern Suite"
+				>
+					Explore The Modern Suite
+				</button>
+				<a
+					href="/contact"
+					class="border-2 border-navy text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-navy hover:text-white transition-all duration-300 focus-ring"
+					aria-label="Get Started"
+				>
+					Get Started
+				</a>
+			</div>
 			
 			<!-- Decorative line -->
 			<div class="w-12 h-px bg-gold mx-auto mt-12 opacity-40"></div>
