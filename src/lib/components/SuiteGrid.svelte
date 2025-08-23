@@ -86,9 +86,9 @@
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 			{#each SUITE as suite, index}
 				{@const matchingSolutions = getMatchingSolutions(suite)}
-				{@const isLastCard = index === SUITE.length - 1}
+				{@const isConsulting = suite.key === 'consulting'}
 				<div 
-					class="bg-navy-800 border border-gold/20 rounded-2xl p-8 hover:border-gold/40 transition-all duration-300 group relative overflow-hidden hover:transform hover:scale-[1.02] {isLastCard ? 'md:col-span-2 lg:col-span-2' : 'lg:col-span-2'}"
+					class="bg-navy-800 border border-gold/20 rounded-2xl p-8 hover:border-gold/40 transition-all duration-300 group relative overflow-hidden hover:transform hover:scale-[1.02] {isConsulting ? 'md:col-span-2 lg:col-span-4' : 'lg:col-span-2'}"
 					data-suite={suite.key}
 				>
 					<!-- Decorative background -->

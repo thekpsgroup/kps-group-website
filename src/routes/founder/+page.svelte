@@ -1,25 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	
-	onMount(() => {
-		const scrollBtn = document.getElementById('scroll-to-top');
-		
-		function toggleScrollButton() {
-			if (window.scrollY > 300) {
-				scrollBtn?.classList.remove('opacity-0', 'pointer-events-none');
-				scrollBtn?.classList.add('opacity-100');
-			} else {
-				scrollBtn?.classList.add('opacity-0', 'pointer-events-none');
-				scrollBtn?.classList.remove('opacity-100');
-			}
-		}
-		
-		window.addEventListener('scroll', toggleScrollButton);
-		
-		return () => {
-			window.removeEventListener('scroll', toggleScrollButton);
-		};
-	});
+	import Button from '$lib/components/Button.svelte';
+	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 </script>
 
 <svelte:head>
@@ -40,6 +21,14 @@
 	<meta name="twitter:description" content="Meet the founder of The KPS Group. From Fortune 500 boardrooms to serving small businesses." />
 	<meta name="twitter:image" content="https://thekpsgroup.com/6809dcf7a0a6774fd70f6395-HeadshotPro.png" />
 </svelte:head>
+
+<!-- Breadcrumbs -->
+<div class="container mx-auto px-4 pt-8">
+	<Breadcrumbs items={[
+		{ label: 'Home', href: '/' },
+		{ label: 'Founder' }
+	]} />
+</div>
 
 <!-- Hero Section -->
 <section class="py-20 bg-gradient-to-br from-navy to-slate-900 text-white">
@@ -204,12 +193,59 @@
 	</div>
 </section>
 
-<!-- Mission Statement -->
+<!-- The Problem We Solve -->
 <section class="py-20 bg-navy text-white">
 	<div class="container mx-auto px-4">
-		<div class="max-w-4xl mx-auto text-center">
-			<h2 class="text-3xl md:text-4xl font-bold mb-8">Our Mission</h2>
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">The Problem We Solve</h2>
+			
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+				<div class="text-center">
+					<div class="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-semibold mb-2">The Cost Gap</h3>
+					<p class="text-slate-300">Enterprise tools cost millions. Small businesses need the same power at a fraction of the cost.</p>
+				</div>
+				
+				<div class="text-center">
+					<div class="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-semibold mb-2">The Complexity Gap</h3>
+					<p class="text-slate-300">Enterprise systems are over-engineered. Small businesses need simplicity without sacrificing power.</p>
+				</div>
+				
+				<div class="text-center">
+					<div class="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-semibold mb-2">The Support Gap</h3>
+					<p class="text-slate-300">Enterprise vendors don't understand small business needs. We speak your language.</p>
+				</div>
+			</div>
+			
 			<div class="bg-gold/20 backdrop-blur-sm p-8 rounded-xl border border-gold/30">
+				<p class="text-xl leading-relaxed text-center">
+					<strong>The KPS Group bridges these gaps</strong> by bringing enterprise-grade solutions to small and mid-sized service businesses—without the enterprise price tag, complexity, or indifference.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Mission Statement -->
+<section class="py-20 bg-white">
+	<div class="container mx-auto px-4">
+		<div class="max-w-4xl mx-auto text-center">
+			<h2 class="text-3xl md:text-4xl font-bold text-navy mb-8">Our Mission</h2>
+			<div class="bg-navy text-white p-8 rounded-xl">
 				<p class="text-xl leading-relaxed">
 					"We exist to give small and mid-sized service businesses the same caliber of systems, financial clarity, and operational infrastructure that the 'big guys' hoard—but built in a way that's affordable, usable, and actually helps owners sleep at night."
 				</p>
@@ -219,7 +255,7 @@
 </section>
 
 <!-- Contact CTA -->
-<section class="py-20 bg-white">
+<section class="py-20 bg-slate-50">
 	<div class="container mx-auto px-4">
 		<div class="max-w-4xl mx-auto text-center">
 			<h2 class="text-3xl md:text-4xl font-bold text-navy mb-6">Ready to Transform Your Business?</h2>
@@ -227,34 +263,24 @@
 				Let's discuss how we can bring enterprise-grade solutions to your service business.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<a 
-					href="mailto:founder@thekpsgroup.com" 
-					class="bg-navy text-white px-8 py-4 rounded-lg font-semibold hover:bg-navy-700 transition-colors"
+				<Button
+					href="mailto:founder@thekpsgroup.com"
+					variant="primary"
+					size="lg"
 				>
 					Email Me Directly
-				</a>
-				<a 
-					href="tel:469-458-6966" 
-					class="bg-gold text-navy px-8 py-4 rounded-lg font-semibold hover:bg-gold-600 transition-colors"
+				</Button>
+				<Button
+					href="tel:469-458-6966"
+					variant="outline"
+					size="lg"
 				>
 					Call Now
-				</a>
+				</Button>
 			</div>
 		</div>
 	</div>
 </section>
-
-<!-- Scroll to top button -->
-<button
-	id="scroll-to-top"
-	class="fixed bottom-8 right-8 bg-navy text-white p-3 rounded-full shadow-lg hover:bg-navy-700 transition-all duration-300 opacity-0 pointer-events-none z-50"
-	on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-	aria-label="Scroll to top"
->
-	<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-	</svg>
-</button>
 
 <style>
 	.eyebrow {
