@@ -9,31 +9,39 @@
 </script>
 
 <svelte:head>
-	<title>The Modern Suite by The KPS Group — Brand, Books, Payroll, Ops, Stack & Custom Software</title>
-	<meta name="description" content="Enterprise-grade tools and ops for service businesses. Branding, bookkeeping, payroll, consulting, stack consolidation, and custom software builds." />
-	<meta name="keywords" content="service business tools, branding, bookkeeping, payroll, consulting, custom software, business operations, technology stack" />
+	<title>The KPS Group | Modern Suite - Branding, Bookkeeping, Payroll, Consulting & Custom Software for Service Businesses</title>
+	<meta name="description" content="The KPS Group provides enterprise-grade business solutions: Modern Brands (logos & websites), Modern Ledger (bookkeeping), Modern Pay (payroll), Modern Consulting (operations), and Modern Stack (custom software). Transform your service business today." />
+	<meta name="keywords" content="service business tools, branding agency, bookkeeping services, payroll services, business consulting, custom software development, technology stack audit, business operations, small business solutions, enterprise tools, modern branding, automated bookkeeping, HR compliance, business process optimization, software development, Dallas business services, Texas business solutions" />
 	<meta name="author" content="The KPS Group" />
-	<meta name="robots" content="index, follow" />
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 	<meta name="theme-color" content="#0A1B2E" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="geo.region" content="US-TX" />
+	<meta name="geo.placename" content="Dallas" />
+	<meta name="geo.position" content="32.7767;-96.7970" />
+	<meta name="ICBM" content="32.7767, -96.7970" />
 	<link rel="canonical" href={`${SITE_URL}${$page.url.pathname}${$page.url.search}`} />
 
 	<!-- Open Graph -->
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="The Modern Suite by The KPS Group" />
-	<meta property="og:description" content="Enterprise-grade tools and ops for service businesses. Branding, bookkeeping, payroll, consulting, stack consolidation, and custom software builds." />
+	<meta property="og:title" content="The KPS Group | Modern Suite - Complete Business Solutions" />
+	<meta property="og:description" content="Transform your service business with The KPS Group's Modern Suite: branding, bookkeeping, payroll, consulting & custom software. Enterprise-grade tools without the enterprise complexity." />
 	<meta property="og:url" content={`${SITE_URL}${$page.url.pathname}${$page.url.search}`} />
 	<meta property="og:image" content={`${SITE_URL}/brands/kps/photos/kps.png`} />
-	<meta property="og:image:alt" content="The KPS Group logo" />
+	<meta property="og:image:alt" content="The KPS Group - Modern Suite Business Solutions" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 	<meta property="og:site_name" content="The KPS Group" />
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="The Modern Suite by The KPS Group" />
-	<meta name="twitter:description" content="Enterprise-grade tools and ops for service businesses." />
+	<meta name="twitter:title" content="The KPS Group | Modern Suite - Complete Business Solutions" />
+	<meta name="twitter:description" content="Transform your service business with enterprise-grade branding, bookkeeping, payroll, consulting & custom software solutions." />
 	<meta name="twitter:image" content={`${SITE_URL}/brands/kps/photos/kps.png`} />
 	<meta name="twitter:site" content="@thekpsgroup" />
+	<meta name="twitter:creator" content="@thekpsgroup" />
 
 	<!-- JSON-LD Organization Schema -->
 	<script type="application/ld+json">
@@ -41,14 +49,24 @@
 			"@context": "https://schema.org",
 			"@type": "Organization",
 			"name": "The KPS Group",
+			"alternateName": "KPS Group",
 			"url": "https://thekpsgroup.com",
 			"email": "sales@thekpsgroup.com",
 			"telephone": "469-458-6966",
-			"logo": "https://thekpsgroup.com/kps-group-logo.svg",
+			"logo": "https://thekpsgroup.com/brands/kps/photos/kps.png",
 			"description": "We give small, gritty service businesses the same tools the giants use—without the bloat or b.s.",
+			"slogan": "Business, Refined. Clarity. Control. Growth.",
 			"address": {
 				"@type": "PostalAddress",
+				"addressLocality": "Dallas",
+				"addressRegion": "TX",
 				"addressCountry": "US"
+			},
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"telephone": "469-458-6966",
+				"contactType": "customer service",
+				"availableLanguage": "English"
 			},
 			"sameAs": [
 				"https://modernbrands.co",
@@ -57,6 +75,62 @@
 				"https://modernconsulting.co",
 				"https://moderntechstack.co"
 			],
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "The Modern Suite",
+				"itemListElement": [
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Modern Brands",
+							"description": "Ultra-modern logos and websites. Quiet luxury, bold impact.",
+							"url": "https://modernbrands.co",
+							"category": "Branding and Web Design"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Modern Ledger",
+							"description": "Done-for-you bookkeeping that kills busywork.",
+							"url": "https://modernledger.co",
+							"category": "Bookkeeping and Accounting"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Modern Pay",
+							"description": "Payroll + HR compliance without the headaches.",
+							"url": "https://modernpay.co",
+							"category": "Payroll and HR Services"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Modern Consulting",
+							"description": "Sales, ops, and leadership tuned for the trades.",
+							"url": "https://modernconsulting.co",
+							"category": "Business Consulting"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Modern Stack",
+							"description": "We audit your tech, cut waste, and build custom software that actually fits.",
+							"url": "https://moderntechstack.co",
+							"category": "Custom Software Development"
+						}
+					}
+				]
+			},
 			"brand": [
 				{
 					"@type": "Brand", 

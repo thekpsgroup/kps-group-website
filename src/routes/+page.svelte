@@ -28,17 +28,78 @@
 </script>
 
 <svelte:head>
-	<title>The Modern Suite by The KPS Group — Brand, Books, Payroll, Ops, Stack & Custom Software</title>
-	<meta name="description" content="Enterprise-grade tools and ops for service businesses. Branding, bookkeeping, payroll, consulting, stack consolidation, and custom software builds." />
-	<script type="application/ld+json">{JSON.stringify({
-		'@context': 'https://schema.org',
-		'@type': 'Organization',
-		name: 'The KPS Group',
-		url: 'https://thekpsgroup.com',
-		email: 'sales@thekpsgroup.com',
-		telephone: '469-458-6966',
-		logo: '/brands/kps/photos/kps.png'
-	})}</script>
+	<title>The KPS Group | Modern Suite - Complete Business Solutions for Service Companies</title>
+	<meta name="description" content="The KPS Group delivers enterprise-grade business solutions: Modern Brands (logos & websites), Modern Ledger (bookkeeping), Modern Pay (payroll), Modern Consulting (operations), and Modern Stack (custom software). Transform your service business with our comprehensive suite." />
+	<meta name="keywords" content="service business solutions, branding agency Dallas, bookkeeping services Texas, payroll services, business consulting, custom software development, technology stack audit, business operations optimization, small business tools, enterprise solutions, modern branding, automated bookkeeping, HR compliance services" />
+	
+	<!-- Additional SEO Meta Tags -->
+	<meta name="author" content="The KPS Group" />
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="https://thekpsgroup.com/" />
+	
+	<!-- Open Graph for Homepage -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="The KPS Group | Modern Suite - Complete Business Solutions" />
+	<meta property="og:description" content="Transform your service business with enterprise-grade branding, bookkeeping, payroll, consulting & custom software solutions. The KPS Group's Modern Suite delivers results." />
+	<meta property="og:url" content="https://thekpsgroup.com/" />
+	<meta property="og:image" content="https://thekpsgroup.com/brands/kps/photos/kps.png" />
+	<meta property="og:image:alt" content="The KPS Group - Modern Suite Business Solutions" />
+	<meta property="og:site_name" content="The KPS Group" />
+	
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="The KPS Group | Modern Suite - Complete Business Solutions" />
+	<meta name="twitter:description" content="Transform your service business with enterprise-grade solutions: branding, bookkeeping, payroll, consulting & custom software." />
+	<meta name="twitter:image" content="https://thekpsgroup.com/brands/kps/photos/kps.png" />
+	
+	<!-- Enhanced JSON-LD Schema -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "The KPS Group",
+			"url": "https://thekpsgroup.com",
+			"description": "Enterprise-grade business solutions for service companies",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": "https://thekpsgroup.com/search?q={search_term_string}",
+				"query-input": "required name=search_term_string"
+			}
+		}
+	</script>
+	
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": [
+				{
+					"@type": "Question",
+					"name": "What services does The KPS Group offer?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "The KPS Group offers five core services through The Modern Suite: Modern Brands (logos & websites), Modern Ledger (bookkeeping), Modern Pay (payroll), Modern Consulting (operations), and Modern Stack (custom software development)."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Where is The KPS Group located?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "The KPS Group is based in Dallas, Texas, serving service businesses across the United States with enterprise-grade tools and solutions."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "How can I contact The KPS Group?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "You can contact The KPS Group by phone at 469-458-6966, email at sales@thekpsgroup.com, or through our contact form on the website."
+					}
+				}
+			]
+		}
+	</script>
 </svelte:head>
 
 <Hero />
@@ -79,6 +140,65 @@
 
 <SuiteGrid />
 <Consolidation />
+
+<!-- SEO-Optimized FAQ Section -->
+<section class="py-20 bg-white">
+	<div class="container mx-auto px-4">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-3xl md:text-4xl font-bold text-navy text-center mb-12">
+				Frequently Asked Questions
+			</h2>
+			
+			<div class="space-y-8">
+				<div class="faq-item">
+					<h3 class="text-xl font-semibold text-navy mb-3">
+						What services does The KPS Group offer?
+					</h3>
+					<p class="text-slate-700 leading-relaxed">
+						The KPS Group offers five core services through The Modern Suite: <strong>Modern Brands</strong> (logos & websites), <strong>Modern Ledger</strong> (bookkeeping), <strong>Modern Pay</strong> (payroll), <strong>Modern Consulting</strong> (operations), and <strong>Modern Stack</strong> (custom software development). Each service is designed to give service businesses enterprise-grade tools without the complexity.
+					</p>
+				</div>
+				
+				<div class="faq-item">
+					<h3 class="text-xl font-semibold text-navy mb-3">
+						Where is The KPS Group located?
+					</h3>
+					<p class="text-slate-700 leading-relaxed">
+						The KPS Group is based in <strong>Dallas, Texas</strong>, serving service businesses across the United States with enterprise-grade tools and solutions. We work with clients nationwide, providing remote and on-site services as needed.
+					</p>
+				</div>
+				
+				<div class="faq-item">
+					<h3 class="text-xl font-semibold text-navy mb-3">
+						How can I contact The KPS Group?
+					</h3>
+					<p class="text-slate-700 leading-relaxed">
+						You can contact The KPS Group by <strong>phone at 469-458-6966</strong>, <strong>email at sales@thekpsgroup.com</strong>, or through our contact form on the website. We typically respond within 24 hours and offer free consultations to discuss your business needs.
+					</p>
+				</div>
+				
+				<div class="faq-item">
+					<h3 class="text-xl font-semibold text-navy mb-3">
+						What makes The KPS Group different from other business service providers?
+					</h3>
+					<p class="text-slate-700 leading-relaxed">
+						The KPS Group stands out by offering <strong>integrated business solutions</strong> rather than isolated services. Our Modern Suite approach ensures all your business tools work together seamlessly. We focus on <strong>service businesses specifically</strong>, understanding their unique challenges and providing tailored solutions that scale with your growth.
+					</p>
+				</div>
+				
+				<div class="faq-item">
+					<h3 class="text-xl font-semibold text-navy mb-3">
+						Do you work with small businesses?
+					</h3>
+					<p class="text-slate-700 leading-relaxed">
+						Absolutely! The KPS Group specializes in helping <strong>small to medium-sized service businesses</strong> access enterprise-grade tools and solutions. We believe that great business tools shouldn't be limited to large corporations. Our services are designed to be accessible, affordable, and scalable for growing businesses.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 <ContactForm />
 
 <!-- Scroll to Top Button -->

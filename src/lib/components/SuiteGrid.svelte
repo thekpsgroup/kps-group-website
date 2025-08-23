@@ -155,16 +155,35 @@
 							</div>
 						</div>
 						
-						<!-- CTA Button -->
-						<button
-							on:click={() => handleCTAClick(suite.key)}
-							class="w-full bg-gold text-navy py-3 px-6 rounded-lg font-semibold hover:bg-gold-600 transition-all duration-300 focus-ring group-hover:shadow-lg group-hover:shadow-gold/25 flex items-center justify-center gap-2 group/btn"
-						>
-							<span>{suite.cta.label}</span>
-							<svg class="w-4 h-4 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-							</svg>
-						</button>
+						<!-- CTA Buttons -->
+						<div class="space-y-3">
+							<!-- Primary CTA - Contact Form -->
+							<button
+								on:click={() => handleCTAClick(suite.key)}
+								class="w-full bg-gold text-navy py-3 px-6 rounded-lg font-semibold hover:bg-gold-600 transition-all duration-300 focus-ring group-hover:shadow-lg group-hover:shadow-gold/25 flex items-center justify-center gap-2 group/btn"
+							>
+								<span>{suite.cta.label}</span>
+								<svg class="w-4 h-4 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+								</svg>
+							</button>
+							
+							<!-- Secondary CTA - Direct to Website -->
+							{#if suite.website}
+								<a
+									href={suite.website}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="w-full border-2 border-gold/30 text-gold py-2 px-6 rounded-lg font-medium hover:bg-gold/10 transition-all duration-300 focus-ring group-hover:border-gold/50 flex items-center justify-center gap-2 group/website"
+									aria-label="Visit {suite.name} website"
+								>
+									<span>Visit {suite.name}</span>
+									<svg class="w-4 h-4 transition-transform group-hover/website:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+									</svg>
+								</a>
+							{/if}
+						</div>
 					</div>
 					
 					<!-- Animated border on hover -->
