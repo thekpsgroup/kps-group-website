@@ -104,18 +104,73 @@
 
 <Hero />
 
+<!-- Founder Story -->
+<section class="py-20 bg-slate-50">
+	<div class="container mx-auto px-4">
+		<div class="max-w-6xl mx-auto">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+				<!-- Founder Photo -->
+				<div class="relative">
+					<div class="relative z-10">
+						<img 
+							src="/brands/kps/photos/kps.png" 
+							alt="KPS Group Founder" 
+							class="w-full h-auto rounded-2xl shadow-2xl"
+						/>
+					</div>
+					<!-- Decorative background elements -->
+					<div class="absolute -top-4 -right-4 w-24 h-24 bg-gold/20 rounded-full"></div>
+					<div class="absolute -bottom-6 -left-6 w-32 h-32 bg-navy/10 rounded-full"></div>
+				</div>
+				
+				<!-- Founder Story -->
+				<div class="space-y-6">
+					<div class="eyebrow text-gold font-semibold">THE FOUNDER'S STORY</div>
+					<h2 class="text-3xl md:text-4xl font-bold text-navy leading-tight">
+						Why I Started The KPS Group
+					</h2>
+					<div class="space-y-4 text-slate-700 leading-relaxed">
+						<p>
+							I didn't start The KPS Group because I wanted to run "just another consulting firm." I started it because I've lived both sides of business—big tech boardrooms and small business job sites—and I saw a painful gap no one was fixing.
+						</p>
+						<p>
+							On one side, I spent years working inside some of the world's largest companies—<strong>IBM, Microsoft, PwC, Informatica</strong>—where billion-dollar organizations had access to powerful software, airtight financials, and entire teams dedicated to compliance and growth.
+						</p>
+						<p>
+							On the other side, I worked shoulder-to-shoulder with service businesses in the trades—<strong>HVAC, plumbing, electrical, construction</strong>—where owners wore ten hats, ran payroll at midnight, guessed their books in QuickBooks, and got stuck paying overpriced IT or marketing vendors who barely moved the needle.
+						</p>
+						<p>
+							That disconnect frustrated me. Why should the tools that drive the Fortune 500 be locked away from the very businesses that keep our homes running and our communities thriving?
+						</p>
+						<p class="text-lg font-semibold text-navy">
+							That's when The KPS Group was born.
+						</p>
+					</div>
+					
+					<!-- Mission Statement -->
+					<div class="bg-navy text-white p-6 rounded-xl">
+						<p class="text-lg font-medium">
+							"We exist to give small and mid-sized service businesses the same caliber of systems, financial clarity, and operational infrastructure that the 'big guys' hoard—but built in a way that's affordable, usable, and actually helps owners sleep at night."
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 <!-- Trust Indicators -->
-<section class="py-12 bg-gray-50">
+<section class="py-16 bg-white">
 	<div class="container mx-auto px-4">
 		<div class="max-w-4xl mx-auto">
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
 				<div class="trust-item">
-					<div class="text-3xl font-bold text-navy mb-2">500+</div>
-					<div class="text-slate-600">Businesses Served</div>
-				</div>
-				<div class="trust-item">
 					<div class="text-3xl font-bold text-navy mb-2">15+</div>
 					<div class="text-slate-600">Years Experience</div>
+				</div>
+				<div class="trust-item">
+					<div class="text-3xl font-bold text-navy mb-2">Enterprise</div>
+					<div class="text-slate-600">Background</div>
 				</div>
 				<div class="trust-item">
 					<div class="text-3xl font-bold text-navy mb-2">98%</div>
@@ -132,6 +187,32 @@
 	minWidth={1080}
 	dense={true}
 />
+
+<!-- Mission & Modern Suite -->
+<section class="py-20 bg-white">
+	<div class="container mx-auto px-4">
+		<div class="max-w-4xl mx-auto text-center">
+			<div class="eyebrow text-gold font-semibold mb-4">THE MISSION</div>
+			<h2 class="text-3xl md:text-4xl font-bold text-navy mb-8">
+				Bridging Enterprise Discipline & Small-Business Grit
+			</h2>
+			<div class="space-y-6 text-slate-700 leading-relaxed text-lg">
+				<p>
+					Through our family of companies, we give business owners the back-office they deserve: streamlined, compliant, and scalable.
+				</p>
+				<p>
+					This isn't about selling software or services. It's about leveling the playing field for the trades and local businesses that fuel our economy. It's about making sure the electrician with five vans or the HVAC company doing $3M a year can compete with companies ten times their size—without losing control of their operations or their margins.
+				</p>
+				<p class="text-xl font-semibold text-navy">
+					The KPS Group is my way of bridging the worlds I know best: enterprise discipline and small-business grit.
+				</p>
+				<p class="text-lg">
+					Because when local businesses thrive, communities thrive. And that's the mission.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
 
 <!-- Fallback anchor -->
 <section id="solutions" style="padding:1rem 0;"></section>
@@ -182,7 +263,16 @@
 						What makes The KPS Group different from other business service providers?
 					</h3>
 					<p class="text-slate-700 leading-relaxed">
-						The KPS Group stands out by offering <strong>integrated business solutions</strong> rather than isolated services. Our Modern Suite approach ensures all your business tools work together seamlessly. We focus on <strong>service businesses specifically</strong>, understanding their unique challenges and providing tailored solutions that scale with your growth.
+						The KPS Group stands apart through our unique combination of enterprise experience and small-business understanding. Our founder has worked inside Fortune 500 companies like IBM, Microsoft, and PwC, as well as directly with service businesses in the trades. This dual perspective allows us to deliver enterprise-grade solutions that are actually practical and affordable for small and mid-sized businesses.
+					</p>
+				</div>
+				
+				<div class="faq-item">
+					<h3 class="text-xl font-semibold text-navy mb-3">
+						What is The KPS Group founder's background?
+					</h3>
+					<p class="text-slate-700 leading-relaxed">
+						Our founder has lived both sides of business—from big tech boardrooms to small business job sites. With experience at IBM, Microsoft, PwC, and Informatica, they understand how billion-dollar organizations operate. But they've also worked shoulder-to-shoulder with HVAC, plumbing, electrical, and construction businesses, seeing firsthand the challenges these owners face. This unique perspective drives our mission to bridge enterprise discipline with small-business grit.
 					</p>
 				</div>
 				

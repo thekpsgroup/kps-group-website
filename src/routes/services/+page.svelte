@@ -504,22 +504,21 @@
     >
       Transform Your Market Position
     </h2>
-    <p
-      style="font-size: 1.25rem; color: rgba(255,255,255,0.9); max-width: 48rem; margin: 0 auto 2rem; line-height: 1.6;"
-    >
-      0 → 500+ organic searches in 30–60 days when we fix structure, schema, and
-      story.
-    </p>
+         <p
+       style="font-size: 1.25rem; color: rgba(255,255,255,0.9); max-width: 48rem; margin: 0 auto 2rem; line-height: 1.6;"
+     >
+       Transform your market position with enterprise-grade systems and strategic execution that drives measurable results.
+     </p>
     <div
       style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 48rem; margin: 0 auto;"
     >
       <div>
-        <div
-          style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--gold); font-weight: 600; margin-bottom: 0.5rem;"
-        >
-          500+
-        </div>
-        <div style="color: rgba(255,255,255,0.8);">Organic Searches</div>
+                 <div
+           style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--gold); font-weight: 600; margin-bottom: 0.5rem;"
+         >
+           Enterprise
+         </div>
+         <div style="color: rgba(255,255,255,0.8);">Systems</div>
       </div>
       <div>
         <div
