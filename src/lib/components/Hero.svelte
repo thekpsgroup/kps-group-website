@@ -24,9 +24,9 @@
 			
 			<!-- Main Headline -->
 			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-				Tools the big guys hoard.
+				Business, Refined
 				<br />
-				<span class="text-gold">Built for the rest of us.</span>
+				<span class="text-gold">Clarity. Control. Growth.</span>
 			</h1>
 			
 			<!-- Subhead -->
