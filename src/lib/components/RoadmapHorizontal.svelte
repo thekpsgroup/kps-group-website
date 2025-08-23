@@ -257,6 +257,8 @@
 
   .rejoin path{ stroke:var(--line); stroke-width:2; fill:none; }
 
+  /* Used dynamically in JavaScript - see activate() function and onMount() */
+  /* stylelint-disable-next-line css-unused-selector */
   .branch-card.active{
     background: color-mix(in oklab, var(--kps-gold) 12%, var(--surface));
     border-color: color-mix(in oklab, var(--kps-gold) 58%, var(--ring));
