@@ -1,12 +1,14 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
-
+<script context="module" lang="ts">
 	export type Branch = {
 		key: string;
 		title: string;
 		description: string;
 		href?: string; // e.g. "#solutions-tech"
 	};
+</script>
+
+<script lang="ts">
+	import { onMount } from 'svelte';
 
 	export let title: string = 'From Pain to Growth';
 	export let subtitle: string = 'Focused, fast, and built to scale with you.';
