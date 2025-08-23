@@ -29,7 +29,7 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<header class="sticky top-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-gold/20">
+<header class="sticky top-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-gold/20" style="--ink-900: rgba(255,255,255,.92); --ink-700: rgba(255,255,255,.78); --ink-500: rgba(255,255,255,.62);">
 	<div class="container mx-auto px-4 py-4">
 		<div class="flex items-center justify-between">
 			<!-- KPS Logo -->
@@ -45,6 +45,9 @@
 				</a>
 				<a href="/outcomes" class="text-slate hover:text-gold transition-colors focus-ring rounded px-2 py-1">
 					Outcomes
+				</a>
+				<a href="/founder" class="text-slate hover:text-gold transition-colors focus-ring rounded px-2 py-1">
+					Founder
 				</a>
 				<a href="/contact" class="text-slate hover:text-gold transition-colors focus-ring rounded px-2 py-1">
 					Contact
@@ -96,6 +99,13 @@
 						on:click={closeMobileMenu}
 					>
 						Outcomes
+					</a>
+					<a 
+						href="/founder" 
+						class="text-slate hover:text-gold transition-colors focus-ring rounded px-2 py-1"
+						on:click={closeMobileMenu}
+					>
+						Founder
 					</a>
 					<a 
 						href="/contact" 

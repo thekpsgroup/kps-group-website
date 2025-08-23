@@ -1,4 +1,4 @@
-<footer class="bg-navy text-slate py-12 border-t border-gold/20">
+<footer class="bg-navy text-slate py-12 border-t border-gold/20" style="--ink-900: rgba(255,255,255,.92); --ink-700: rgba(255,255,255,.78); --ink-500: rgba(255,255,255,.62);">
 	<div class="container mx-auto px-4">
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			<!-- Company Info -->
@@ -22,6 +22,7 @@
 				<ul class="space-y-2 text-sm">
 					<li><a href="/suite" class="hover:text-gold transition-colors">The Modern Suite</a></li>
 					<li><a href="/outcomes" class="hover:text-gold transition-colors">Outcomes</a></li>
+					<li><a href="/founder" class="hover:text-gold transition-colors">Founder's Story</a></li>
 					<li><a href="/contact" class="hover:text-gold transition-colors">Contact</a></li>
 				</ul>
 			</div>

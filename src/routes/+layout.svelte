@@ -237,19 +237,19 @@
 		border: 0;
 	}
 
-	/* Dark theme overrides */
+	/* Light theme by default */
 	:root {
 		--kps-navy: #00438c;
 		--kps-gold: #cab068;
 
-		--bg-900: #0b1622;  /* deep navy background */
-		--bg-800: #0f1e2d;
-		--ink-900: rgba(255,255,255,.92);
-		--ink-700: rgba(255,255,255,.78);
-		--ink-500: rgba(255,255,255,.62);
-		--line: rgba(255,255,255,.25);
-		--ring: rgba(255,255,255,.14);
-		--surface: #0f1a26; /* card bg */
+		--bg-900: #ffffff;  /* white background */
+		--bg-800: #f9fafb;
+		--ink-900: #0b0f14;
+		--ink-700: #374151;
+		--ink-500: #6b7280;
+		--line: #d1d5db;
+		--ring: #e5e7eb;
+		--surface: #ffffff; /* card bg */
 	}
 
 	:global(html), :global(body) {

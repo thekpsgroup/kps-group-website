@@ -189,12 +189,6 @@
 		margin-bottom: 1rem;
 	}
 	
-	.prose h3 {
-		color: #00438c;
-		margin-top: 1.5rem;
-		margin-bottom: 0.75rem;
-	}
-	
 	.prose ul {
 		margin-bottom: 1rem;
 	}

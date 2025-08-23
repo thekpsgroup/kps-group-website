@@ -80,89 +80,84 @@
 </script>
 
 <section class="roadmap" bind:this={rootEl} data-dense={dense ? 'true' : 'false'} aria-label={title}>
-  <div class="band">
-    <div class="wrap">
-      <header class="hdr">
-        <h2 class="ttl">{title}</h2>
-        {#if subtitle}<p class="sub">{subtitle}</p>{/if}
-      </header>
+  <div class="container mx-auto px-4 py-20">
+    <div class="max-w-6xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">{title}</h2>
+        {#if subtitle}<p class="text-lg text-gray-600 max-w-2xl mx-auto">{subtitle}</p>{/if}
+      </div>
 
-      <div class="scroller" style={`--minw:${minWidth}px`}>
-        <div class="row">
-                     <!-- Step 1 -->
-           <div class="col step">
-             <div class="card">
-               <div class="badge">Step 1</div>
-               <h3 class="card-title">Name the Pain</h3>
-               <p class="card-text">You need help. Tell us what hurts most.</p>
-             </div>
-           </div>
-
-          <div class="col connector" aria-hidden="true"><span></span></div>
-
-                     <!-- Step 2 (hub + branches) -->
-           <div class="col step wide">
-             <div class="card hub">
-               <div class="badge badge-gold">Step 2</div>
-               <h3 class="card-title">We Analyze Your Needs</h3>
-               <p class="card-text">Quick discovery to understand goals, constraints, and timeline.</p>
-             </div>
-
-            <div class="branches">
-              <svg class="nub" width="2" height="24" viewBox="0 0 2 24" aria-hidden="true">
-                <rect width="2" height="24" />
-              </svg>
-
-              <div class="branch-grid">
-                {#each branches as b, i}
-                  <div
-                    class="branch-card"
-                    data-index={i}
-                    data-key={b.key}
-                    data-href={b.href || ''}
-                    role="button"
-                    tabindex="0"
-                    aria-pressed="false"
-                    on:click={(e)=>activate(e.currentTarget)}
-                    on:keydown={(e)=>{ if(e.key==='Enter'||e.key===' ') { e.preventDefault(); activate(e.currentTarget);} }}
-                  >
-                    <svg class="branch-line" viewBox="0 0 120 40" width="120" height="40" aria-hidden="true">
-                      <path />
-                    </svg>
-                    <div class="branch-badge">Option</div>
-                    <h4 class="branch-title">{b.title}</h4>
-                    <p class="branch-text">{b.description}</p>
-                  </div>
-                {/each}
-              </div>
-
-              <svg class="rejoin" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M0,14 L400,14 C600,14 600,14 800,14 L1200,14" />
-              </svg>
+      <!-- Roadmap -->
+      <div class="relative">
+        <!-- Main Timeline Line -->
+        <div class="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-navy to-transparent transform -translate-y-1/2 z-0"></div>
+        
+        <!-- Steps Container -->
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+          
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3 class="step-title">Name the Pain</h3>
+              <p class="step-description">You need help. Tell us what hurts most.</p>
             </div>
           </div>
 
-          <div class="col spacer" aria-hidden="true"></div>
+          <!-- Step 2 (Hub) -->
+          <div class="step-card hub">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3 class="step-title">We Analyze Your Needs</h3>
+              <p class="step-description">Quick discovery to understand goals, constraints, and timeline.</p>
+              
+              <!-- Branch Options -->
+              <div class="branches-container">
+                <div class="branches-grid">
+                  {#each branches as b, i}
+                    <div
+                      class="branch-option"
+                      data-index={i}
+                      data-key={b.key}
+                      data-href={b.href || ''}
+                      role="button"
+                      tabindex="0"
+                      aria-pressed="false"
+                      on:click={(e)=>activate(e.currentTarget)}
+                      on:keydown={(e)=>{ if(e.key==='Enter'||e.key===' ') { e.preventDefault(); activate(e.currentTarget);} }}
+                    >
+                      <div class="branch-icon">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <h4 class="branch-title">{b.title}</h4>
+                      <p class="branch-description">{b.description}</p>
+                    </div>
+                  {/each}
+                </div>
+              </div>
+            </div>
+          </div>
 
-                     <!-- Step 3 -->
-           <div class="col step">
-             <div class="card">
-               <div class="badge">Step 3</div>
-               <h3 class="card-title">Recommend the Plan</h3>
-               <p class="card-text">Clear options, timelines, and a clean rollout path.</p>
-             </div>
-           </div>
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3 class="step-title">Recommend the Plan</h3>
+              <p class="step-description">Clear options, timelines, and a clean rollout path.</p>
+            </div>
+          </div>
 
-          <div class="col connector" aria-hidden="true"><span></span></div>
-
-                     <!-- Step 4 -->
-           <div class="col step wide">
-             <div class="card">
-               <div class="badge">Step 4</div>
-               <h3 class="card-title">Grow Together</h3>
-               <p class="card-text">Ongoing support and optimization as your business scales.</p>
-             </div>
-           </div>
+          <!-- Step 4 -->
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3 class="step-title">Grow Together</h3>
+              <p class="step-description">Ongoing support and optimization as your business scales.</p>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -171,104 +166,129 @@
 </section>
 
 <style>
-  .band{
-    position:relative;
-    padding: clamp(22px,3.6vw,40px) 0;
-    background:
-      radial-gradient(100% 80% at 50% 0%, color-mix(in oklab, var(--kps-gold) 14%, transparent) 0%, transparent 55%),
-      linear-gradient(180deg, color-mix(in oklab, var(--kps-navy) 12%, transparent), transparent 60%);
-    border-block: 1px solid color-mix(in oklab, var(--kps-navy) 28%, transparent);
-  }
-  .wrap{ max-width:1240px; margin:0 auto; padding:0 20px; }
-
-  .hdr{ text-align:center; margin-bottom:14px; }
-  .ttl{ margin:0; font-size:clamp(22px,2.3vw,30px); color:var(--ink-900); letter-spacing:-.01em; }
-  .sub{ margin:8px 0 0; color:var(--ink-500); font-size:14px; }
-
-  .scroller{ overflow-x:auto; padding-bottom:8px; }
-  .row{
-    min-width: var(--minw, 1080px);
-    display:grid;
-    grid-template-columns: 1fr 64px 1.7fr 16px 1fr 64px 1.3fr;
-    gap:12px; align-items:start;
-  }
-  .col{ min-width:0; }
-  .spacer{ min-height:1px; }
-
-  .roadmap{ --p:16px; }
-  .roadmap[data-dense="false"]{ --p:22px; }
-
-  .card{
-    background: var(--surface);
-    border:1px solid var(--ring);
-    border-radius:16px;
-    padding:var(--p);
-    box-shadow: 0 2px 10px rgba(0,0,0,.25);
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background-color .18s ease;
-    outline:none;
-  }
-  .card:hover,.card:focus-visible{
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0,0,0,.35);
-    border-color: color-mix(in oklab, var(--kps-navy) 36%, var(--ring));
-  }
-  .card-title{ margin:4px 0 6px; font-size:18px; color:var(--ink-900); }
-  .card-text{ margin:0; font-size:14px; color:var(--ink-700); }
-
-  .badge{
-    display:inline-block; font-size:11px; letter-spacing:.02em;
-    background: var(--kps-navy); color:#fff;
-    border-radius:999px; padding:4px 10px; margin-bottom:6px;
-  }
-  .badge-gold{ background:var(--kps-gold); color:#181818; }
-
-  .connector{ position:relative; display:flex; align-items:center; }
-  .connector>span{ width:100%; height:2px; background:var(--line); transition: background-color .18s ease; }
-  .connector:hover>span{ background: color-mix(in oklab, var(--kps-gold) 60%, var(--line)); }
-
-  .branches{ position:relative; margin-top:12px; }
-  .nub rect{ fill:var(--line); }
-
-  .branch-grid{ display:grid; gap:10px; grid-template-columns: repeat(3, minmax(0,1fr)); }
-  .branch-card{
-    position:relative; cursor:pointer;
-    background: var(--surface); border:1px solid var(--ring);
-    border-radius:14px; padding:14px;
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background-color .18s ease;
-    outline:none;
-  }
-  .branch-card:hover,.branch-card:focus-visible{
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0,0,0,.35);
-    border-color: color-mix(in oklab, var(--kps-gold) 46%, var(--ring));
-  }
-  .branch-badge{ display:inline-block; font-size:10px; color:var(--ink-500); background:#ffffff10; padding:2px 8px; border-radius:999px; margin-bottom:6px; }
-  .branch-title{ margin:0 0 4px; font-size:15px; color:var(--ink-900); }
-  .branch-text{ margin:0; font-size:13px; color:var(--ink-700); }
-
-  .branch-line{ position:absolute; left:50%; transform:translateX(-50%); top:-28px; width:120px; height:40px; }
-  .branch-line path{ stroke:var(--line); stroke-width:2; fill:none; transition:stroke .18s ease; }
-  .branch-card:hover .branch-line path,
-  .branch-card:focus-visible .branch-line path{ stroke: color-mix(in oklab, var(--kps-navy) 60%, var(--line)); }
-
-  .branch-card[data-index="0"] .branch-line path{ d:path("M60,40 C60,26 42,20 20,10"); }
-  .branch-card[data-index="1"] .branch-line path{ d:path("M60,40 C60,26 60,20 60,10"); }
-  .branch-card[data-index="2"] .branch-line path{ d:path("M60,40 C60,26 78,20 100,10"); }
-
-  .rejoin path{ stroke:var(--line); stroke-width:2; fill:none; }
-
-  /* Used dynamically in JavaScript - see activate() function and onMount() */
-  /* stylelint-disable-next-line css-unused-selector */
-  .branch-card.active{
-    background: color-mix(in oklab, var(--kps-gold) 12%, var(--surface));
-    border-color: color-mix(in oklab, var(--kps-gold) 58%, var(--ring));
-    box-shadow: 0 10px 30px rgba(202,176,104,.25);
+  .roadmap {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   }
 
-  @media (max-width:1100px){
-    .row{ grid-template-columns: 1fr 48px 1.6fr 12px 1fr 48px 1.2fr; }
+  .step-card {
+    @apply relative bg-white rounded-2xl p-6 shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    backdrop-filter: blur(10px);
   }
-  @media (max-width:900px){
-    .row{ grid-template-columns: 1fr 36px 1.4fr 12px 1fr 36px 1fr; }
+
+  .step-card.hub {
+    @apply md:col-span-2 bg-gradient-to-br from-navy to-navy-800 text-white border-0;
+    box-shadow: 0 20px 40px rgba(0, 67, 140, 0.15);
+  }
+
+  .step-card.hub:hover {
+    box-shadow: 0 25px 50px rgba(0, 67, 140, 0.25);
+  }
+
+  .step-number {
+    @apply absolute -top-4 left-6 w-8 h-8 bg-gold text-navy rounded-full flex items-center justify-center font-bold text-sm;
+    box-shadow: 0 4px 12px rgba(202, 176, 104, 0.3);
+  }
+
+  .step-card.hub .step-number {
+    @apply bg-white text-navy;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  }
+
+  .step-content {
+    @apply mt-4;
+  }
+
+  .step-title {
+    @apply text-lg font-semibold text-navy mb-2;
+  }
+
+  .step-card.hub .step-title {
+    @apply text-white;
+  }
+
+  .step-description {
+    @apply text-sm text-gray-600 leading-relaxed;
+  }
+
+  .step-card.hub .step-description {
+    @apply text-gray-200;
+  }
+
+  .branches-container {
+    @apply mt-6;
+  }
+
+  .branches-grid {
+    @apply grid grid-cols-1 sm:grid-cols-3 gap-4;
+  }
+
+  .branch-option {
+    @apply relative bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-4 border border-white border-opacity-20 cursor-pointer transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:border-white hover:border-opacity-30 hover:scale-105;
+  }
+
+  .branch-option:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .branch-option.active {
+    @apply bg-gold bg-opacity-20 border-gold border-opacity-40;
+    box-shadow: 0 8px 25px rgba(202, 176, 104, 0.3);
+  }
+
+  .branch-icon {
+    @apply w-8 h-8 bg-gold bg-opacity-20 rounded-lg flex items-center justify-center mb-3;
+  }
+
+  .branch-option.active .branch-icon {
+    @apply bg-gold text-navy;
+  }
+
+  .branch-title {
+    @apply text-sm font-semibold text-white mb-1;
+  }
+
+  .branch-description {
+    @apply text-xs text-gray-200 leading-relaxed;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .step-card.hub {
+      @apply col-span-1;
+    }
+    
+    .branches-grid {
+      @apply grid-cols-1;
+    }
+  }
+
+  /* Animation for step cards */
+  .step-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .step-card:nth-child(1) { animation-delay: 0.1s; }
+  .step-card:nth-child(2) { animation-delay: 0.2s; }
+  .step-card:nth-child(3) { animation-delay: 0.3s; }
+  .step-card:nth-child(4) { animation-delay: 0.4s; }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Focus styles */
+  .branch-option:focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-navy;
+  }
+
+  /* Smooth transitions */
+  .step-card,
+  .branch-option {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 </style>
