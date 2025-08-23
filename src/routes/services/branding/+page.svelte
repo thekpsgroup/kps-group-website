@@ -31,7 +31,7 @@
 				"name": "The KPS Group",
 				"url": "https://thekpsgroup.com"
 			},
-			"url": "https://modernbrands.co",
+			"url": "https://thekpsgroup.com",
 			"category": "Branding and Web Design",
 			"serviceType": "Logo Design and Website Development",
 			"areaServed": "United States",

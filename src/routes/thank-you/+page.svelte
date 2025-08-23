@@ -1,6 +1,6 @@
 <svelte:head>
-    <title>Thank You — ModernBrands</title>
-    <meta name="description" content="Thank you for choosing ModernBrands. We'll be in touch shortly." />
+    <title>Thank You — The KPS Group</title>
+<meta name="description" content="Thank you for choosing The KPS Group. We'll be in touch shortly." />
 </svelte:head>
 
 <section style="max-width:64rem; margin:0 auto; padding:5rem 1.5rem; text-align:center;">
@@ -10,7 +10,7 @@
         </div>
     </div>
     
-    <h1 style="font-family: var(--font-serif); font-size: clamp(2.25rem, 5vw, 3rem);">Thank you for choosing ModernBrands</h1>
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2.25rem, 5vw, 3rem);">Thank you for choosing The KPS Group</h1>
     <p style="margin-top:1rem; color: rgba(10,10,10,0.8); font-size:1.125rem; max-width:32rem; margin-left:auto; margin-right:auto;">
         We've received your payment and will be in touch within 24 hours to begin your project.
     </p>

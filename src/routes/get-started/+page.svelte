@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Get Started — ModernBrands</title>
+	<title>Get Started — The KPS Group</title>
 	<meta name="description" content="Choose a plan and purchase securely, or leave your details and we'll invoice." />
 </svelte:head>
 
@@ -462,7 +462,7 @@
 		<!-- Luxury Form -->
 		<div style="background: white; border: 1px solid rgba(198,166,100,0.2); border-radius: 1.5rem; padding: 3rem; box-shadow: 0 10px 30px rgba(198,166,100,0.1);">
 			<form style="display: grid; gap: 1.5rem;" action="https://formsubmit.co/sales@thekpsgroup.com" method="POST">
-				<input type="hidden" name="_subject" value="ModernBrands — Get Started Lead" />
+				<input type="hidden" name="_subject" value="The KPS Group — Get Started Lead" />
 				<input type="hidden" name="_next" value="/get-started#thanks" />
 				<input type="hidden" name="_captcha" value="false" />
 				

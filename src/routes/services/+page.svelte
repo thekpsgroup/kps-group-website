@@ -1,8 +1,8 @@
 <svelte:head>
-  <title>Services — ModernBrands</title>
+  <title>Services — The KPS Group</title>
   <meta
     name="description"
-    content="Luxury branding services that transform businesses into market leaders. Strategy, design, and execution that drives results."
+    content="Comprehensive business services that transform service businesses. Brand, books, payroll, operations, and tech solutions that drive results."
   />
 </svelte:head>
 
@@ -41,13 +41,13 @@
       class="eyebrow"
       style="margin-bottom: 2rem; letter-spacing: 0.3em; font-size: 0.9rem; color: var(--gold); font-weight: 500;"
     >
-      OUR SERVICES
+      THE MODERN SUITE
     </div>
 
     <h1
       style="font-family: var(--font-serif); font-size: clamp(3rem, 6vw, 5rem); font-weight: 600; margin: 0 0 2rem; color: var(--ink); line-height: 1.05; letter-spacing: -0.02em;"
     >
-      Modern Branding, <span style="color: var(--gold); font-weight: 700;"
+      Business Solutions, <span style="color: var(--gold); font-weight: 700;"
         >Ruthlessly Executed</span
       >
     </h1>
@@ -56,7 +56,7 @@
       style="font-size: 1.375rem; color: rgba(10,10,10,0.7); max-width: 56rem; margin: 0 auto; line-height: 1.5; font-weight: 300; letter-spacing: 0.01em;"
     >
       We focus on outcomes, not deliverables. Every service is designed to
-      transform your brand into a market-dominating force.
+      transform your business into a market-dominating force.
     </p>
 
     <!-- Decorative line below content -->
@@ -89,12 +89,12 @@
       <h2
         style="font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; color: var(--ink); margin: 0 0 1rem;"
       >
-        The ModernBrands Method
+        The KPS Group Method
       </h2>
       <p
         style="font-size: 1.125rem; color: rgba(10,10,10,0.7); max-width: 48rem; margin: 0 auto;"
       >
-        A proven three-phase approach that transforms brands and drives
+        A proven three-phase approach that transforms businesses and drives
         measurable results.
       </p>
     </div>
@@ -597,7 +597,7 @@
         <input
           type="hidden"
           name="_subject"
-          value="ModernBrands — Services Lead"
+          value="The KPS Group — Services Lead"
         />
         <input type="hidden" name="_next" value="/services#thanks" />
         <input type="hidden" name="_captcha" value="false" />
