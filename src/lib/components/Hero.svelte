@@ -6,7 +6,7 @@
 	}
 </script>
 
-<section class="bg-navy text-white py-20 lg:py-32 relative overflow-hidden">
+<section class="bg-white text-navy py-20 lg:py-32 relative overflow-hidden">
 	<!-- Background Pattern -->
 	<div class="absolute inset-0 dot-grid opacity-20"></div>
 	
@@ -23,14 +23,14 @@
 			<div class="w-16 h-px bg-gold mx-auto mb-8 opacity-60"></div>
 			
 			<!-- Main Headline -->
-			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-navy">
 				Business, Refined
 				<br />
 				<span class="text-gold">Clarity. Control. Growth.</span>
 			</h1>
 			
 			<!-- Subhead -->
-			<p class="text-xl md:text-2xl text-slate mb-12 max-w-3xl mx-auto leading-relaxed">
+			<p class="text-xl md:text-2xl text-gold mb-12 max-w-3xl mx-auto leading-relaxed">
 				We equip service businesses with brand, books, payroll, ops, and tech that actually work together.
 			</p>
 			
