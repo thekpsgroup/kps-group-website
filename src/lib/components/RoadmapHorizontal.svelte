@@ -17,13 +17,12 @@
 		{ key: 'ops',   title: 'Modern Ledger & Pay', description: 'Books, payroll, HR compliance.',              href: '#solutions-ops' },
 		{ key: 'tech',  title: 'Modern Stack',        description: 'Stack audit, integrations, custom software.', href: '#solutions-tech' }
 	];
-	export let minWidth = 1080; // keeps the line straight on desktop
 	export let dense = true;
 
 	let rootEl: HTMLElement;
 
 	function activate(el: HTMLElement) {
-		const all = Array.from(rootEl.querySelectorAll<HTMLElement>('.branch-card'));
+		const all = Array.from(rootEl.querySelectorAll<HTMLElement>('.branch-option'));
 		all.forEach(b => b.classList.remove('active'));
 		el.classList.add('active');
 		el.setAttribute('aria-pressed', 'true');
@@ -58,13 +57,13 @@
 				}
 			});
 		}, { threshold: 0.14 });
-		rootEl.querySelectorAll('.card, .branch-card').forEach(el => io.observe(el));
+		rootEl.querySelectorAll('.step-card, .branch-option').forEach(el => io.observe(el));
 
 		// restore selection
 		try {
 			const saved = sessionStorage.getItem('kps:roadmap-branch');
 			if (saved) {
-				const el = rootEl.querySelector<HTMLElement>(`.branch-card[data-key="${saved}"]`);
+				const el = rootEl.querySelector<HTMLElement>(`.branch-option[data-key="${saved}"]`);
 				el?.classList.add('active');
 			}
 		} catch {}
@@ -73,7 +72,7 @@
 		const h = location.hash || '';
 		if (h.startsWith('#solutions-')) {
 			const key = h.replace('#solutions-','');
-			const el = rootEl.querySelector<HTMLElement>(`.branch-card[data-key="${key}"]`);
+			const el = rootEl.querySelector<HTMLElement>(`.branch-option[data-key="${key}"]`);
 			if (el) setTimeout(() => activate(el), 40);
 		}
 	});
@@ -230,6 +229,8 @@
     transform: translateY(-2px) scale(1.02);
   }
 
+  /* Used dynamically in JavaScript - see activate() function and onMount() */
+  /* stylelint-disable-next-line css-unused-selector */
   .branch-option.active {
     @apply bg-gold bg-opacity-20 border-gold border-opacity-40;
     box-shadow: 0 8px 25px rgba(202, 176, 104, 0.3);
