@@ -9,12 +9,34 @@
 	// tiny filter controller
 	function blocks(){ return Array.from(document.querySelectorAll<HTMLElement>('.solution-block')); }
 	function showAll(){ blocks().forEach(b=>b.classList.remove('is-hidden')); }
-	function filter(key){ let hit=false; blocks().forEach(b=>{ if(b.dataset.key===key){b.classList.remove('is-hidden'); hit=true;} else b.classList.add('is-hidden'); }); if(!hit) showAll(); }
+	function filter(key: string){ let hit=false; blocks().forEach(b=>{ if(b.dataset.key===key){b.classList.remove('is-hidden'); hit=true;} else b.classList.add('is-hidden'); }); if(!hit) showAll(); }
 
 	onMount(() => {
 		// initial state
 		const initHash = (location.hash||'');
 		if(initHash.startsWith('#solutions-')) filter(initHash.replace('#solutions-',''));
+
+		// Handle hash changes
+		const handleHashChange = () => {
+			const key = (location.hash||'').replace('#solutions-','');
+			if(['brand','ops','tech'].includes(key)) filter(key); else showAll();
+		};
+
+		// Handle roadmap branch events
+		const handleRoadmapBranch = (e: CustomEvent) => {
+			const key = e.detail?.key;
+			if(key) filter(key);
+		};
+
+		// Add event listeners
+		window.addEventListener('hashchange', handleHashChange);
+		window.addEventListener('roadmap:branch', handleRoadmapBranch as EventListener);
+
+		// Cleanup
+		return () => {
+			window.removeEventListener('hashchange', handleHashChange);
+			window.removeEventListener('roadmap:branch', handleRoadmapBranch as EventListener);
+		};
 	});
 </script>
 
@@ -77,11 +99,3 @@
 	.sol-copy{ margin:0; color: var(--ink-700); }
 	.is-hidden{ display:none; }
 </style>
-
-<svelte:window
-	on:hashchange={()=>{
-		const key = (location.hash||'').replace('#solutions-','');
-		if(['brand','ops','tech'].includes(key)) filter(key); else showAll();
-	}}
-	on:roadmap:branch={(e)=>{ const key = e.detail?.key; if(key) filter(key); }}
-/>
