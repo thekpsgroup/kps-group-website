@@ -30,9 +30,9 @@
 			<div>
 				<h3 class="text-white font-semibold mb-4">Legal</h3>
 				<ul class="space-y-2 text-sm">
-					<li><a href="/terms" class="hover:text-gold transition-colors">Terms & Conditions</a></li>
+					<li><a href="/terms" class="hover:text-gold transition-colors">Terms of Service</a></li>
 					<li><a href="/privacy" class="hover:text-gold transition-colors">Privacy Policy</a></li>
-					<li><a href="/disclaimer" class="hover:text-gold transition-colors">Disclaimer</a></li>
+					<li><a href="/cookies" class="hover:text-gold transition-colors">Cookie Policy</a></li>
 				</ul>
 			</div>
 		</div>
