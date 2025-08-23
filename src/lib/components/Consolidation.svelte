@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { smoothScrollTo } from '$lib/utils/observe';
+	import Button from './Button.svelte';
 	
 	function scrollToContact() {
 		const contactForm = document.querySelector('#contact-form') as HTMLElement;
@@ -128,12 +129,13 @@
 					<p class="text-slate mb-6">
 						Let us audit your current tools, identify waste, and build a streamlined system that actually works together.
 					</p>
-					<button
+					<Button
 						on:click={scrollToContact}
-						class="bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gold-600 transition-colors focus-ring shadow-lg hover:shadow-xl"
+						variant="primary"
+						size="lg"
 					>
 						Audit My Stack
-					</button>
+					</Button>
 				</div>
 			</div>
 		</div>

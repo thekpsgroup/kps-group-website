@@ -3,9 +3,18 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import SuiteDrawer from '$lib/components/SuiteDrawer.svelte';
+	import SkipLink from '$lib/components/SkipLink.svelte';
+	import BackToTop from '$lib/components/BackToTop.svelte';
+	import PageLoader from '$lib/components/PageLoader.svelte';
 	import { suiteDrawerOpen } from '$lib/stores/ui';
 	import { page } from '$app/stores';
+	import { trackPageView } from '$lib/utils/analytics';
 	const SITE_URL = (import.meta.env?.PUBLIC_SITE_URL as string) || 'https://thekpsgroup.com';
+	
+	// Track page views
+	$: if ($page.url.pathname) {
+		trackPageView($page.url.pathname);
+	}
 </script>
 
 <svelte:head>
@@ -177,12 +186,14 @@
 	
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+	
+	<!-- Vercel Analytics -->
+	<script defer src="/_vercel/insights/script.js"></script>
 </svelte:head>
 
-<!-- Skip link for keyboard users -->
-<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-gold text-navy px-4 py-2 rounded focus-ring z-[100]">Skip to main content</a>
-
 <div class="min-h-screen bg-bg-900 text-ink-900">
+	<SkipLink targetId="main" />
+	<PageLoader />
 	<Header />
 	
 	<main id="main">
@@ -192,6 +203,7 @@
 	<Footer />
 	
 	<SuiteDrawer />
+	<BackToTop />
 </div>
 
 <style>

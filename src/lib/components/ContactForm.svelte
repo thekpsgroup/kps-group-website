@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { SUITE } from '$lib/data/suite';
+	import LoadingSpinner from './LoadingSpinner.svelte';
+	import Button from './Button.svelte';
+	import { trackContactForm } from '$lib/utils/analytics';
 	
 	let form: HTMLFormElement;
 	let isSubmitting = false;
@@ -67,6 +70,7 @@
 			
 			if (response.ok) {
 				isSubmitted = true;
+				trackContactForm(true);
 				// Reset form
 				formData = {
 					name: '',
@@ -77,9 +81,11 @@
 				};
 			} else {
 				errorMessage = 'Something went wrong. Please try again or contact us directly.';
+				trackContactForm(false);
 			}
 		} catch (error) {
 			errorMessage = 'Network error. Please check your connection and try again.';
+			trackContactForm(false);
 		} finally {
 			isSubmitting = false;
 		}
@@ -125,12 +131,12 @@
 					<p class="text-slate mb-6">
 						We've received your message and will get back to you within 24 hours.
 					</p>
-					<button
+					<Button
 						on:click={() => isSubmitted = false}
-						class="bg-gold text-navy px-6 py-3 rounded-lg font-semibold hover:bg-gold-600 transition-colors focus-ring"
+						variant="primary"
 					>
 						Send Another Message
-					</button>
+					</Button>
 				</div>
 			{:else}
 				<!-- Contact Form -->
@@ -226,18 +232,20 @@
 					</div>
 					
 					<!-- Submit Button -->
-					<button
+					<Button
 						type="submit"
 						disabled={isSubmitting}
-						class="w-full bg-gold text-navy py-4 px-8 rounded-lg text-lg font-semibold hover:bg-gold-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors focus-ring shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+						loading={isSubmitting}
+						fullWidth
+						variant="primary"
+						size="lg"
 					>
 						{#if isSubmitting}
-							<div class="spinner" style="width:16px; height:16px; border:2px solid transparent; border-top:2px solid currentColor; border-radius:50%; animation:spin 1s linear infinite;"></div>
 							Sending...
 						{:else}
 							Send it
 						{/if}
-					</button>
+					</Button>
 				</form>
 				
 				<!-- Contact Info -->

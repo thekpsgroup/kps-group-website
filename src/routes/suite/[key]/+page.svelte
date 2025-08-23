@@ -2,6 +2,8 @@
 	import { page } from '$app/stores';
 	import { SUITE } from '$lib/data/suite';
 	import { smoothScrollTo } from '$lib/utils/observe';
+	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+	import Button from '$lib/components/Button.svelte';
 	const SITE_URL = (import.meta.env?.PUBLIC_SITE_URL as string) || 'https://thekpsgroup.com';
 	
 	// Get the suite data based on the URL parameter
@@ -55,6 +57,15 @@
 
 {#if suite}
 	
+	<!-- Breadcrumbs -->
+	<div class="container mx-auto px-4 pt-8">
+		<Breadcrumbs items={[
+			{ label: 'Home', href: '/' },
+			{ label: 'Suite', href: '/suite' },
+			{ label: suite.name }
+		]} />
+	</div>
+	
 	<!-- Hero Section -->
 	<section class="bg-navy text-white py-20 lg:py-32">
 		<div class="container mx-auto px-4">
@@ -75,12 +86,13 @@
 					<p class="text-lg text-slate max-w-2xl mx-auto mb-8">
 						{suite.summary}
 					</p>
-					<button
+					<Button
 						on:click={scrollToContact}
-						class="bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gold-600 transition-colors focus-ring shadow-lg hover:shadow-xl"
+						variant="primary"
+						size="lg"
 					>
 						{suite.cta.label}
-					</button>
+					</Button>
 				</div>
 			</div>
 		</div>
@@ -183,12 +195,13 @@
 				<p class="text-lg text-slate mb-8">
 					Let's discuss how {suite.name} can transform your business and drive real results.
 				</p>
-				<button
+				<Button
 					on:click={scrollToContact}
-					class="bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gold-600 transition-colors focus-ring shadow-lg hover:shadow-xl"
+					variant="primary"
+					size="lg"
 				>
 					{suite.cta.label}
-				</button>
+				</Button>
 			</div>
 		</div>
 	</section>

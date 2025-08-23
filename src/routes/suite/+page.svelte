@@ -2,6 +2,8 @@
 	import { SUITE } from '$lib/data/suite';
 	import { smoothScrollTo } from '$lib/utils/observe';
 	import { page } from '$app/stores';
+	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+	import Button from '$lib/components/Button.svelte';
 	const SITE_URL = (import.meta.env?.PUBLIC_SITE_URL as string) || 'https://thekpsgroup.com';
 	
 	function scrollToContact() {
@@ -36,6 +38,14 @@
 	</script>
 </svelte:head>
 
+<!-- Breadcrumbs -->
+<div class="container mx-auto px-4 pt-8">
+	<Breadcrumbs items={[
+		{ label: 'Home', href: '/' },
+		{ label: 'Suite' }
+	]} />
+</div>
+
 <!-- Hero Section -->
 <section class="bg-navy text-white py-20 lg:py-32">
 	<div class="container mx-auto px-4">
@@ -46,12 +56,13 @@
 			<p class="text-xl md:text-2xl text-slate mb-8 max-w-3xl mx-auto">
 				Five integrated services that give service businesses the tools they need to dominate their market.
 			</p>
-			<button
+			<Button
 				on:click={scrollToContact}
-				class="bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gold-600 transition-colors focus-ring shadow-lg hover:shadow-xl"
+				variant="primary"
+				size="lg"
 			>
 				Get Started Today
-			</button>
+			</Button>
 		</div>
 	</div>
 </section>
@@ -95,20 +106,22 @@
 					</div>
 					
 					<div class="flex flex-col sm:flex-row gap-4">
-						<a
+						<Button
 							href="/suite/{suite.key}"
-							class="bg-navy text-white px-6 py-3 rounded-lg font-semibold hover:bg-navy-800 transition-colors focus-ring text-center"
+							variant="secondary"
+							fullWidth
 						>
 							Learn More
-						</a>
-						<button
+						</Button>
+						<Button
 							on:click={() => {
 								window.location.href = `/contact?service=${suite.key}`;
 							}}
-							class="bg-gold text-navy px-6 py-3 rounded-lg font-semibold hover:bg-gold-600 transition-colors focus-ring"
+							variant="primary"
+							fullWidth
 						>
 							{suite.cta.label}
-						</button>
+						</Button>
 					</div>
 				</div>
 			{/each}
@@ -172,12 +185,13 @@
 			<p class="text-lg text-slate mb-8">
 				Let's discuss how The Modern Suite can streamline your operations and drive growth.
 			</p>
-			<button
+			<Button
 				on:click={scrollToContact}
-				class="bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gold-600 transition-colors focus-ring shadow-lg hover:shadow-xl"
+				variant="primary"
+				size="lg"
 			>
 				Start the Conversation
-			</button>
+			</Button>
 		</div>
 	</div>
 </section>

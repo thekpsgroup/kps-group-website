@@ -7,7 +7,15 @@
 	let mobileMenuOpen = false;
 	
 	function toggleSuiteDrawer() {
-		suiteDrawerOpen.set(!$suiteDrawerOpen);
+		if ($suiteDrawerOpen) {
+			suiteDrawerOpen.set(false);
+		} else {
+			// Import the tracking function
+			import('$lib/utils/analytics').then(({ trackSuiteExplore }) => {
+				trackSuiteExplore();
+				suiteDrawerOpen.set(true);
+			});
+		}
 	}
 	
 	function toggleMobileMenu() {
@@ -66,11 +74,12 @@
 			
 			<!-- Mobile Menu Button -->
 			<button
-				class="md:hidden text-white hover:text-gold transition-colors focus-ring rounded p-3"
+				class="md:hidden text-white hover:text-gold transition-colors focus-ring rounded p-3 touch-manipulation"
 				style="min-width:44px; min-height:44px;"
 				aria-label={mobileMenuOpen ? "Close mobile menu" : "Open mobile menu"}
 				aria-expanded={mobileMenuOpen}
 				on:click={toggleMobileMenu}
+				on:touchstart={() => {}}
 			>
 				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 					{#if mobileMenuOpen}

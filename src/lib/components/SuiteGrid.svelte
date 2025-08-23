@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { SUITE } from '$lib/data/suite';
 	import { smoothScrollTo } from '$lib/utils/observe';
+	import Button from './Button.svelte';
+	import { trackServiceClick } from '$lib/utils/analytics';
 	
 	let selectedPains: string[] = [];
 	
@@ -15,6 +17,7 @@
 	}
 	
 	function handleCTAClick(suiteKey: string) {
+		trackServiceClick(suiteKey);
 		// Pre-fill contact form with selected service
 		const contactForm = document.querySelector('#contact-form') as HTMLElement;
 		if (contactForm) {
@@ -158,30 +161,34 @@
 						<!-- CTA Buttons -->
 						<div class="space-y-3">
 							<!-- Primary CTA - Contact Form -->
-							<button
+							<Button
 								on:click={() => handleCTAClick(suite.key)}
-								class="w-full bg-gold text-navy py-3 px-6 rounded-lg font-semibold hover:bg-gold-600 transition-all duration-300 focus-ring group-hover:shadow-lg group-hover:shadow-gold/25 flex items-center justify-center gap-2 group/btn"
+								variant="primary"
+								fullWidth
+								class="group-hover:shadow-lg group-hover:shadow-gold/25"
 							>
 								<span>{suite.cta.label}</span>
-								<svg class="w-4 h-4 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
 								</svg>
-							</button>
+							</Button>
 							
 							<!-- Secondary CTA - Direct to Website -->
 							{#if suite.website}
-								<a
+								<Button
 									href={suite.website}
+									variant="outline"
+									fullWidth
 									target="_blank"
 									rel="noopener noreferrer"
-									class="w-full border-2 border-gold/30 text-gold py-2 px-6 rounded-lg font-medium hover:bg-gold/10 transition-all duration-300 focus-ring group-hover:border-gold/50 flex items-center justify-center gap-2 group/website"
+									class="border-gold/30 text-gold hover:bg-gold/10 group-hover:border-gold/50"
 									aria-label="Visit {suite.name} website"
 								>
 									<span>Visit {suite.name}</span>
-									<svg class="w-4 h-4 transition-transform group-hover/website:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
 									</svg>
-								</a>
+								</Button>
 							{/if}
 						</div>
 					</div>
@@ -197,12 +204,13 @@
 			<p class="text-slate mb-6 max-w-2xl mx-auto">
 				Ready to transform your business? Let's connect the dots and build your modern stack.
 			</p>
-			<a
+			<Button
 				href="/contact"
-				class="inline-block bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gold-600 transition-colors focus-ring shadow-lg hover:shadow-xl"
+				variant="primary"
+				size="lg"
 			>
 				Get Started Today
-			</a>
+			</Button>
 		</div>
 	</div>
 </section>

@@ -165,6 +165,7 @@
 </section>
 
 <style>
+  /* stylelint-disable at-rule-no-unknown, css-unused-selector */
   .roadmap {
     background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   }
@@ -230,7 +231,6 @@
   }
 
   /* Used dynamically in JavaScript - see activate() function and onMount() */
-  /* stylelint-disable-next-line css-unused-selector */
   .branch-option.active {
     @apply bg-gold bg-opacity-20 border-gold border-opacity-40;
     box-shadow: 0 8px 25px rgba(202, 176, 104, 0.3);

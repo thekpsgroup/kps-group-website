@@ -2,11 +2,17 @@
 	import { suiteDrawerOpen } from '$lib/stores/ui';
 	import { SUITE } from '$lib/data/suite';
 	import { createEventDispatcher } from 'svelte';
+	import { trackSuiteExplore, trackServiceClick } from '$lib/utils/analytics';
 	
 	const dispatch = createEventDispatcher();
 	
 	function closeDrawer() {
 		suiteDrawerOpen.set(false);
+	}
+	
+	function openDrawer() {
+		trackSuiteExplore();
+		suiteDrawerOpen.set(true);
 	}
 	
 	function handleKeydown(event: KeyboardEvent) {
@@ -22,6 +28,7 @@
 	}
 	
 	function visitBrandWebsite(url: string, brandName: string) {
+		trackServiceClick(brandName.toLowerCase().replace(' ', '_'));
 		window.open(url, '_blank', 'noopener,noreferrer');
 	}
 </script>

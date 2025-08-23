@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { suiteDrawerOpen } from '$lib/stores/ui';
+	import Button from './Button.svelte';
+	import { trackSuiteExplore } from '$lib/utils/analytics';
 	
 	function openSuiteDrawer() {
+		trackSuiteExplore();
 		suiteDrawerOpen.set(true);
 	}
 </script>
@@ -36,20 +39,22 @@
 			
 			<!-- CTA Buttons -->
 			<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-				<button
+				<Button
 					on:click={openSuiteDrawer}
-					class="bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gold-600 transition-all duration-300 focus-ring shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+					variant="primary"
+					size="lg"
 					aria-label="Explore The Modern Suite"
 				>
 					Explore The Modern Suite
-				</button>
-				<a
+				</Button>
+				<Button
 					href="/contact"
-					class="border-2 border-navy text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-navy hover:text-white transition-all duration-300 focus-ring"
+					variant="outline"
+					size="lg"
 					aria-label="Get Started"
 				>
 					Get Started
-				</a>
+				</Button>
 			</div>
 			
 			<!-- Decorative line -->

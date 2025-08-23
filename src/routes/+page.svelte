@@ -4,27 +4,10 @@
 	import SuiteGrid from '$lib/components/SuiteGrid.svelte';
 	import Consolidation from '$lib/components/Consolidation.svelte';
 	import ContactForm from '$lib/components/ContactForm.svelte';
+	import TestimonialsSection from '$lib/components/TestimonialsSection.svelte';
 	import { onMount } from 'svelte';
 	
-	onMount(() => {
-		const scrollBtn = document.getElementById('scroll-to-top');
-		
-		function toggleScrollButton() {
-			if (window.scrollY > 300) {
-				scrollBtn?.classList.remove('opacity-0', 'pointer-events-none');
-				scrollBtn?.classList.add('opacity-100');
-			} else {
-				scrollBtn?.classList.add('opacity-0', 'pointer-events-none');
-				scrollBtn?.classList.remove('opacity-100');
-			}
-		}
-		
-		window.addEventListener('scroll', toggleScrollButton);
-		
-		return () => {
-			window.removeEventListener('scroll', toggleScrollButton);
-		};
-	});
+	// Page is ready
 </script>
 
 <svelte:head>
@@ -129,7 +112,6 @@
 <RoadmapHorizontal
 	title="From Pain to Growth"
 	subtitle="We fix friction fast—and keep everything working together."
-	minWidth={1080}
 	dense={true}
 />
 
@@ -165,6 +147,7 @@
 
 
 <SuiteGrid />
+<TestimonialsSection />
 <Consolidation />
 
 <!-- SEO-Optimized FAQ Section -->
@@ -236,16 +219,6 @@
 
 <ContactForm />
 
-<!-- Scroll to Top Button -->
-<button
-	id="scroll-to-top"
-	class="fixed bottom-8 right-8 bg-gold text-navy p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 pointer-events-none z-50"
-	aria-label="Scroll to top"
-	on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
->
-	<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-	</svg>
-</button>
+
 
 

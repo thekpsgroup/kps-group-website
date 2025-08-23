@@ -48,6 +48,63 @@ export const POST: RequestHandler = async ({ request }) => {
 		});
 
 		const text = await res.text();
+		
+		// Also send email to sales@thekpsgroup.com
+		try {
+			// Try the main email service first
+			const emailResponse = await fetch('/api/email', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					name,
+					email,
+					phone: phone ?? '',
+					services: Array.isArray(servicesInput) ? servicesInput : [servicesStr],
+					notes: body.notes || ''
+				})
+			});
+
+			if (!emailResponse.ok) {
+				console.error('Main email API error:', await emailResponse.text());
+				
+				// Fallback to simple email service
+				const simpleEmailResponse = await fetch('/api/email-simple', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({
+						name,
+						email,
+						phone: phone ?? '',
+						services: Array.isArray(servicesInput) ? servicesInput : [servicesStr],
+						notes: body.notes || ''
+					})
+				});
+
+				if (!simpleEmailResponse.ok) {
+					console.error('Simple email API error:', await simpleEmailResponse.text());
+				}
+			}
+		} catch (emailError) {
+			console.error('Email sending error:', emailError);
+			
+			// Final fallback to simple email service
+			try {
+				await fetch('/api/email-simple', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({
+						name,
+						email,
+						phone: phone ?? '',
+						services: Array.isArray(servicesInput) ? servicesInput : [servicesStr],
+						notes: body.notes || ''
+					})
+				});
+			} catch (fallbackError) {
+				console.error('Fallback email error:', fallbackError);
+			}
+		}
+
 		return new Response(text, { status: res.status });
 	} catch (error) {
 		console.error('Lead submission error:', error);
