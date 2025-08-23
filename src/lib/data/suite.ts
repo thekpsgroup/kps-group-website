@@ -69,25 +69,6 @@ export const SUITE: Suite[] = [
 		website: 'https://modernpay.co'
 	},
 	{
-		key: 'consulting',
-		name: 'Modern Consulting',
-		tag: 'Sell + operate smart',
-		summary: 'Sales, ops, and leadership tuned for the trades.',
-		description: 'Modern Consulting specializes in sales, operations, and leadership optimization for service businesses. We provide training, playbooks, process design, and accountability systems.',
-		painPoints: [
-			'Sales team underperforming',
-			'Ops are a tire fire',
-			'No playbook, no KPIs'
-		],
-		solutions: [
-			'Training + playbooks',
-			'Process design',
-			'Accountability systems'
-		],
-		cta: { label: 'We do that', href: '#contact' },
-		website: 'https://modernconsulting.co'
-	},
-	{
 		key: 'stack',
 		name: 'Modern Stack',
 		tag: 'Audit. Fix. Build.',
@@ -105,5 +86,24 @@ export const SUITE: Suite[] = [
 		],
 		cta: { label: 'We do that', href: '#contact' },
 		website: 'https://moderntechstack.co'
+	},
+	{
+		key: 'consulting',
+		name: 'Modern Consulting',
+		tag: 'Sell + operate smart',
+		summary: 'Sales, ops, and leadership tuned for the trades.',
+		description: 'Modern Consulting specializes in sales, operations, and leadership optimization for service businesses. We provide training, playbooks, process design, and accountability systems.',
+		painPoints: [
+			'Sales team underperforming',
+			'Ops are a tire fire',
+			'No playbook, no KPIs'
+		],
+		solutions: [
+			'Training + playbooks',
+			'Process design',
+			'Accountability systems'
+		],
+		cta: { label: 'We do that', href: '#contact' },
+		website: 'https://modernconsulting.co'
 	}
 ];
