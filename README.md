@@ -37,6 +37,7 @@ This website guides service-based companies through a straightforward problem â†
 ## Design System
 
 ### Colors
+
 - **Navy**: `#0A1B2E` (primary background)
 - **Navy-800**: `#0F2540` (secondary background)
 - **Gold**: `#D4AF37` (accent color)
@@ -46,6 +47,7 @@ This website guides service-based companies through a straightforward problem â†
 - **Slate**: `#7A8896` (muted text)
 
 ### Typography
+
 - **Primary**: Inter (sans-serif)
 - **Secondary**: Manrope (sans-serif)
 - **Weights**: 300, 400, 500, 600, 700
@@ -84,29 +86,34 @@ src/
 ## Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd kps-group-modern-suite
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Create environment variables:
+
 ```bash
 # Create .env file
 ROUTER_API_KEY="your-router-so-api-key"
 ```
 
 4. Start development server:
+
 ```bash
 npm run dev
 ```
@@ -135,16 +142,21 @@ The project is configured for Vercel deployment:
 ## Key Components
 
 ### Pain-Solution Narrative
+
 A simple text-based section that outlines common pains and the Modern Suite services that solve them.
 
 ### Suite Drawer
+
 A slide-down drawer accessible from any page that provides:
+
 - Quick overview of all Modern Suite services
 - Direct navigation to service details
 - Keyboard accessibility
 
 ### Contact Form
+
 Integrated lead capture with:
+
 - Service selection
 - Form validation
 - Router.so API integration
@@ -191,5 +203,6 @@ This project is proprietary to The KPS Group.
 ## Contact
 
 For questions about this project, contact:
+
 - Email: sales@thekpsgroup.com
 - Phone: 469-458-6966

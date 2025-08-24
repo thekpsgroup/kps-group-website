@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Enterprise-grade business solutions for service companies",
+    "subtitle": "We give small, gritty service businesses the same tools the giants use—without the bloat or b.s.",
+    "cta": "Get Started"
+  },
+  "services": {
+    "brands": {
+      "title": "Modern Brands",
+      "tagline": "Logos, websites, brand systems",
+      "description": "Ultra-modern logos and websites. Quiet luxury, bold impact."
+    },
+    "ledger": {
+      "title": "Modern Ledger",
+      "tagline": "Books without drama",
+      "description": "Done-for-you bookkeeping that kills busywork."
+    },
+    "pay": {
+      "title": "Modern Pay",
+      "tagline": "Payroll that behaves",
+      "description": "Payroll + HR compliance without the headaches."
+    },
+    "stack": {
+      "title": "Modern Stack",
+      "tagline": "Audit. Fix. Build.",
+      "description": "We audit your tech, cut waste, and build custom software that actually fits."
+    },
+    "consulting": {
+      "title": "Modern Consulting",
+      "tagline": "Sell + operate smart",
+      "description": "Sales, ops, and leadership tuned for the trades."
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Ready to transform your business? Let's talk.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "service": "Service Interest",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 The KPS Group. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}

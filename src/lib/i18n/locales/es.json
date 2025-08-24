@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Acerca de",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Soluciones empresariales de nivel empresarial para empresas de servicios",
+    "subtitle": "Damos a las pequeñas empresas de servicios las mismas herramientas que usan los gigantes, sin la complejidad ni las tonterías.",
+    "cta": "Comenzar"
+  },
+  "services": {
+    "brands": {
+      "title": "Marcas Modernas",
+      "tagline": "Logos, sitios web, sistemas de marca",
+      "description": "Logos y sitios web ultra-modernos. Lujo discreto, impacto audaz."
+    },
+    "ledger": {
+      "title": "Libro Moderno",
+      "tagline": "Libros sin drama",
+      "description": "Contabilidad hecha por nosotros que elimina el trabajo ocupado."
+    },
+    "pay": {
+      "title": "Pago Moderno",
+      "tagline": "Nómina que se comporta",
+      "description": "Nómina y cumplimiento de RRHH sin los dolores de cabeza."
+    },
+    "stack": {
+      "title": "Stack Moderno",
+      "tagline": "Auditar. Arreglar. Construir.",
+      "description": "Auditamos tu tecnología, cortamos desperdicios y construimos software personalizado que realmente se ajusta."
+    },
+    "consulting": {
+      "title": "Consultoría Moderna",
+      "tagline": "Vender + operar inteligentemente",
+      "description": "Ventas, operaciones y liderazgo sintonizados para los oficios."
+    }
+  },
+  "contact": {
+    "title": "Ponte en Contacto",
+    "subtitle": "¿Listo para transformar tu negocio? Hablemos.",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "service": "Interés en Servicio",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 The KPS Group. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  }
+}

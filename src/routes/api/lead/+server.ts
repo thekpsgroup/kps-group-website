@@ -1,113 +1,125 @@
-import type { RequestHandler } from '@sveltejs/kit';
-import { json } from '@sveltejs/kit';
+import type { RequestHandler } from "@sveltejs/kit";
+import { json } from "@sveltejs/kit";
 
 export const POST: RequestHandler = async ({ request }) => {
-	try {
-		const body = await request.json();
-		const name: string | undefined = body.name ?? body.Name;
-		const email: string | undefined = body.email ?? body.Email;
-		const phone: string | undefined = body.phone ?? body['Phone Number'];
-		const servicesInput = body.services ?? body['Service(s) interested in?'];
+  try {
+    const body = await request.json();
+    const name: string | undefined = body.name ?? body.Name;
+    const email: string | undefined = body.email ?? body.Email;
+    const phone: string | undefined = body.phone ?? body["Phone Number"];
+    const servicesInput = body.services ?? body["Service(s) interested in?"];
 
-		if (!name || !email) {
-			return json({ error: 'Name and email are required' }, { status: 400 });
-		}
+    if (!name || !email) {
+      return json({ error: "Name and email are required" }, { status: 400 });
+    }
 
-		// Normalize services to comma-separated string
-		let servicesStr = '';
-		if (Array.isArray(servicesInput)) {
-			servicesStr = servicesInput.join(', ');
-		} else if (typeof servicesInput === 'string') {
-			servicesStr = servicesInput;
-		}
+    // Normalize services to comma-separated string
+    let servicesStr = "";
+    if (Array.isArray(servicesInput)) {
+      servicesStr = servicesInput.join(", ");
+    } else if (typeof servicesInput === "string") {
+      servicesStr = servicesInput;
+    }
 
-		// Build Router.so payload with exact schema keys
-		const routerPayload: Record<string, string> = {
-			Name: name,
-			'Phone Number': phone ?? '',
-			Email: email,
-			'Service(s) interested in?': servicesStr
-		};
+    // Build Router.so payload with exact schema keys
+    const routerPayload: Record<string, string> = {
+      Name: name,
+      "Phone Number": phone ?? "",
+      Email: email,
+      "Service(s) interested in?": servicesStr,
+    };
 
-		const endpoint = 'https://app.router.so/api/endpoints/wfk5gdct';
-		const apiKey = process.env.ROUTER_API_KEY;
+    const endpoint = "https://app.router.so/api/endpoints/wfk5gdct";
+    const apiKey = process.env.ROUTER_API_KEY;
 
-		if (!apiKey) {
-			// Fallback: log and succeed to avoid blocking leads during setup
-			console.log('Lead (no ROUTER_API_KEY set):', routerPayload);
-			return json({ success: true, note: 'Router API key not configured. Lead logged server-side.' });
-		}
+    if (!apiKey) {
+      // Fallback: log and succeed to avoid blocking leads during setup
+      console.log("Lead (no ROUTER_API_KEY set):", routerPayload);
+      return json({
+        success: true,
+        note: "Router API key not configured. Lead logged server-side.",
+      });
+    }
 
-		const res = await fetch(endpoint, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				Authorization: `Bearer ${apiKey}`
-			},
-			body: JSON.stringify(routerPayload)
-		});
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify(routerPayload),
+    });
 
-		const text = await res.text();
-		
-		// Also send email to sales@thekpsgroup.com
-		try {
-			// Try the main email service first
-			const emailResponse = await fetch('/api/email', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					name,
-					email,
-					phone: phone ?? '',
-					services: Array.isArray(servicesInput) ? servicesInput : [servicesStr],
-					notes: body.notes || ''
-				})
-			});
+    const text = await res.text();
 
-			if (!emailResponse.ok) {
-				console.error('Main email API error:', await emailResponse.text());
-				
-				// Fallback to simple email service
-				const simpleEmailResponse = await fetch('/api/email-simple', {
-					method: 'POST',
-					headers: { 'Content-Type': 'application/json' },
-					body: JSON.stringify({
-						name,
-						email,
-						phone: phone ?? '',
-						services: Array.isArray(servicesInput) ? servicesInput : [servicesStr],
-						notes: body.notes || ''
-					})
-				});
+    // Also send email to sales@thekpsgroup.com
+    try {
+      // Try the main email service first
+      const emailResponse = await fetch("/api/email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          phone: phone ?? "",
+          services: Array.isArray(servicesInput)
+            ? servicesInput
+            : [servicesStr],
+          notes: body.notes || "",
+        }),
+      });
 
-				if (!simpleEmailResponse.ok) {
-					console.error('Simple email API error:', await simpleEmailResponse.text());
-				}
-			}
-		} catch (emailError) {
-			console.error('Email sending error:', emailError);
-			
-			// Final fallback to simple email service
-			try {
-				await fetch('/api/email-simple', {
-					method: 'POST',
-					headers: { 'Content-Type': 'application/json' },
-					body: JSON.stringify({
-						name,
-						email,
-						phone: phone ?? '',
-						services: Array.isArray(servicesInput) ? servicesInput : [servicesStr],
-						notes: body.notes || ''
-					})
-				});
-			} catch (fallbackError) {
-				console.error('Fallback email error:', fallbackError);
-			}
-		}
+      if (!emailResponse.ok) {
+        console.error("Main email API error:", await emailResponse.text());
 
-		return new Response(text, { status: res.status });
-	} catch (error) {
-		console.error('Lead submission error:', error);
-		return json({ error: 'Failed to submit lead' }, { status: 500 });
-	}
+        // Fallback to simple email service
+        const simpleEmailResponse = await fetch("/api/email-simple", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name,
+            email,
+            phone: phone ?? "",
+            services: Array.isArray(servicesInput)
+              ? servicesInput
+              : [servicesStr],
+            notes: body.notes || "",
+          }),
+        });
+
+        if (!simpleEmailResponse.ok) {
+          console.error(
+            "Simple email API error:",
+            await simpleEmailResponse.text(),
+          );
+        }
+      }
+    } catch (emailError) {
+      console.error("Email sending error:", emailError);
+
+      // Final fallback to simple email service
+      try {
+        await fetch("/api/email-simple", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name,
+            email,
+            phone: phone ?? "",
+            services: Array.isArray(servicesInput)
+              ? servicesInput
+              : [servicesStr],
+            notes: body.notes || "",
+          }),
+        });
+      } catch (fallbackError) {
+        console.error("Fallback email error:", fallbackError);
+      }
+    }
+
+    return new Response(text, { status: res.status });
+  } catch (error) {
+    console.error("Lead submission error:", error);
+    return json({ error: "Failed to submit lead" }, { status: 500 });
+  }
 };

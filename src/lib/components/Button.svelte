@@ -5,6 +5,7 @@
 	export let loading = false;
 	export let fullWidth = false;
 	export let href: string | undefined = undefined;
+	export let text: string | undefined = undefined;
 	
 	const variantClasses = {
 		primary: 'bg-gold text-navy hover:bg-gold-600 shadow-lg hover:shadow-xl',
@@ -35,7 +36,7 @@
 		aria-disabled={disabled || loading}
 		tabindex={disabled || loading ? -1 : 0}
 	>
-		<slot />
+		{#if text}{text}{:else}<slot />{/if}
 	</a>
 {:else}
 	<button 
@@ -48,6 +49,6 @@
 		{#if loading}
 			<div class="w-4 h-4 border-2 border-transparent border-t-current rounded-full animate-spin mr-2"></div>
 		{/if}
-		<slot />
+		{#if text}{text}{:else}<slot />{/if}
 	</button>
 {/if}

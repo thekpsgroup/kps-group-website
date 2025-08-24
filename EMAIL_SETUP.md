@@ -7,16 +7,19 @@ The website has a robust email system with multiple fallback methods to ensure l
 ## How It Works
 
 ### Primary Email Service (`/api/email`)
+
 - Uses multiple email providers (Resend, SendGrid, Mailgun)
 - Tries each provider in sequence until one succeeds
 - Includes webhook fallbacks for redundancy
 
 ### Simple Email Service (`/api/email-simple`)
+
 - Works without any external dependencies
 - Logs leads to console and backup file
 - Always captures leads even if email delivery fails
 
 ### Lead Capture (`/api/lead`)
+
 - Integrates with Router.so for lead management
 - Calls both email services for maximum reliability
 - Ensures no leads are lost
@@ -58,7 +61,7 @@ For the public API fallback:
 2. Create a service and template
 3. Replace the placeholder IDs in the code:
    - `your_service_id`
-   - `your_template_id` 
+   - `your_template_id`
    - `your_user_id`
 
 ## Current Status
