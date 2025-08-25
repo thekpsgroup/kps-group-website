@@ -319,9 +319,7 @@
 		background-size: 100% 24px;
 	}
 	
-	.bounds-overlay * {
-		outline: 1px solid rgba(16, 185, 129, 0.3) !important;
-	}
+
 	
 	.contrast-overlay {
 		filter: contrast(200%) brightness(150%);

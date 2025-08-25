@@ -260,6 +260,5 @@
 					</div>
 				</div>
 			{/if}
-		</div>
 	</div>
 </section>

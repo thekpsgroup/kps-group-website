@@ -27,11 +27,36 @@
 		showContrast = uiMode === 'contrast';
 	}
 	
+	// Update responsive info
+	function updateResponsiveInfo() {
+		const width = window.innerWidth;
+		const widthEl = document.getElementById('current-width');
+		const breakpointEl = document.getElementById('breakpoint');
+		
+		if (widthEl) widthEl.textContent = `${width}px`;
+		
+		let breakpoint = 'xs';
+		if (width >= 640) breakpoint = 'sm';
+		if (width >= 768) breakpoint = 'md';
+		if (width >= 1024) breakpoint = 'lg';
+		if (width >= 1280) breakpoint = 'xl';
+		if (width >= 1536) breakpoint = '2xl';
+		
+		if (breakpointEl) breakpointEl.textContent = breakpoint;
+	}
+	
 	onMount(() => {
 		// Only show in dev mode
 		if (import.meta.env.PROD) {
 			window.location.href = '/';
 		}
+		
+		updateResponsiveInfo();
+		window.addEventListener('resize', updateResponsiveInfo);
+		
+		return () => {
+			window.removeEventListener('resize', updateResponsiveInfo);
+		};
 	});
 </script>
 
@@ -221,32 +246,3 @@
 		@apply border-2 border-navy text-navy px-4 py-2 rounded-lg font-semibold transition-all duration-300 hover:bg-navy hover:text-white shadow-lg hover:shadow-xl focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2;
 	}
 </style>
-
-<script>
-	// Update responsive info
-	function updateResponsiveInfo() {
-		const width = window.innerWidth;
-		const widthEl = document.getElementById('current-width');
-		const breakpointEl = document.getElementById('breakpoint');
-		
-		if (widthEl) widthEl.textContent = `${width}px`;
-		
-		let breakpoint = 'xs';
-		if (width >= 640) breakpoint = 'sm';
-		if (width >= 768) breakpoint = 'md';
-		if (width >= 1024) breakpoint = 'lg';
-		if (width >= 1280) breakpoint = 'xl';
-		if (width >= 1536) breakpoint = '2xl';
-		
-		if (breakpointEl) breakpointEl.textContent = breakpoint;
-	}
-	
-	onMount(() => {
-		updateResponsiveInfo();
-		window.addEventListener('resize', updateResponsiveInfo);
-		
-		return () => {
-			window.removeEventListener('resize', updateResponsiveInfo);
-		};
-	});
-</script>

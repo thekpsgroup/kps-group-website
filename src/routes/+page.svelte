@@ -91,18 +91,17 @@
 <section class="section-sm bg-white">
 	<div class="container-narrow">
 		<div class="grid grid-cols-1 md:grid-cols-3 cluster-8 text-center">
-				<div class="trust-item">
-					<div class="text-3xl font-bold text-navy mb-2">15+</div>
-					<div class="text-slate-600">Years Experience</div>
-				</div>
-				<div class="trust-item">
-					<div class="text-3xl font-bold text-navy mb-2">Enterprise</div>
-					<div class="text-slate-600">Background</div>
-				</div>
-				<div class="trust-item">
-					<div class="text-3xl font-bold text-navy mb-2">98%</div>
-					<div class="text-slate-600">Client Satisfaction</div>
-				</div>
+			<div class="trust-item">
+				<div class="text-3xl font-bold text-navy mb-2">15+</div>
+				<div class="text-slate-600">Years Experience</div>
+			</div>
+			<div class="trust-item">
+				<div class="text-3xl font-bold text-navy mb-2">Enterprise</div>
+				<div class="text-slate-600">Background</div>
+			</div>
+			<div class="trust-item">
+				<div class="text-3xl font-bold text-navy mb-2">98%</div>
+				<div class="text-slate-600">Client Satisfaction</div>
 			</div>
 		</div>
 	</div>
@@ -157,59 +156,58 @@
 		</h2>
 		
 		<div class="stack-8">
-				<div class="faq-item">
-					<h3 class="text-xl font-semibold text-navy mb-3">
-						What services does The KPS Group offer?
-					</h3>
-					<p class="text-slate-700 leading-relaxed">
-						The KPS Group offers five core services through The Modern Suite: <strong>Modern Brands</strong> (logos & websites), <strong>Modern Ledger</strong> (bookkeeping), <strong>Modern Pay</strong> (payroll), <strong>Modern Consulting</strong> (operations), and <strong>Modern Stack</strong> (custom software development). Each service is designed to give service businesses enterprise-grade tools without the complexity.
-					</p>
-				</div>
-				
-				<div class="faq-item">
-					<h3 class="text-xl font-semibold text-navy mb-3">
-						Where is The KPS Group located?
-					</h3>
-					<p class="text-slate-700 leading-relaxed">
-						The KPS Group is based in <strong>Dallas, Texas</strong>, serving service businesses across the United States with enterprise-grade tools and solutions. We work with clients nationwide, providing remote and on-site services as needed.
-					</p>
-				</div>
-				
-				<div class="faq-item">
-					<h3 class="text-xl font-semibold text-navy mb-3">
-						How can I contact The KPS Group?
-					</h3>
-					<p class="text-slate-700 leading-relaxed">
-						You can contact The KPS Group by <strong>phone at 469-458-6966</strong>, <strong>email at sales@thekpsgroup.com</strong>, or through our contact form on the website. We typically respond within 24 hours and offer free consultations to discuss your business needs.
-					</p>
-				</div>
-				
-				<div class="faq-item">
-					<h3 class="text-xl font-semibold text-navy mb-3">
-						What makes The KPS Group different from other business service providers?
-					</h3>
-					<p class="text-slate-700 leading-relaxed">
-						The KPS Group stands apart through our unique combination of enterprise experience and small-business understanding. Our founder has worked inside Fortune 500 companies like IBM, Microsoft, and PwC, as well as directly with service businesses in the trades. This dual perspective allows us to deliver enterprise-grade solutions that are actually practical and affordable for small and mid-sized businesses.
-					</p>
-				</div>
-				
-				<div class="faq-item">
-					<h3 class="text-xl font-semibold text-navy mb-3">
-						What is The KPS Group founder's background?
-					</h3>
-					<p class="text-slate-700 leading-relaxed">
-						Our founder has lived both sides of business—from big tech boardrooms to small business job sites. With experience at IBM, Microsoft, PwC, and Informatica, they understand how billion-dollar organizations operate. But they've also worked shoulder-to-shoulder with HVAC, plumbing, electrical, and construction businesses, seeing firsthand the challenges these owners face. This unique perspective drives our mission to bridge enterprise discipline with small-business grit.
-					</p>
-				</div>
-				
-				<div class="faq-item">
-					<h3 class="text-xl font-semibold text-navy mb-3">
-						Do you work with small businesses?
-					</h3>
-					<p class="text-slate-700 leading-relaxed">
-						Absolutely! The KPS Group specializes in helping <strong>small to medium-sized service businesses</strong> access enterprise-grade tools and solutions. We believe that great business tools shouldn't be limited to large corporations. Our services are designed to be accessible, affordable, and scalable for growing businesses.
-					</p>
-				</div>
+			<div class="faq-item">
+				<h3 class="text-xl font-semibold text-navy mb-3">
+					What services does The KPS Group offer?
+				</h3>
+				<p class="text-slate-700 leading-relaxed">
+					The KPS Group offers five core services through The Modern Suite: <strong>Modern Brands</strong> (logos & websites), <strong>Modern Ledger</strong> (bookkeeping), <strong>Modern Pay</strong> (payroll), <strong>Modern Consulting</strong> (operations), and <strong>Modern Stack</strong> (custom software development). Each service is designed to give service businesses enterprise-grade tools without the complexity.
+				</p>
+			</div>
+			
+			<div class="faq-item">
+				<h3 class="text-xl font-semibold text-navy mb-3">
+					Where is The KPS Group located?
+				</h3>
+				<p class="text-slate-700 leading-relaxed">
+					The KPS Group is based in <strong>Dallas, Texas</strong>, serving service businesses across the United States with enterprise-grade tools and solutions. We work with clients nationwide, providing remote and on-site services as needed.
+				</p>
+			</div>
+			
+			<div class="faq-item">
+				<h3 class="text-xl font-semibold text-navy mb-3">
+					How can I contact The KPS Group?
+				</h3>
+				<p class="text-slate-700 leading-relaxed">
+					You can contact The KPS Group by <strong>phone at 469-458-6966</strong>, <strong>email at sales@thekpsgroup.com</strong>, or through our contact form on the website. We typically respond within 24 hours and offer free consultations to discuss your business needs.
+				</p>
+			</div>
+			
+			<div class="faq-item">
+				<h3 class="text-xl font-semibold text-navy mb-3">
+					What makes The KPS Group different from other business service providers?
+				</h3>
+				<p class="text-slate-700 leading-relaxed">
+					The KPS Group stands apart through our unique combination of enterprise experience and small-business understanding. Our founder has worked inside Fortune 500 companies like IBM, Microsoft, and PwC, as well as directly with service businesses in the trades. This dual perspective allows us to deliver enterprise-grade solutions that are actually practical and affordable for small and mid-sized businesses.
+				</p>
+			</div>
+			
+			<div class="faq-item">
+				<h3 class="text-xl font-semibold text-navy mb-3">
+					What is The KPS Group founder's background?
+				</h3>
+				<p class="text-slate-700 leading-relaxed">
+					Our founder has lived both sides of business—from big tech boardrooms to small business job sites. With experience at IBM, Microsoft, PwC, and Informatica, they understand how billion-dollar organizations operate. But they've also worked shoulder-to-shoulder with HVAC, plumbing, electrical, and construction businesses, seeing firsthand the challenges these owners face. This unique perspective drives our mission to bridge enterprise discipline with small-business grit.
+				</p>
+			</div>
+			
+			<div class="faq-item">
+				<h3 class="text-xl font-semibold text-navy mb-3">
+					Do you work with small businesses?
+				</h3>
+				<p class="text-slate-700 leading-relaxed">
+					Absolutely! The KPS Group specializes in helping <strong>small to medium-sized service businesses</strong> access enterprise-grade tools and solutions. We believe that great business tools shouldn't be limited to large corporations. Our services are designed to be accessible, affordable, and scalable for growing businesses.
+				</p>
 			</div>
 		</div>
 	</div>
