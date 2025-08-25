@@ -92,9 +92,8 @@
 	}
 </script>
 
-<section id="contact-form" class="py-20 bg-navy text-white">
-	<div class="container mx-auto px-4">
-		<div class="max-w-2xl mx-auto">
+<section id="contact-form" class="section bg-navy text-white">
+	<div class="container-narrow">
 			<!-- Header -->
 			<div class="text-center mb-12">
 				<h2 class="text-3xl md:text-4xl font-bold mb-6">

@@ -29,18 +29,18 @@
 	];
 </script>
 
-<section class="py-20 bg-sand">
-	<div class="container mx-auto px-4">
+<section class="section bg-sand">
+	<div class="container-standard">
 		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-4xl font-bold text-navy mb-6">
+			<h2 class="text-3xl md:text-4xl font-bold text-navy mb-6 text-balance">
 				What Our Clients Say
 			</h2>
-			<p class="text-lg text-slate max-w-2xl mx-auto">
+			<p class="text-lg text-slate max-w-2xl mx-auto kicker">
 				Service businesses across the country trust The KPS Group to streamline their operations and drive growth.
 			</p>
 		</div>
 		
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+		<div class="grid-standard">
 			{#each testimonials as testimonial}
 				<Testimonial {...testimonial} />
 			{/each}

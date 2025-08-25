@@ -79,12 +79,11 @@
 </script>
 
 <section class="roadmap" bind:this={rootEl} data-dense={dense ? 'true' : 'false'} aria-label={title}>
-  <div class="container mx-auto px-4 py-20">
-    <div class="max-w-6xl mx-auto">
+  <div class="container-wide section">
       <!-- Header -->
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">{title}</h2>
-        {#if subtitle}<p class="text-lg text-gray-600 max-w-2xl mx-auto">{subtitle}</p>{/if}
+        <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4 text-balance">{title}</h2>
+        {#if subtitle}<p class="text-lg text-gray-600 max-w-2xl mx-auto kicker">{subtitle}</p>{/if}
       </div>
 
       <!-- Roadmap -->
@@ -93,7 +92,7 @@
         <div class="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-navy to-transparent transform -translate-y-1/2 z-0"></div>
         
         <!-- Steps Container -->
-        <div class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-4 cluster-8 md:cluster-12">
           
           <!-- Step 1 -->
           <div class="step-card">

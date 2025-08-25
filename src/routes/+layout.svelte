@@ -9,6 +9,13 @@
 	import { suiteDrawerOpen } from '$lib/stores/ui';
 	import { page } from '$app/stores';
 	import { trackPageView } from '$lib/utils/analytics';
+	
+	// UI Debug Mode (dev only)
+	let uiMode = $page.url.searchParams.get('ui') || '';
+	let showGrid = uiMode === 'grid';
+	let showBaseline = uiMode === 'baseline';
+	let showBounds = uiMode === 'bounds';
+	let showContrast = uiMode === 'contrast';
 	const SITE_URL = (import.meta.env?.PUBLIC_SITE_URL as string) || 'https://thekpsgroup.com';
 	
 	// Track page views
@@ -191,6 +198,31 @@
 	<script defer src="/_vercel/insights/script.js"></script>
 </svelte:head>
 
+<!-- UI Debug Overlays (dev only) -->
+{#if showGrid}
+	<div class="fixed inset-0 pointer-events-none z-50">
+		<div class="grid-overlay"></div>
+	</div>
+{/if}
+
+{#if showBaseline}
+	<div class="fixed inset-0 pointer-events-none z-50">
+		<div class="baseline-overlay"></div>
+	</div>
+{/if}
+
+{#if showBounds}
+	<div class="fixed inset-0 pointer-events-none z-50">
+		<div class="bounds-overlay"></div>
+	</div>
+{/if}
+
+{#if showContrast}
+	<div class="fixed inset-0 pointer-events-none z-50">
+		<div class="contrast-overlay"></div>
+	</div>
+{/if}
+
 <div class="min-h-screen bg-bg-900 text-ink-900">
 	<SkipLink targetId="main" />
 	<PageLoader />
@@ -273,4 +305,25 @@
 
 	/* Nix any "helpful" default gradients from old styles */
 	:global(body::before) { content: none !important; }
+	
+	/* UI Debug Overlays */
+	.grid-overlay {
+		background-image: 
+			linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+			linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+		background-size: 64px 64px;
+	}
+	
+	.baseline-overlay {
+		background-image: linear-gradient(to bottom, rgba(239, 68, 68, 0.1) 1px, transparent 1px);
+		background-size: 100% 24px;
+	}
+	
+	.bounds-overlay * {
+		outline: 1px solid rgba(16, 185, 129, 0.3) !important;
+	}
+	
+	.contrast-overlay {
+		filter: contrast(200%) brightness(150%);
+	}
 </style>
