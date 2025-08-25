@@ -42,8 +42,8 @@
 		<div class="flex items-center justify-between">
 			<!-- KPS Logo -->
 			<a href="/" class="flex items-center space-x-2 focus-ring rounded" aria-label="The KPS Group - Home">
-				<img src="/brands/kps/photos/kps.png" alt="The KPS Group" class="h-8 w-auto" />
-				<span class="text-white font-semibold text-lg">The KPS Group</span>
+				<img src="/brands/kps/photos/kps.png" alt="The KPS Group" class="h-16 w-auto" />
+				<span class="text-white font-semibold text-2xl">The KPS Group</span>
 			</a>
 			
 			<!-- Desktop Navigation -->

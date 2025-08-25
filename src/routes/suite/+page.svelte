@@ -14,6 +14,61 @@
 			window.location.href = '/contact';
 		}
 	}
+	
+	// Get brand-specific header image
+	function getBrandHeaderImage(suiteKey: string) {
+		const images = {
+			brands: '/brands/modern-brands-card-header.png',
+			ledger: '/brands/modern-ledger-card-header.png',
+			pay: '/brands/modern-pay-card-header.png',
+			stack: '/brands/modern-stack-card-header.png',
+			consulting: '/brands/modern-consulting-card-header.png'
+		};
+		return images[suiteKey as keyof typeof images] || images.brands;
+	}
+	
+	// Get brand-specific colors that match the header images exactly
+	function getBrandColors(suite: any) {
+		const headerColors = {
+			brands: {
+				primary: '#C9A246',    // Gold (Text & Feather) from Modern Brands header
+				secondary: '#0D0D0D',   // Black Background
+				accent: '#C9A246'       // Gold accent
+			},
+			ledger: {
+				primary: '#C9A246',     // Gold Book & Text from Modern Ledger header
+				secondary: '#0E3A3D',   // Deep Teal Background
+				accent: '#C9A246'       // Gold accent
+			},
+			pay: {
+				primary: '#0B5C3C',     // Emerald Green ($ Icon / Background) from Modern Pay header
+				secondary: '#D1A12F',   // Gold Text
+				accent: '#0B5C3C'       // Emerald accent
+			},
+			stack: {
+				primary: '#007BFF',     // Electric Blue (Icon Glow) from Modern Stack header
+				secondary: '#CBA34A',   // Gold Text
+				accent: '#0A0F1C'       // Navy Background
+			},
+			consulting: {
+				primary: '#C45A1A',     // Orange Compass/Background from Modern Consulting header
+				secondary: '#D3A84C',   // Gold Text
+				accent: '#C45A1A'       // Orange accent
+			}
+		};
+		
+		return headerColors[suite.key as keyof typeof headerColors] || headerColors.brands;
+	}
+	
+	// Get brand-specific CSS custom properties
+	function getBrandCSSVars(suite: any) {
+		const colors = getBrandColors(suite);
+		return {
+			'--brand-primary': colors.primary,
+			'--brand-secondary': colors.secondary,
+			'--brand-accent': colors.accent
+		};
+	}
 </script>
 
 <svelte:head>
@@ -50,6 +105,14 @@
 <section class="bg-navy text-white py-20 lg:py-32">
 	<div class="container mx-auto px-4">
 		<div class="max-w-4xl mx-auto text-center">
+			<!-- The Modern Suite Header Image -->
+			<div class="mb-8">
+				<img 
+					src="/brands/the-modern-suite.png" 
+					alt="The Modern Suite" 
+					class="w-full max-w-2xl mx-auto h-auto object-contain"
+				/>
+			</div>
 			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
 				The Modern Suite
 			</h1>
@@ -72,10 +135,21 @@
 	<div class="container mx-auto px-4">
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 			{#each SUITE as suite}
-				<div class="bg-white rounded-2xl p-8 shadow-lg border border-slate/20 hover:shadow-xl transition-shadow">
+				{@const brandColors = getBrandColors(suite)}
+				{@const cssVars = getBrandCSSVars(suite)}
+				<div class="bg-white rounded-2xl p-8 shadow-lg border transition-all duration-300 group hover:shadow-xl hover:scale-105" style="{Object.entries(cssVars).map(([key, value]) => `${key}: ${value}`).join('; ')}; border-color: var(--brand-primary);">
+					<!-- Brand Header Image -->
+					<div class="mb-6">
+						<img 
+							src={getBrandHeaderImage(suite.key)} 
+							alt="{suite.name} header" 
+							class="w-full h-32 object-cover rounded-xl shadow-sm group-hover:shadow-md transition-all duration-300"
+						/>
+					</div>
+					
 					<div class="mb-6">
 						<h2 class="text-3xl font-bold text-navy mb-2">{suite.name}</h2>
-						<p class="text-gold font-semibold text-lg mb-4">{suite.tag}</p>
+						<p class="font-semibold text-lg mb-4" style="color: var(--brand-primary);">{suite.tag}</p>
 						<p class="text-slate leading-relaxed">{suite.summary}</p>
 					</div>
 					
@@ -97,7 +171,7 @@
 							<ul class="space-y-2">
 								{#each suite.solutions as solution}
 									<li class="flex items-start space-x-2">
-										<div class="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></div>
+										<div class="w-2 h-2 rounded-full mt-2 flex-shrink-0" style="background-color: var(--brand-primary);"></div>
 										<span class="text-slate text-sm">{solution}</span>
 									</li>
 								{/each}
@@ -119,6 +193,7 @@
 							}}
 							variant="primary"
 							fullWidth
+							style="background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);"
 						>
 							{suite.cta.label}
 						</Button>

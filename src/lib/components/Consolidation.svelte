@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { smoothScrollTo } from '$lib/utils/observe';
 	import Button from './Button.svelte';
+	import { smoothScrollTo } from '$lib/utils/observe';
 	
 	function scrollToContact() {
 		const contactForm = document.querySelector('#contact-form') as HTMLElement;
@@ -9,6 +9,38 @@
 		} else {
 			window.location.href = '/contact';
 		}
+	}
+	
+	// Get brand-specific styling for each service that matches header images
+	function getServiceStyle(service: string) {
+		const styles = {
+			'Modern Brands': {
+				bg: 'rgba(201, 162, 70, 0.1)',   // Gold from header #C9A246
+				border: 'rgba(201, 162, 70, 0.3)',
+				text: '#C9A246'
+			},
+			'Modern Ledger': {
+				bg: 'rgba(201, 162, 70, 0.1)',   // Gold from header #C9A246
+				border: 'rgba(201, 162, 70, 0.3)',
+				text: '#C9A246'
+			},
+			'Modern Pay': {
+				bg: 'rgba(11, 92, 60, 0.1)',     // Emerald from header #0B5C3C
+				border: 'rgba(11, 92, 60, 0.3)',
+				text: '#0B5C3C'
+			},
+			'Modern Consulting': {
+				bg: 'rgba(196, 90, 26, 0.1)',    // Orange from header #C45A1A
+				border: 'rgba(196, 90, 26, 0.3)',
+				text: '#C45A1A'
+			},
+			'Modern Stack': {
+				bg: 'rgba(0, 123, 255, 0.1)',    // Electric Blue from header #007BFF
+				border: 'rgba(0, 123, 255, 0.3)',
+				text: '#007BFF'
+			}
+		};
+		return styles[service as keyof typeof styles] || styles['Modern Brands'];
 	}
 </script>
 
@@ -111,7 +143,8 @@
 					<div class="mt-8 p-6 bg-navy-800 rounded-lg border border-gold/20">
 						<div class="grid grid-cols-2 gap-3">
 							{#each ['Modern Brands', 'Modern Ledger', 'Modern Pay', 'Modern Consulting', 'Modern Stack'] as service}
-								<div class="px-3 py-2 bg-gold/10 border border-gold/30 rounded-lg text-xs text-gold text-center">
+								{@const style = getServiceStyle(service)}
+								<div class="px-3 py-2 rounded-lg text-xs text-center" style="background-color: {style.bg}; border: 1px solid {style.border}; color: {style.text};">
 									{service}
 								</div>
 							{/each}

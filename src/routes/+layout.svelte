@@ -9,6 +9,10 @@
 	import { suiteDrawerOpen } from '$lib/stores/ui';
 	import { page } from '$app/stores';
 	import { trackPageView } from '$lib/utils/analytics';
+	import { inject } from '@vercel/analytics';
+	
+	// Initialize Vercel Analytics
+	inject();
 	
 	// UI Debug Mode (dev only)
 	let uiMode = $page.url.searchParams.get('ui') || '';
@@ -193,9 +197,6 @@
 	
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-	
-	<!-- Vercel Analytics -->
-	<script defer src="/_vercel/insights/script.js"></script>
 </svelte:head>
 
 <!-- UI Debug Overlays (dev only) -->
@@ -285,6 +286,7 @@
 	:root {
 		--kps-navy: #00438c;
 		--kps-gold: #cab068;
+		--kps-gold-600: #b8a05a;
 
 		--bg-900: #ffffff;  /* white background */
 		--bg-800: #f9fafb;

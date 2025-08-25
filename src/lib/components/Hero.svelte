@@ -29,7 +29,7 @@
 			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-navy text-balance">
 				Business, Refined
 				<br />
-				<span class="text-gold animate-slide-up bg-gradient-to-r from-gold to-gold-600 bg-clip-text text-transparent" style="animation-delay: 0.2s;">Clarity. Control. Growth.</span>
+				<span class="text-gold animate-slide-up" style="animation-delay: 0.2s;">Clarity. Control. Growth.</span>
 			</h1>
 			
 			<!-- Subhead -->

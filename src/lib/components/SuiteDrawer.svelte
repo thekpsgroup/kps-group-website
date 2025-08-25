@@ -31,6 +31,61 @@
 		trackServiceClick(brandName.toLowerCase().replace(' ', '_'));
 		window.open(url, '_blank', 'noopener,noreferrer');
 	}
+	
+	// Get brand-specific header image
+	function getBrandHeaderImage(suiteKey: string) {
+		const images = {
+			brands: '/brands/modern-brands-card-header.png',
+			ledger: '/brands/modern-ledger-card-header.png',
+			pay: '/brands/modern-pay-card-header.png',
+			stack: '/brands/modern-stack-card-header.png',
+			consulting: '/brands/modern-consulting-card-header.png'
+		};
+		return images[suiteKey as keyof typeof images] || images.brands;
+	}
+	
+	// Get brand-specific colors that match the header images exactly
+	function getBrandColors(suite: any) {
+		const headerColors = {
+			brands: {
+				primary: '#C9A246',    // Gold (Text & Feather) from Modern Brands header
+				secondary: '#0D0D0D',   // Black Background
+				accent: '#C9A246'       // Gold accent
+			},
+			ledger: {
+				primary: '#C9A246',     // Gold Book & Text from Modern Ledger header
+				secondary: '#0E3A3D',   // Deep Teal Background
+				accent: '#C9A246'       // Gold accent
+			},
+			pay: {
+				primary: '#0B5C3C',     // Emerald Green ($ Icon / Background) from Modern Pay header
+				secondary: '#D1A12F',   // Gold Text
+				accent: '#0B5C3C'       // Emerald accent
+			},
+			stack: {
+				primary: '#007BFF',     // Electric Blue (Icon Glow) from Modern Stack header
+				secondary: '#CBA34A',   // Gold Text
+				accent: '#0A0F1C'       // Navy Background
+			},
+			consulting: {
+				primary: '#C45A1A',     // Orange Compass/Background from Modern Consulting header
+				secondary: '#D3A84C',   // Gold Text
+				accent: '#C45A1A'       // Orange accent
+			}
+		};
+		
+		return headerColors[suite.key as keyof typeof headerColors] || headerColors.brands;
+	}
+	
+	// Get brand-specific CSS custom properties
+	function getBrandCSSVars(suite: any) {
+		const colors = getBrandColors(suite);
+		return {
+			'--brand-primary': colors.primary,
+			'--brand-secondary': colors.secondary,
+			'--brand-accent': colors.accent
+		};
+	}
 </script>
 
 <svelte:window on:keydown={handleKeydown} />
@@ -57,7 +112,15 @@
 	>
 		<div class="container mx-auto px-4 py-6">
 			<div class="flex items-center justify-between mb-6">
-				<h2 id="suite-drawer-title" class="text-navy text-2xl font-bold">The Modern Suite</h2>
+				<!-- The Modern Suite Header Image -->
+				<div class="flex items-center gap-4">
+					<img 
+						src="/brands/the-modern-suite.png" 
+						alt="The Modern Suite" 
+						class="h-8 w-auto object-contain"
+					/>
+					<h2 id="suite-drawer-title" class="text-navy text-2xl font-bold">The Modern Suite</h2>
+				</div>
 				<button
 					on:click={closeDrawer}
 					class="text-navy hover:text-navy-800 transition-colors focus-ring rounded p-2"
@@ -71,10 +134,21 @@
 			
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 				{#each SUITE as suite}
-					<div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+					{@const brandColors = getBrandColors(suite)}
+					{@const cssVars = getBrandCSSVars(suite)}
+					<div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border transition-all duration-300 group hover:scale-105" style="{Object.entries(cssVars).map(([key, value]) => `${key}: ${value}`).join('; ')}; border-color: var(--brand-primary);">
+						<!-- Brand Header Image -->
+						<div class="mb-4">
+							<img 
+								src={getBrandHeaderImage(suite.key)} 
+								alt="{suite.name} header" 
+								class="w-full h-16 object-cover rounded-lg shadow-sm group-hover:shadow-md transition-all duration-300"
+							/>
+						</div>
+						
 						<div class="flex items-start justify-between mb-3">
 							<div>
-								<h3 class="text-navy font-semibold text-lg mb-1">{suite.name}</h3>
+								<h3 class="text-navy font-semibold text-lg mb-1" style="color: var(--brand-primary);">{suite.name}</h3>
 								<p class="text-navy/80 text-sm mb-2">{suite.tag}</p>
 							</div>
 							{#if suite.website}

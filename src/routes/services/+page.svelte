@@ -44,6 +44,15 @@
       THE MODERN SUITE
     </div>
 
+    <!-- The Modern Suite Header Image -->
+    <div style="margin-bottom: 2rem; text-align: center;">
+      <img 
+        src="/brands/the-modern-suite.png" 
+        alt="The Modern Suite" 
+        style="max-width: 100%; height: auto; max-height: 200px; object-fit: contain;"
+      />
+    </div>
+
     <h1
       style="font-family: var(--font-serif); font-size: clamp(3rem, 6vw, 5rem); font-weight: 600; margin: 0 0 2rem; color: var(--ink); line-height: 1.05; letter-spacing: -0.02em;"
     >
