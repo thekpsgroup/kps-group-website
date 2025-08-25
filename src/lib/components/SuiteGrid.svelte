@@ -2,6 +2,7 @@
 	import { SUITE, type Suite } from '$lib/data/suite';
 	import { smoothScrollTo } from '$lib/utils/observe';
 	import Button from './Button.svelte';
+	import SuiteCard from './SuiteCard.svelte';
 	import { trackServiceClick } from '$lib/utils/analytics';
 	
 	let selectedPains: string[] = [];
@@ -123,140 +124,101 @@
 			</p>
 		</div>
 		
-		<!-- Suite Grid -->
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-			{#each SUITE as suite, index}
-				{@const matchingSolutions = getMatchingSolutions(suite)}
-				{@const isConsulting = suite.key === 'consulting'}
-				{@const brandColors = getBrandColors(suite)}
-				{@const cssVars = getBrandCSSVars(suite)}
-				<div 
-					class="bg-gradient-to-br from-navy-800/80 to-navy-900/80 backdrop-blur-sm border rounded-3xl p-8 transition-all duration-500 group relative overflow-hidden hover:transform hover:scale-[1.02] hover:shadow-2xl {isConsulting ? 'md:col-span-2 lg:col-span-4' : 'lg:col-span-2'}"
-					data-suite={suite.key}
-					style="animation-delay: {index * 0.1}s; {Object.entries(cssVars).map(([key, value]) => `${key}: ${value}`).join('; ')}; border-color: var(--brand-primary);"
-				>
-					<!-- Enhanced decorative background with brand colors -->
-					<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background: linear-gradient(135deg, var(--brand-primary) 0%, transparent 50%, var(--brand-secondary) 100%); opacity: 0.05;"></div>
-					
-					<!-- Animated corner accents with brand colors -->
-					<div class="absolute top-0 right-0 w-20 h-20 rounded-bl-3xl group-hover:scale-110 transition-transform duration-500" style="background: linear-gradient(135deg, var(--brand-primary) 0%, transparent 100%); opacity: 0.15;"></div>
-					<div class="absolute bottom-0 left-0 w-16 h-16 rounded-tr-3xl group-hover:scale-110 transition-transform duration-500" style="background: linear-gradient(135deg, var(--brand-secondary) 0%, transparent 100%); opacity: 0.1; animation-delay: 0.2s;"></div>
-					
-					<!-- Floating particles with brand colors -->
-					<div class="absolute top-4 right-4 w-2 h-2 rounded-full group-hover:animate-pulse" style="background-color: var(--brand-primary); opacity: 0.3;"></div>
-					<div class="absolute bottom-6 left-6 w-1 h-1 rounded-full group-hover:animate-pulse" style="background-color: var(--brand-accent); opacity: 0.4; animation-delay: 0.5s;"></div>
-					
-					<div class="relative z-10">
-						<!-- Suite Header with Brand Image -->
-						<div class="mb-8 text-center">
-							<!-- Brand Header Image -->
-							<div class="mb-6">
-								<img 
-									src={getBrandHeaderImage(suite.key)} 
-									alt="{suite.name} header" 
-									class="w-full h-24 object-cover rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:scale-105"
-								/>
-							</div>
-							
-							<!-- Title and Tag -->
-							<div class="text-center">
-								<h3 class="text-2xl md:text-3xl font-bold mb-2 group-hover:scale-105 transition-all duration-300" style="color: var(--brand-primary);">{suite.name}</h3>
-								<p class="text-slate/90 text-sm font-medium tracking-wide uppercase">{suite.tag}</p>
-							</div>
-							
-							<p class="text-slate/80 leading-relaxed text-lg mt-4">{suite.summary}</p>
-						</div>
-						
-						<!-- Pain Points -->
-						<div class="mb-8">
-							<h4 class="text-sm font-semibold text-slate/90 mb-4 flex items-center gap-2 uppercase tracking-wide">
-								<svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
-								</svg>
-								Pain Points
-							</h4>
-							<div class="space-y-3">
-								{#each suite.painPoints as pain}
-									<button
-										on:click={() => togglePain(pain, suite.key)}
-										class="w-full text-center p-4 rounded-2xl text-sm font-medium transition-all duration-300 focus-ring group/pain border-2 backdrop-blur-sm {selectedPains.includes(pain) ? 'bg-red-500/20 text-red-300 border-red-400 shadow-lg shadow-red-500/20 hover:bg-red-500/30 hover:scale-105' : 'bg-navy/40 text-slate border-red-400/30 hover:bg-red-500/10 hover:border-red-400/50 hover:shadow-md hover:shadow-red-500/10 hover:scale-105'}"
-									>
-										<div class="flex items-center justify-center gap-2">
-											<svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
-											</svg>
-											<span>{pain}</span>
-										</div>
-									</button>
-								{/each}
-							</div>
-						</div>
-						
-						<!-- Solutions -->
-						<div class="mb-8">
-							<h4 class="text-sm font-semibold text-slate/90 mb-4 flex items-center gap-2 uppercase tracking-wide">
-								<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-								</svg>
-								Solutions
-							</h4>
-							<div class="space-y-3">
-								{#each suite.solutions as solution}
-									<button
-										class="w-full text-center p-4 rounded-2xl text-sm font-medium transition-all duration-300 border-2 backdrop-blur-sm {matchingSolutions.includes(solution) ? 'bg-green-500/20 text-green-300 border-green-400 shadow-lg shadow-green-500/20 hover:scale-105' : 'bg-navy/40 text-slate/70 border-green-400/30 hover:bg-green-500/10 hover:border-green-400/50 hover:shadow-md hover:shadow-green-500/10 hover:scale-105'}"
-									>
-										<div class="flex items-center justify-center gap-2">
-											<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-											</svg>
-											<span>{solution}</span>
-										</div>
-									</button>
-								{/each}
-							</div>
-						</div>
-						
-						<!-- CTA Buttons -->
-						<div class="space-y-3">
-							<!-- Primary CTA - Contact Form -->
-							<Button
-								on:click={() => handleCTAClick(suite.key)}
-								variant="primary"
-								fullWidth
-								class="group-hover:shadow-lg hover:scale-105 transition-transform duration-300"
-								style="background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%); box-shadow: 0 4px 14px 0 rgba(0,0,0,0.1);"
-							>
-								<span>{suite.cta.label}</span>
-								<svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-								</svg>
-							</Button>
-							
-							<!-- Secondary CTA - Direct to Website -->
-							{#if suite.website}
-								<Button
-									href={suite.website}
-									variant="outline"
-									fullWidth
-									target="_blank"
-									rel="noopener noreferrer"
-									class="hover:scale-105 transition-transform duration-300"
-									style="border-color: var(--brand-primary); color: var(--brand-primary);"
-									aria-label="Visit {suite.name} website"
-								>
-									<span>Visit {suite.name}</span>
-									<svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-									</svg>
-								</Button>
-							{/if}
-						</div>
-					</div>
-					
-					<!-- Enhanced animated border on hover with brand colors -->
-					<div class="absolute inset-0 rounded-3xl border border-transparent group-hover:border-opacity-40 transition-all duration-500" style="border-color: var(--brand-primary);"></div>
-				</div>
-			{/each}
+		<!-- Suite Grid with Glassy Cards -->
+		<div class="grid gap-6 md:grid-cols-2">
+			<SuiteCard
+				title="Modern Brands"
+				tagline="Brand identity & web design"
+				headerSrc="/brands/modern-brands-card-header.png"
+				bgHex="#0D0D0D"
+				pains={[
+					"You look smaller than you are.",
+					"Website is leaking leads (slow, dated, confusing).",
+					"Inconsistent identity across touchpoints.",
+					"Google can't see you (poor SEO structure).",
+					"DIY branding stalls growth."
+				]}
+				solutions={[
+					"Custom logo & complete brand kit.",
+					"High-performance website (Next/Astro).",
+					"Consistent identity everywhere.",
+					"Local SEO setup + schema.",
+					"Hosting, updates, support."
+				]}
+				ctaHref="/suite/brands"
+			/>
+
+			<SuiteCard
+				title="Modern Ledger"
+				tagline="Books without drama"
+				headerSrc="/brands/modern-ledger-card-header.png"
+				bgHex="#0E3A3D"
+				pains={[
+					"Admin busywork is expensive.",
+					"No real-time numbers.",
+					"Month-end chaos."
+				]}
+				solutions={[
+					"Automated reconciliations.",
+					"Clean monthly closes.",
+					"Decision-ready dashboards."
+				]}
+				ctaHref="/suite/ledger"
+			/>
+
+			<SuiteCard
+				title="Modern Pay"
+				tagline="Payroll that behaves"
+				headerSrc="/brands/modern-pay-card-header.png"
+				bgHex="#0B5C3C"
+				pains={[
+					"Manual payroll is risky.",
+					"Overpaying current provider.",
+					"Compliance anxiety."
+				]}
+				solutions={[
+					"Fully managed payroll.",
+					"On-time tax filings.",
+					"HR compliance guardrails."
+				]}
+				ctaHref="/suite/pay"
+			/>
+
+			<SuiteCard
+				title="Modern Stack"
+				tagline="Audit. Fix. Build."
+				headerSrc="/brands/modern-stack-card-header.png"
+				bgHex="#0A0F1C"
+				pains={[
+					"Paying for too many tools.",
+					"Off-the-shelf doesn't fit.",
+					"Nothing talks to each other."
+				]}
+				solutions={[
+					"Stack audit + cost reduction.",
+					"Custom apps & integrations.",
+					"Automations & AI copilots."
+				]}
+				ctaHref="/suite/stack"
+			/>
+
+			<SuiteCard
+				title="Modern Consulting"
+				tagline="Sell + operate smart"
+				headerSrc="/brands/modern-consulting-card-header.png"
+				bgHex="#C45A1A"
+				pains={[
+					"Sales team underperforming.",
+					"Ops are a tire fire.",
+					"No playbook, no KPIs."
+				]}
+				solutions={[
+					"Training + playbooks.",
+					"Process design.",
+					"Accountability systems."
+				]}
+				ctaHref="/suite/consulting"
+			/>
 		</div>
 		
 		<!-- We Do That Button - Improved -->
@@ -306,8 +268,14 @@
 	}
 	
 	/* Apply staggered animation to cards */
-	div[data-suite] {
+	.suite-card {
 		animation: fadeInUp 0.6s ease-out forwards;
 		opacity: 0;
 	}
+	
+	.suite-card:nth-child(1) { animation-delay: 0.1s; }
+	.suite-card:nth-child(2) { animation-delay: 0.2s; }
+	.suite-card:nth-child(3) { animation-delay: 0.3s; }
+	.suite-card:nth-child(4) { animation-delay: 0.4s; }
+	.suite-card:nth-child(5) { animation-delay: 0.5s; }
 </style>
