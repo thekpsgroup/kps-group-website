@@ -9,7 +9,7 @@
 	}
 </script>
 
-<section class="bg-white text-navy py-20 lg:py-32 relative overflow-hidden">
+<section class="bg-white text-navy section-lg relative overflow-hidden">
 	<!-- Background Pattern -->
 	<div class="absolute inset-0 dot-grid opacity-20"></div>
 	
@@ -20,20 +20,20 @@
 		<div class="absolute bottom-1/4 left-1/3 w-px h-20 bg-gradient-to-b from-transparent via-gold to-transparent animate-pulse-gold" style="animation-delay: 2s;"></div>
 	</div>
 	
-	<div class="container mx-auto px-4 relative z-10">
+	<div class="container-standard relative z-10">
 		<div class="max-w-4xl mx-auto text-center">
 			<!-- Decorative line -->
 			<div class="w-16 h-px bg-gold mx-auto mb-8 opacity-60"></div>
 			
 			<!-- Main Headline -->
-			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-navy">
+			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-navy text-balance">
 				Business, Refined
 				<br />
-				<span class="text-gold">Clarity. Control. Growth.</span>
+				<span class="text-gold animate-slide-up bg-gradient-to-r from-gold to-gold-600 bg-clip-text text-transparent" style="animation-delay: 0.2s;">Clarity. Control. Growth.</span>
 			</h1>
 			
 			<!-- Subhead -->
-			<p class="text-lg md:text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+			<p class="text-lg md:text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed lead">
 				We equip service businesses with brand, books, payroll, ops, and tech that actually work together.
 			</p>
 			

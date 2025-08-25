@@ -51,7 +51,8 @@
     "monitor": "npm run dev & npm run lighthouse",
     "deploy:staging": "vercel --env staging",
     "deploy:production": "vercel --prod",
-    "health:check": "curl -f http://localhost:5173/ || exit 1"
+    "health:check": "curl -f http://localhost:5173/ || exit 1",
+    "ui:audit": "node scripts/audit-tailwind-classes.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0",

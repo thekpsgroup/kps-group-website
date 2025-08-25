@@ -88,10 +88,9 @@
 <Hero />
 
 <!-- Trust Indicators -->
-<section class="py-16 bg-white">
-	<div class="container mx-auto px-4">
-		<div class="max-w-4xl mx-auto">
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+<section class="section-sm bg-white">
+	<div class="container-narrow">
+		<div class="grid grid-cols-1 md:grid-cols-3 cluster-8 text-center">
 				<div class="trust-item">
 					<div class="text-3xl font-bold text-navy mb-2">15+</div>
 					<div class="text-slate-600">Years Experience</div>
@@ -116,14 +115,14 @@
 />
 
 <!-- Mission & Modern Suite -->
-<section class="py-20 bg-white">
-	<div class="container mx-auto px-4">
-		<div class="max-w-4xl mx-auto text-center">
+<section class="section bg-white">
+	<div class="container-narrow">
+		<div class="text-center">
 			<div class="eyebrow text-gold font-semibold mb-4">THE MISSION</div>
-			<h2 class="text-3xl md:text-4xl font-bold text-navy mb-8">
+			<h2 class="text-3xl md:text-4xl font-bold text-navy mb-8 text-balance">
 				Bridging Enterprise Discipline & Small-Business Grit
 			</h2>
-			<div class="space-y-6 text-slate-700 leading-relaxed text-lg">
+			<div class="stack-6 prose-controlled">
 				<p>
 					Through our family of companies, we give business owners the back-office they deserve: streamlined, compliant, and scalable.
 				</p>
@@ -151,14 +150,13 @@
 <Consolidation />
 
 <!-- SEO-Optimized FAQ Section -->
-<section class="py-20 bg-white">
-	<div class="container mx-auto px-4">
-		<div class="max-w-4xl mx-auto">
-			<h2 class="text-3xl md:text-4xl font-bold text-navy text-center mb-12">
-				Frequently Asked Questions
-			</h2>
-			
-			<div class="space-y-8">
+<section class="section bg-white">
+	<div class="container-narrow">
+		<h2 class="text-3xl md:text-4xl font-bold text-navy text-center mb-12 text-balance">
+			Frequently Asked Questions
+		</h2>
+		
+		<div class="stack-8">
 				<div class="faq-item">
 					<h3 class="text-xl font-semibold text-navy mb-3">
 						What services does The KPS Group offer?
