@@ -1,3 +1,6 @@
+	<h2 id="modern-suite-cta-header" class="sr-only">The Modern Suite Call to Action Section</h2>
+	<h1 id="modern-suite-header" class="sr-only">The Modern Suite Overview Section</h1>
+	<h1 id="suite-hero-header" class="sr-only">The Modern Suite Hero Section</h1>
 <script lang="ts">
 	import { SUITE } from '$lib/data/suite';
 	import { smoothScrollTo } from '$lib/utils/observe';
@@ -94,28 +97,26 @@
 </svelte:head>
 
 <!-- Breadcrumbs -->
-<div class="container mx-auto px-4 pt-8">
-	<Breadcrumbs items={[
-		{ label: 'Home', href: '/' },
-		{ label: 'Suite' }
-	]} />
-</div>
+<nav aria-label="Breadcrumb" class="container mx-auto px-4 pt-8">
+   <Breadcrumbs items={[ 
+	   { label: 'Home', href: '/' }, 
+	   { label: 'Suite' } 
+   ]} />
+</nav>
 
 <!-- Hero Section -->
 <section class="bg-navy text-white py-20 lg:py-32">
 	<div class="container mx-auto px-4">
 		<div class="max-w-4xl mx-auto text-center">
 			<!-- The Modern Suite Header Image -->
-			<div class="mb-8">
-				<img 
-					src="/brands/the-modern-suite.png" 
-					alt="The Modern Suite" 
-					class="w-full max-w-2xl mx-auto h-auto object-contain"
-				/>
-			</div>
-			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-				The Modern Suite
-			</h1>
+			   <div class="mb-8">
+				   <img 
+					   src="/brands/the-modern-suite.png" 
+					   alt="The Modern Suite" 
+					   class="w-full max-w-2xl mx-auto h-auto object-contain"
+					   loading="lazy"
+				   />
+			   </div>
 			<p class="text-xl md:text-2xl text-slate mb-8 max-w-3xl mx-auto">
 				Five integrated services that give service businesses the tools they need to dominate their market.
 			</p>
@@ -139,18 +140,19 @@
 				{@const cssVars = getBrandCSSVars(suite)}
 				<div class="bg-white rounded-2xl p-8 shadow-lg border transition-all duration-300 group hover:shadow-xl hover:scale-105" style="{Object.entries(cssVars).map(([key, value]) => `${key}: ${value}`).join('; ')}; border-color: var(--brand-primary);">
 					<!-- Brand Header Image -->
-					<div class="mb-6">
-						<img 
-							src={getBrandHeaderImage(suite.key)} 
-							alt="{suite.name} header" 
-							class="w-full h-32 object-cover rounded-xl shadow-sm group-hover:shadow-md transition-all duration-300"
-						/>
+					<div class="mb-6 flex items-center justify-center" style="height:120px;">
+						   <img 
+							   src={getBrandHeaderImage(suite.key)} 
+							   alt="{suite.name} header" 
+							   class="max-h-full max-w-[80%] object-contain rounded-xl shadow-sm group-hover:shadow-md transition-all duration-300"
+							   loading="lazy"
+						   />
 					</div>
 					
-					<div class="mb-6">
-						<h2 class="text-3xl font-bold text-navy mb-2">{suite.name}</h2>
-						<p class="font-semibold text-lg mb-4" style="color: var(--brand-primary);">{suite.tag}</p>
-						<p class="text-slate leading-relaxed">{suite.summary}</p>
+					<div class="mb-6 text-center">
+						<h2 class="text-3xl font-bold text-navy mb-2 text-center">{suite.name}</h2>
+						<p class="font-semibold text-lg mb-4 text-center" style="color: var(--brand-primary);">{suite.tag}</p>
+						<p class="text-slate leading-relaxed text-center">{suite.summary}</p>
 					</div>
 					
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -179,24 +181,29 @@
 						</div>
 					</div>
 					
-					<div class="flex flex-col sm:flex-row gap-4">
-						<Button
-							href="/suite/{suite.key}"
-							variant="secondary"
-							fullWidth
-						>
-							Learn More
-						</Button>
-						<Button
-							on:click={() => {
-								window.location.href = `/contact?service=${suite.key}`;
-							}}
-							variant="primary"
-							fullWidth
-							style="background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);"
-						>
-							{suite.cta.label}
-						</Button>
+					<div class="flex justify-center mt-8">
+						{#if suite.key === 'pay'}
+							<Button href={suite.website} style="background-color: #C9A246; color: #fff; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.08); font-weight: bold;" class="px-8 py-3 rounded-lg text-lg w-auto">
+								Check out our payroll service
+							   <Button
+								   on:click={scrollToContact}
+								   variant="primary"
+								   size="lg"
+								   aria-label="Get Started Today with The Modern Suite"
+							   >
+								   Get Started Today
+							   </Button>
+								Check out our consulting
+							</Button>
+						{:else if suite.key === 'ledger'}
+							<Button href={suite.website} style="background-color: #C9A246; color: #fff; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.08); font-weight: bold;" class="px-8 py-3 rounded-lg text-lg w-auto">
+								Check out our bookkeeping
+							</Button>
+						{:else}
+							<Button href={suite.website} style="background-color: #C9A246; color: #fff; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.08); font-weight: bold;" class="px-8 py-3 rounded-lg text-lg w-auto">
+								Check out our marketing services
+							</Button>
+						{/if}
 					</div>
 				</div>
 			{/each}
@@ -206,6 +213,7 @@
 
 <!-- Integration Benefits -->
 <section class="py-20 bg-navy text-white">
+	<h2 id="integration-benefits-header" class="sr-only">Integration Benefits Section</h2>
 	<div class="container mx-auto px-4">
 		<div class="max-w-4xl mx-auto text-center">
 			<h2 class="text-3xl md:text-4xl font-bold mb-8">
@@ -253,6 +261,13 @@
 <!-- CTA Section -->
 <section class="py-20 bg-sand">
 	<div class="container mx-auto px-4">
+		<div class="max-w-4xl mx-auto text-center mb-12">
+			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-navy" style="text-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+				The Modern Suite
+			</h1>
+		</div>
+	</div>
+	<div class="container mx-auto px-4">
 		<div class="max-w-2xl mx-auto text-center">
 			<h2 class="text-3xl md:text-4xl font-bold text-navy mb-6">
 				Ready to Transform Your Business?
@@ -260,13 +275,14 @@
 			<p class="text-lg text-slate mb-8">
 				Let's discuss how The Modern Suite can streamline your operations and drive growth.
 			</p>
-			<Button
-				on:click={scrollToContact}
-				variant="primary"
-				size="lg"
-			>
-				Start the Conversation
-			</Button>
+			   <Button
+				   on:click={scrollToContact}
+				   variant="primary"
+				   size="lg"
+				   aria-label="Start the Conversation about The Modern Suite"
+			   >
+				   Start the Conversation
+			   </Button>
 		</div>
 	</div>
 </section>
