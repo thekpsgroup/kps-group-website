@@ -63,7 +63,7 @@
 					<div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
 						<h3 class="text-lg font-semibold mb-3">Get In Touch Directly</h3>
 						<div class="space-y-2 text-slate-200">
-							<p>Email: <a href="mailto:founder@thekpsgroup.com" class="text-gold hover:text-gold-300 transition-colors font-medium">founder@thekpsgroup.com</a></p>
+							<p>Email: <a href="mailto:Karson@thekpsgroup.com" class="text-gold hover:text-gold-300 transition-colors font-medium">Karson@thekpsgroup.com</a></p>
 							<p>Phone: <a href="tel:469-458-6966" class="text-gold hover:text-gold-300 transition-colors font-medium">469-458-6966</a></p>
 						</div>
 					</div>
@@ -264,7 +264,7 @@
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
 				<Button
-					href="mailto:founder@thekpsgroup.com"
+					href="mailto:Karson@thekpsgroup.com"
 					variant="primary"
 					size="lg"
 				>

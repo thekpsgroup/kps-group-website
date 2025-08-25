@@ -99,15 +99,15 @@
 					
 					<div class="relative z-10">
 						<!-- Suite Header -->
-						<div class="mb-6">
+						<div class="mb-6 text-center">
 							<!-- Icon and Title Row -->
-							<div class="flex items-center gap-3 mb-3">
-								<div class="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center group-hover:bg-gold/30 transition-colors duration-300">
+							<div class="flex flex-col items-center gap-3 mb-3">
+								<div class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center group-hover:bg-gold/30 transition-colors duration-300">
 									<div class="group-hover:scale-110 transition-transform duration-300">
 										{@html getSuiteIcon(suite.key)}
 									</div>
 								</div>
-								<div>
+								<div class="text-center">
 									<h3 class="text-2xl font-bold text-gold">{suite.name}</h3>
 									<p class="text-slate text-sm font-medium">{suite.tag}</p>
 								</div>
@@ -127,10 +127,12 @@
 								{#each suite.painPoints as pain}
 									<button
 										on:click={() => togglePain(pain, suite.key)}
-										class="w-full text-left p-3 rounded-lg text-sm transition-all duration-200 focus-ring group/pain {selectedPains.includes(pain) ? 'bg-gold/20 text-gold border border-gold/30 shadow-lg shadow-gold/10' : 'bg-navy/60 text-slate hover:bg-navy-800 border border-transparent hover:border-gold/20 hover:shadow-md'}"
+										class="w-full text-center p-4 rounded-xl text-sm font-medium transition-all duration-200 focus-ring group/pain border-2 {selectedPains.includes(pain) ? 'bg-red-500/20 text-red-300 border-red-400 shadow-lg shadow-red-500/20 hover:bg-red-500/30' : 'bg-navy/60 text-slate border-red-400/30 hover:bg-red-500/10 hover:border-red-400/50 hover:shadow-md hover:shadow-red-500/10'}"
 									>
-										<div class="flex items-center gap-2">
-											<div class="w-1.5 h-1.5 rounded-full bg-red-400 opacity-60 group-hover/pain:opacity-100 transition-opacity"></div>
+										<div class="flex items-center justify-center gap-2">
+											<svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+											</svg>
 											<span>{pain}</span>
 										</div>
 									</button>
@@ -148,12 +150,16 @@
 							</h4>
 							<div class="space-y-2">
 								{#each suite.solutions as solution}
-									<div class="p-3 rounded-lg text-sm transition-all duration-200 {matchingSolutions.includes(solution) ? 'bg-gold/20 text-gold border border-gold/30 shadow-lg shadow-gold/10' : 'bg-navy/40 text-slate/70 border border-transparent'}">
-										<div class="flex items-center gap-2">
-											<div class="w-1.5 h-1.5 rounded-full {matchingSolutions.includes(solution) ? 'bg-gold' : 'bg-green-400'} opacity-60"></div>
+									<button
+										class="w-full text-center p-4 rounded-xl text-sm font-medium transition-all duration-200 border-2 {matchingSolutions.includes(solution) ? 'bg-green-500/20 text-green-300 border-green-400 shadow-lg shadow-green-500/20' : 'bg-navy/60 text-slate/70 border-green-400/30 hover:bg-green-500/10 hover:border-green-400/50 hover:shadow-md hover:shadow-green-500/10'}"
+									>
+										<div class="flex items-center justify-center gap-2">
+											<svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+											</svg>
 											<span>{solution}</span>
 										</div>
-									</div>
+									</button>
 								{/each}
 							</div>
 						</div>
@@ -197,6 +203,18 @@
 					<div class="absolute inset-0 rounded-2xl border border-transparent group-hover:border-gold/30 transition-colors duration-300"></div>
 				</div>
 			{/each}
+		</div>
+		
+		<!-- We Do That Button -->
+		<div class="text-center mt-16 mb-8">
+			<Button
+				href="/contact"
+				variant="primary"
+				size="lg"
+				class="bg-gradient-to-r from-gold to-gold-600 hover:from-gold-600 hover:to-gold shadow-2xl hover:shadow-3xl hover:shadow-gold/30 transform hover:-translate-y-1 transition-all duration-300 text-xl font-bold px-12 py-6 rounded-2xl"
+			>
+				We Do That
+			</Button>
 		</div>
 		
 		<!-- Bottom CTA -->

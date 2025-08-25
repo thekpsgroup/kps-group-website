@@ -77,7 +77,7 @@
 					"name": "How can I contact The KPS Group?",
 					"acceptedAnswer": {
 						"@type": "Answer",
-						"text": "You can contact The KPS Group by phone at 469-458-6966, email at sales@thekpsgroup.com, or through our contact form on the website."
+						"text": "You can contact The KPS Group by phone at 469-458-6966, email at Karson@thekpsgroup.com, or through our contact form on the website."
 					}
 				}
 			]

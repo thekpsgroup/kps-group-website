@@ -103,39 +103,12 @@
             </div>
           </div>
 
-          <!-- Step 2 (Hub) -->
-          <div class="step-card hub">
+          <!-- Step 2 -->
+          <div class="step-card">
             <div class="step-number">2</div>
             <div class="step-content">
               <h3 class="step-title">We Analyze Your Needs</h3>
               <p class="step-description">Quick discovery to understand goals, constraints, and timeline.</p>
-              
-              <!-- Branch Options -->
-              <div class="branches-container">
-                <div class="branches-grid">
-                  {#each branches as b, i}
-                    <div
-                      class="branch-option"
-                      data-index={i}
-                      data-key={b.key}
-                      data-href={b.href || ''}
-                      role="button"
-                      tabindex="0"
-                      aria-pressed="false"
-                      on:click={(e)=>activate(e.currentTarget)}
-                      on:keydown={(e)=>{ if(e.key==='Enter'||e.key===' ') { e.preventDefault(); activate(e.currentTarget);} }}
-                    >
-                      <div class="branch-icon">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
-                      <h4 class="branch-title">{b.title}</h4>
-                      <p class="branch-description">{b.description}</p>
-                    </div>
-                  {/each}
-                </div>
-              </div>
             </div>
           </div>
 
